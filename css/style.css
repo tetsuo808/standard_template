@@ -1,0 +1,487 @@
+/**********************************
+Description...:Master Screen CSS
+Copyright.....:USdigital Ltd.
+Author........:lewis@usdigital.co.uk
+Last Changed..:02-08-2013
+Notes #1......:
+/******************
+Layout**/
+* {padding:0;margin:0;border:0;}
+body {
+font-family:helvetica,arial,sans-serif;
+font-size:100%;
+text-align:center;
+cursor:default;
+background:#cfe4dd url(../img/bg.png) top center no-repeat;
+-webkit-font-smoothing:antialiased;
+-webkit-text-size-adjust:100%;
+}
+.container, .container-header, .container-footer {
+position:relative;
+width:882px;
+margin:0 auto;
+text-align:left;
+background:#fff;
+}
+.container-header {background:none;}
+.container-footer {background:#ccc;}
+@font-face {
+font-family:'khakiregular';
+src:url('../data/fonts/khaki-one-webfont.eot');
+src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../data/fonts/khaki-one-webfont.woff') format('woff'),
+	url('../data/fonts/khaki-one-webfont.ttf') format('truetype'),
+	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg');
+}
+article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section {display:block;}
+h2, h3, h4, h5, h6 {}
+img {vertical-align:middle;}
+
+/******************
+Skipto**/
+.skip a {position:absolute;left:-9999px;}
+.skip a:focus, .skip a:active {
+width:100%;
+top:0;left:0;
+z-index:99;
+opacity:0.8;
+outline:none;
+text-align:center;
+font-size:0.8em;
+color:#fff;
+letter-spacing:3px;
+text-transform:uppercase;
+padding:5px 0;
+background:#600;
+}
+/******************
+Logo Area**/
+#header {
+width:100%;
+background:#ddd;
+}
+#header img {float:left;}
+#header h1 {position:absolute;left:-9999px;}
+/******************
+Qucik Links**/
+.quick-links {
+position:absolute;
+top:8px;right:0;
+width:500px;
+text-align:right;
+color:#fff;
+}
+.quick-links p {font-size:1.1em;line-height:1em;}
+.quick-links p span.tel {font-size:1.4em;}
+.quick-links a:link, .quick-links a:visited {}
+.quick-links a:hover {}
+.quick-links a:active, .quick-links a:focus {}
+
+/******************
+Navigation**/
+#nav {
+float:left;
+width:882px;
+font-family:'khakiregular';
+background:#555 url(../img/navbar_bg.gif) repeat-x;
+}
+#nav ul {}
+#nav ul li {
+display:inline;
+list-style:none;
+font-size:1.2em;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+#nav ul li span {font-weight:bold;}
+#nav ul li a {
+float:left;
+color:#fff;
+padding:10px 20px;margin:0 4px 0 0;
+text-align:center;
+background:#333;
+}
+#nav ul li.selected a {background:#999;}
+#nav ul li a:hover {
+color:#fff;
+text-decoration:none;
+background:#350;
+}
+#nav li a:active, nav li a:focus {}
+
+/******************
+Main Content**/
+#main-content_holder {}
+.main-content {
+float:left;
+width:862px;
+color:#828283;
+margin:10px;
+background:#eee;
+}
+.main-content h2 {
+font-size:1.2em;
+color:#619080;
+margin:0 0 10px;
+}
+.main-content h2 span {color:#981b1e;}
+.main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+font-size:1em;
+margin:0 0 10px;
+}
+.main-content p {
+font-size:0.8em;
+margin:0 0 10px;
+}
+.main-content ul, .main-content ol, .main-content dl {margin:0 0 10px;}
+.main-content ul li, .main-content ol li, .main-content dl dd {
+list-style:disc;
+font-size:0.8em;
+line-height:1.5em;
+margin:0 0 0 20px;
+}
+.main-content ol li {
+list-style:decimal;
+margin:0 0 0 30px;
+}
+.main-content dl dt {
+font-size:0.8em;
+font-weight:bold;
+margin:10px 0 0;
+}
+.main-content img {
+float:right;
+margin:0 0 10px 10px;padding:8px;
+background:#fff;
+border:1px solid #999;
+
+-o-box-shadow:0 0 6px #ddd;
+-moz-box-shadow:0 0 6px #ddd;
+-webkit-box-shadow:0 0 6px #ddd;
+box-shadow:0 0 6px #ddd;
+}
+.main-content img:hover {
+-webkit-filter:sepia(90%);
+-webkit-filter:hue-rotate(150deg);
+-webkit-transition:2.5s;
+-moz-transition:2.5s;
+-ms-transition:2.5s;
+-o-transition:2.5s;
+transition:2.5s;
+}
+.main-content a:link, .main-content a:visited {
+color:#eab066;
+font-weight:bold;
+text-decoration:none;
+border-bottom:1px solid #795;
+}
+.main-content a:hover {
+color:#c59961;
+border-bottom:0;
+padding-bottom:1px;
+}
+.main-content a:active, .main-content a:focus {text-decoration:none;}
+
+/*table code*/
+.main-content table {
+margin:20px 0;
+border-top:1px solid #888;
+border-left:1px solid #888;
+}
+.main-content td, .main-content th {
+min-width:100px;
+font-size:0.8em;
+padding:5px;
+vertical-align:top;
+border-right:1px solid #888;
+border-bottom:1px solid #888;
+}
+.main-content th {
+font-size:1em;
+color:#fff;
+background:#640725;
+}
+.main-content td p {
+font-size:1em;
+margin:0;
+}
+.main-content td img {float:none;margin:0;}
+
+/******************
+Labelled Images**/
+.main-content .figure {
+float:right;
+width:250px;
+margin:10px;
+
+-o-transform:rotate(5deg);
+-webkit-transform:rotate(5deg);
+-moz-transform:rotate(5deg);
+transform:rotate(5deg);
+}
+.main-content .figure figcaption {
+float:right;
+clear:both;/*IE Needs me*/
+width:250px;/*IE Needs me*/
+text-align:right;
+font-size:0.8em;
+font-style:normal;
+color:#7154ca;
+margin:5px 0;
+opacity:0.7;
+}
+.main-content .figure img {
+width:250px;
+margin:0;
+}
+
+/******************
+Footer**/
+#footer {
+float:left;
+position:relative;
+width:100%;min-height:96px;
+background:#ccc;
+}
+#footer p {
+position:absolute;
+top:0;right:0;
+text-align:left;
+font-size:0.7em;
+line-height:1.9em;
+}
+#footer ul li {
+float:left;
+list-style:none;
+font-size:0.7em;
+padding:0 0 0 5px;margin:0 5px 0 0;
+border-left:1px solid #fff;
+}
+#footer ul li:first-child {border:0;}
+#footer a:link, #footer a:visited {}
+#footer a:hover {}
+#footer a:active, #footer a:focus {}
+
+a#credit {
+position:absolute;
+top:50px;right:0;
+float:left;
+overflow:hidden;
+width:160px;height:28px;
+background:url(../img/logo-usdigital.png);
+}
+a#credit span {position:absolute;left:-9999px;}
+
+/******************
+Global Styles**/
+.line {
+clear:both;
+height:1px;
+font-size:0;
+margin:20px 0;
+border-bottom:1px solid #f00;
+}
+.clearing {clear:both;}
+.amp {
+font-family:baskerville,'goudy old style',palatino,'book antiqua',serif;
+font-style:italic;
+font-weight:normal;
+}
+.error {
+color:#f00;
+font-weight:bold;
+}
+.win {color:#090;}
+.hide {position:absolute;left:-9999px;}
+.remove {margin:0;padding:0;border:0;}
+.tiny {font-size:0.7em;}
+
+strong {font-weight:bold;}
+em {font-style:italic;}
+cite {font-weight:bold;}
+address {font-style:normal;}
+acronym, abbr {cursor:help;border-bottom:1px dotted #000;}
+iframe {margin:10px 0;border:1px solid #ddd;}
+blockquote {
+quotes:"\201C""\201D""\2018""\2019";
+margin:15px;padding:10px;
+background:#f9f9f9;
+border-left:10px solid #ccc;
+}
+blockquote:before {
+content:open-quote;
+font-size:4em;
+color:#eee;
+line-height:0.1em;
+vertical-align:-0.4em;
+margin-right:4px;
+}
+blockquote:after {
+content:close-quote;
+font-size:4em;
+color:#eee;
+line-height:0.1em;
+vertical-align:-0.6em;
+margin-left:4px;
+}
+blockquote p {display:inline;}
+q {font-style:italic;display:block;}
+
+/******************
+Links + slectors**/
+a:link, a:visited {
+color:#ed1c24;
+text-decoration:underline;
+-webkit-transition:color 0.4s ease-out;
+-moz-transition:color 0.4s ease-out;
+-o-transition:color 0.4s ease-out;
+transition:color 0.4s ease-out;
+}
+a:hover {color:#ed1c24;text-decoration:none;}
+a:active, a:focus {/*outline:none;*/color:#fff;background-color:#890f14;text-decoration:underline;}
+a.pdf {padding-right:14px;background:url(../img/icon-pdf.gif) no-repeat 100% 50%;}
+a.ext {padding-right:14px;background:url(../img/icon-ext.png) no-repeat 100% 2px;}
+
+a[href$=".pdf"]:after {content:"(PDF document)";}
+
+::selection {background:#ff537f;color:#fff;}
+::-moz-selection {background:#ff537f;color:#fff;}
+
+input[type="text"]:disabled {background:#ddd;}
+input:checked {border:1px solid #090;}
+/******************
+Clearfix**/
+.clearfix:after {
+visibility:hidden;
+display:block;
+clear:both;
+content:".";
+font-size:0;
+height:0;
+}
+* html .clearfix {zoom:1;}/*IE6*/
+*:first-child+html .clearfix {zoom:1;}/*IE7*/
+/******************
+Self clearing floats**/
+#divname:after, #name:after {
+visibility:hidden;
+display:block;
+clear:both;
+content:".";
+font-size:0;
+height:0;
+}
+
+
+
+/******************
+Animations**/
+@keyframes fader {
+	from {
+	background: red;
+	margin-left:0;
+	transform:rotateY(0deg);
+	transform:rotate3d(-1, 0, 0, 90deg);
+	}
+	to {
+	background: yellow;
+	margin-left:100px;
+	transform:rotate3d(0, 0, 0, 0deg);
+	transform:rotateY(180deg);
+	}
+	/*or.. 0%, 50%, 100%*/
+}
+/*do the same for @-webkit-keyframes, above?*/
+	.animate {
+	float:left;
+	width:100px;height:100px;
+	perspective: 500px;
+	background:green;
+	animation-name:fader;
+	animation-duration:5s;
+	animation-timing-function:ease;
+	animation-delay:2s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+	animation-play-state:running;
+	}
+/*do the same for -webkit-, above?*/
+
+/******************
+Rotations**/
+.rotate {
+float:left;
+width:170px;height:170px;
+background:url(../img/imagery/test-img02.jpg);
+-webkit-transform:rotateY(180deg);
+transform:rotateY(180deg);
+}
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+/* Galaxy s3 (landscape) ----------- */
+@media screen and (max-width: 1028px) {
+/* Styles */
+}

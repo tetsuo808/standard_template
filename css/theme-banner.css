@@ -1,0 +1,51 @@
+/**********************************
+Description...:BANNER THEME
+Last Changed..:10-08-2012
+Notes #1......:
+/******************/
+#slides {
+position:absolute;
+top:0;left:0;
+z-index:100;
+}
+.slides_container {
+display:none;
+overflow:hidden;
+position:relative;
+width:718px;
+}
+.slides_container a, .slides_container img {
+width:718px;height:240px;
+display:block;
+}
+.slides_container a img {display:block;margin:0;}
+/*Next/prev buttons*/
+#slides .next, #slides .prev {
+position:absolute;
+top:107px;left:-39px;
+width:24px;height:43px;
+display:block;
+z-index:101;
+}
+#slides .next {left:585px;}
+/*Pagination*/
+.pagination {
+position:absolute;
+bottom:14px;right:20px;
+z-index:99;
+}
+.pagination li {
+float:left;
+list-style:none;
+margin:0 0 0 6px;
+}
+.pagination li a {
+float:left;
+overflow:hidden;
+display:block;
+width:17px;height:0;
+padding-top:17px;
+background:url(../img/banners/pagination.png) 0 0 no-repeat;
+}
+.pagination li a:hover {opacity:0.8;}
+.pagination li.current a {background-position:0 -17px;}

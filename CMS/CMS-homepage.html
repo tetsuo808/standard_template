@@ -1,0 +1,75 @@
+{process_pagedata}
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head>
+	<title>{sitename} - {title}</title>
+	
+	<meta charset="utf-8" />
+	{metadata}
+	<meta name="robots" content="all" />
+	<meta name="author" content="The Party Hire Company Ltd." />
+	
+	
+</head>
+
+<body id="home">
+	
+	<div class="skip">{anchor anchor='skip' accesskey='s' text='Skip to content &#8595;'}</div>
+
+	<header id="header">
+		<div class="container no-bg clearfix">
+			<a href="./"><img src="img/logo.png" alt="{sitename} logo" /></a>
+			<h1>{title}</h1>
+		</div>
+	</header>
+	
+	<div class="container clearfix" id="top">
+		<nav id="nav" role="navigation">
+			<ul>
+				{menu}
+			</ul>
+		</nav>
+		
+		<div id="main-content_holder">
+			<div id="flashcontent">
+				<div id="slides">
+					<div class="slides_container">
+						{Gallery dir='Homepage'}
+					</div>
+				</div>
+			</div>
+		
+			<div class="main-content" id="skip">
+				<h2>{content block='Main Headline' wysiwyg='false' oneline='true'}</h2>
+				{content}
+			</div>
+			
+			<div class="widget news-div">
+				<h5>Latest News</h5>
+				{news summarytemplate='newsFeed' number='1' detailpage='articles'}
+			</div>
+		</div>
+		
+	</div>
+		
+	<footer id="footer" role="contentinfo">
+		<div class="container-footer clearfix">
+			<section class="first">
+				<h6>Head Office</h6>
+				{global_content name='footerHeadOffice'}
+				<a href="http://usdigital.co.uk/" rel="external" title="USdigital - Web Design &amp; Development" id="credit"><span>USdigital - Leicester Web Design</span></a>
+			</section>
+			<section class="last">
+				<h6>Others</h6>
+				<ul>
+					{menu start_page='reference' childrenof='reference'}
+				</ul>
+			</section>
+		</div>
+	</footer>
+
+<script src="js/tracker.js"></script>
+</body>
+</html>

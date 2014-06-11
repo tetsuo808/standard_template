@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////////
+authorname
+////////////////////////////////////////////////////////////////////////////////////
+ global $gCms;
+$db =& $gCms->GetDb(); 
+
+$user_name = isset($params['username']) ? $params['username'] : "";
+$feu_field = isset($params['feufield']) ? $params['feufield'] : ""; 
+
+$query = "SELECT first_name, last_name FROM ".cms_db_prefix()."users WHERE username=?";
+$row = $db->GetRow($query, array($user_name)); 
+if($row){   
+ $result = $row['first_name'] . " " . $row['last_name'];
+}else{  
+if($gCms->modules['FrontEndUsers']['object'] && !empty($feu_field)) 
+{    
+ $query = "SELECT id FROM ".cms_db_prefix()."module_feusers_users WHERE username=?";   
+$feid = $db->GetOne($query, array($user_name));    
+if($feid)   {   
+
+$query = "SELECT data FROM ".cms_db_prefix()."module_feusers_properties WHERE userid=? AND title=?";   
+$result = $db->GetOne($query, array($feid,$feu_field));      
+}    
+}
+} 
+if(!$result){   
+
+$result = "Username: $user_name doesn't exist or feufield is not set";} 
+return $result;
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+random_quote
+////////////////////////////////////////////////////////////////////////////////////
+
+<?php
+	$testimonial[0]['quote']="Had a great weekend serving over 2000 guests with chocolate fountains and fruit palm trees at Hamleys toy store of London!!";
+	$testimonial[0]['cite']="Jane 1";
+	$testimonial[0]['company']="Party Girl, London";
+	
+	$testimonial[1]['quote']="Had a super weekend serving over 2000 guests with chocolate fountains and fruit palm trees at Hamleys toy store of London!!";
+	$testimonial[1]['cite']="Jane 2";
+	$testimonial[1]['company']="Party Girl, Durham";
+	
+	$testimonial[2]['quote']="Had a ace weekend serving over 2000 guests with chocolate fountains and fruit palm trees at Hamleys toy store of London!!";
+	$testimonial[2]['cite']="Jane 3";
+	$testimonial[2]['company']="Party Girl, Leicester";
+	
+	$id_banner = array_rand($testimonial);
+	
+	echo "<blockquote><p>" .$testimonial[$id_banner]['quote']. "</p></blockquote>\n";
+	echo "<p><strong>" .$testimonial[$id_banner]['cite']. "</strong>\n";
+	echo " " .$testimonial[$id_banner]['company']. "</p>\n";
+?>
