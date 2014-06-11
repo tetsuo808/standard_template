@@ -1,0 +1,56 @@
+Options -Indexes
+
+<FilesMatch "\.(?i:pdf)$">
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</FilesMatch>
+
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+# cache images and flash content for one month
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+# cache text, css, and javascript files for one week
+<FilesMatch ".(js|css|pdf|txt)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+ServerSignature Off
+
+RewriteEngine on
+
+#force www. - COMMENTED OUT ON LOCALHOST ONLY
+#RewriteCond %{HTTP_HOST} !^www.usdigital.co.uk$ [NC]
+#RewriteRule ^(.*)$ http://www.usdigital.co.uk/$1 [R,L]
+#RewriteRule ^index.php http://www.usdigital.co.uk/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+# must be in this order, more specific first
+# and needs <base href="http://localhost/website-name/" />
+RewriteRule ^our-work/([a-z0-9\-\_]+) our-work_$1.php [L]
+
+# some others, one for individual pages
+RewriteRule ^about-us/ about-us.php [L]
+
+# keep these in, can't remember what they do though
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule  ^.*$ - [L]
+
+# 301 redirects
+RewriteRule ^choosing_webdesign_agency.php$ http://www.usdigital.co.uk/about-us/ [R=301,L]
+
+ErrorDocument 404 /404.php

@@ -1,0 +1,46 @@
+- use character encoding type relative to region/country of the site (iso or utf8)
+- use microformats on relevant areas, things like v-cards
+
+	<div class="vcard">
+   		<div class="fn">Joe Doe</div>
+ 		<div class="org">The Example Company</div>
+		<div class="tel">604-555-1234</div>
+		<a class="url" href="http://example.com/">http://example.com/</a>
+	</div>
+
+- consider using the old min-height or max height
+- apply an id to <body> on every page
+
+font:italic small-caps bold 1em/140% "Lucida Grande",sans-serif;
+
+Again, when it comes to the order of the values, I see no reason not to use the order given by the W3C. Better safe than sorry.
+
+When using the font shorthand you can omit any values except font-size and font-family – 
+you always need to give values for those, and in that order. 
+
+The initial values for the individual font properties are these:
+
+    * font-style: normal
+    * font-variant: normal
+    * font-weight: normal
+    * font-size: medium
+    * line-height: normal
+    * font-family: depends on the user agent
+	
+	
+<form action="./">
+	<fieldset>
+		<legend>Details</legend>
+		<p><label for="name">Name:</label><input type="text" name="name" id="name" /></p>
+		<p><label for="email">Email Address:</label><input type="text" name="email" id="email" /></p>
+		<p><label for="url">url:</label><input type="text" name="url" id="url" /></p>
+	</fieldset>
+	<fieldset>
+		<legend>Comment</legend>
+		<p><label for="comment">Comment:</label><textarea name="comment" id="comment" cols="50" rows="10"></textarea></p>
+	</fieldset>
+	<fieldset>
+		<legend>Submit</legend>
+		<p><input id="submit" type="button" value="Submit" /><input id="reset" type="button" value="Reset" /></p>
+	</fieldset>
+</form>
