@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <lewis> -- <developer/designer> -- <@fointypinger.co.uk>
 
 # THANKS
 
     <name>
 
 # TECHNOLOGY COLOPHON
-
+    Sass, Grunt
     HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+    jquery, modernizr, slidesjs, trianglify

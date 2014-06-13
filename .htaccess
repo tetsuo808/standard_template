@@ -31,9 +31,9 @@ ServerSignature Off
 RewriteEngine on
 
 #force www. - COMMENTED OUT ON LOCALHOST ONLY
-#RewriteCond %{HTTP_HOST} !^www.usdigital.co.uk$ [NC]
-#RewriteRule ^(.*)$ http://www.usdigital.co.uk/$1 [R,L]
-#RewriteRule ^index.php http://www.usdigital.co.uk/ [R=301,L]
+#RewriteCond %{HTTP_HOST} !^www.company.co.uk$ [NC]
+#RewriteRule ^(.*)$ http://www.company.co.uk/$1 [R,L]
+#RewriteRule ^index.php http://www.company.co.uk/ [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
@@ -51,6 +51,6 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule  ^.*$ - [L]
 
 # 301 redirects
-RewriteRule ^choosing_webdesign_agency.php$ http://www.usdigital.co.uk/about-us/ [R=301,L]
+RewriteRule ^choosing_webdesign_agency.php$ http://www.company.co.uk/about-us/ [R=301,L]
 
 ErrorDocument 404 /404.php

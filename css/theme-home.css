@@ -1,22 +1,5 @@
 /**********************************
 Description...:HOME THEME
-Last Changed..:04-04-2011
+Last Changed..:24-09-2014
 Notes #1......:
 **********************************/
-/******************
-Slideshow area**/
-#flashcontent {
-float:left;
-position:relative;
-width:718px;min-height:240px;
-margin:0 0 26px;
-background:#eee;
-}
-#flashcontent span {
-position:absolute;
-top:0;left:0;
-z-index:999;
-width:240px;height:240px;
-background:url(../img/icon-banner.png) no-repeat;
-}
-#flashcontent img {float:left;}
