@@ -4,3 +4,4 @@ del
 lib-contact
 node_modules
 *Thumbs.db
+*.db
