@@ -1,5 +1,6 @@
-@mixin drop-shadow {text-shadow:1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000, 6px 6px #000;}
+@mixin hide {position:absolute;left:-9999px;}
 
+@mixin drop-shadow {text-shadow:1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000, 6px 6px #000;}
 @mixin text-shadow {text-shadow:1px 1px #000;}
 
 @mixin transition($transition-property, $transition-time, $method) {
