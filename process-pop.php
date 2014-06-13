@@ -2,23 +2,23 @@
 
 	/* ############### EDIT THESE VARIABLES... ########################################################### */
 
-	$url = 'www.versatilevenues.co.uk'; //Leave out 'http://' and closing slash (change to live url when launching)
-	$domain = 'www.versatilevenues.co.uk'; //Root domain
-	$emaildomain = 'versatilevenues.co.uk'; //email domain
-	$companyname = 'Versatile Venues';
+	$url = 'www.company.co.uk'; //Leave out 'http://' and closing slash (change to live url when launching)
+	$domain = 'www.company.co.uk'; //Root domain
+	$emaildomain = 'company.co.uk'; //email domain
+	$companyname = 'COMPANY';
 	
 	$smtp = array(
       'host'  => 'localhost',
       'port'  => 25,
       'ssl'   => false,
-      'user'  => 'contact@versatilevenues.co.uk',
+      'user'  => 'contact@company.co.uk',
       'pass'  => ')eOAGV{z2_Z['
     );
 
 	$autoresponder = 1; //Send autoresponder email? 0=no, 1=yes
 	$autoresponder_name_field = array('pop_Namey'); //Name of name field (If forename/surname use format: array('forename','surname') else just: array('name') ;
 	$autoresponder_email_field = 'pop_Email'; //Name of email field
-	$autoresponder_subject = "Versatile Venues: quote application confirmation"; //Subject text for autoresponder email
+	$autoresponder_subject = "COMPANY: quote application confirmation"; //Subject text for autoresponder email
 	$autoresponder_message = "<p>Thank you for applying for a quote.</p>"; //Message for autoresponder email (use HTML)
 	$autoresponder_details = 1; //Show summary of form contents in autoresponder email? 0=no, 1=yes
 	$autoresponder_details_text = "Quote application details:"; //Text to prefix summary (if not showing summary, leave as empty string
@@ -32,7 +32,7 @@
 	$emailsubject = "Quote: New quote application"; //Subject line of email
 	$email_content_msg = "The following user has applied for a quote."; //First line of email
 
-	$sendto = "info@versatilevenues.co.uk"; //Change when launching - xxx
+	$sendto = "info@company.co.uk"; //Change when launching - xxx
 
 	$fields = array(
 		"Name" => "pop_Namey",
@@ -151,10 +151,10 @@
   }
 
 	
-	$valid_referers[] = "~http://www.versatilevenues.co.uk/(.+)~";
-	$valid_referers[] = "~http://versatilevenues.co.uk/(.+)~";
-	$valid_referers[] = "http://versatilevenues.co.uk/";
-	$valid_referers[] = "http://www.versatilevenues.co.uk/";
+	$valid_referers[] = "~http://www.company.co.uk/(.+)~";
+	$valid_referers[] = "~http://company.co.uk/(.+)~";
+	$valid_referers[] = "http://company.co.uk/";
+	$valid_referers[] = "http://www.company.co.uk/";
 	
 	
 	if(is_valid_referer($valid_referers)){

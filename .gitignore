@@ -1,1 +1,6 @@
 .sass-cache
+CMSMS
+del
+lib-contact
+node_modules
+*Thumbs.db
