@@ -69,8 +69,7 @@
 				<li><a href="generic.html">About Us</a></li>
 				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
-			<a href="#" id="pull">Show menu</a>
-		</nav>
+			<a href="#" id="pull">Show menu</a>		</nav>
 		
 		<div id="flashcontent">
 			<div class="containerz">
@@ -150,22 +149,30 @@
 				
 				<div class="line" role="separator"></div>
 				
-				<form action="./">
-					<fieldset>
-						<legend>Details</legend>
-						<p><label for="name">Name:</label><input type="text" name="name" id="name" /></p>
-						<p><label for="email">Email Address:</label><input type="text" name="email" id="email" /></p>
-						<p><label for="url">url:</label><input type="text" name="url" id="url" /></p>
-					</fieldset>
-					<fieldset>
-						<legend>Comment</legend>
-						<p><label for="comment">Comment:</label><textarea name="comment" id="comment" cols="50" rows="10"></textarea></p>
-					</fieldset>
-					<fieldset>
-						<legend>Submit</legend>
-						<p><input id="submit" type="button" value="Submit" /></p>
-					</fieldset>
-				</form>
+				<div id="contact-form">
+					<form action="./">
+						<fieldset>
+							<legend>Details</legend>
+							<ul>
+								<li><label for="name">Name</label><input type="text" name="name" id="name" /></li>
+								<li><label for="email">Email Address</label><input type="email" name="email" id="email" /></li>
+								<li><label for="url">url</label><input type="text" name="url" id="url" /></li>
+							</ul>
+						</fieldset>
+						<fieldset>
+							<legend>Comment</legend>
+							<ul>
+								<li><label for="comment">Comment</label><textarea name="comment" id="comment" cols="50" rows="10"></textarea></li>
+							</ul>
+						</fieldset>
+						<fieldset>
+							<legend>Submit</legend>
+							<ul>
+								<li><input id="submit" type="button" value="Submit" /></li>
+							</ul>
+						</fieldset>
+					</form>
+				</div>
 				
 			</section>
 		</div>

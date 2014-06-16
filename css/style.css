@@ -374,6 +374,107 @@ Labelled Images**/
 }
 
 /******************
+Contact Form**/
+#contact-form fieldset {
+  position: relative;
+  padding: 20px;
+  margin: 0 0 20px;
+  border: 1px solid #ccc;
+}
+
+#contact-form ul li {
+  display: block;
+  float: left;
+  clear: left;
+  font-size: 0.85em;
+  margin: 0 0 10px;
+  padding-left: 0;
+}
+
+#contact-form label {
+  cursor: pointer;
+  float: left;
+  display: block;
+  width: 200px;
+}
+
+#contact-form label:after {
+  content: ":";
+}
+
+#contact-form li.checky label:after {
+  content: none;
+}
+
+#contact-form li.checky label {
+  width: 178px;
+  margin: 0 0 12px;
+}
+
+#contact-form input {
+  width: 268px;
+  font-size: 1em;
+  padding: 4px;
+  border: 1px solid #999;
+  /*cfcfcf*/
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+  border-color: #8cc541;
+  background: #fff;
+}
+
+#contact-form input.submit {
+  width: auto;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px 15px;
+  margin-left: 334px;
+  border: 0;
+  background: #454377;
+}
+
+#contact-form input.submit:hover {
+  background: #78769c;
+}
+
+#contact-form li.checky input {
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px 0 0;
+  padding: 0;
+  border: 0;
+  /*for IE*/
+}
+
+#contact-form select {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 1em;
+  width: 244px;
+  padding: 4px;
+  border: 1px solid #cfcfcf;
+}
+
+#contact-form textarea {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 0.95em;
+  width: 268px;
+  height: 80px;
+  padding: 2px;
+  background: #eee;
+  border: 1px solid #999;
+  /*cfcfcf*/
+}
+
+#contact-form textarea.big {
+  width: 402px;
+  height: 80px;
+  margin: 10px 0;
+}
+
+/******************
 Footer**/
 #footer {
   float: left;
