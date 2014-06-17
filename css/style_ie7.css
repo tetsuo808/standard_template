@@ -3,7 +3,7 @@ Description...:CSS condition file for IE6-
 Last Changed..:04-04-2011
 Notes #1......:Fixes for IE6 quirks
 **********************************/
-body {behavior:url("./css/csshover.htc");}
+img {-ms-interpolation-mode:bicubic;}
 .clearfix {display:inline-block;}
 div {display:inline;}
 

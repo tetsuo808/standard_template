@@ -20,6 +20,7 @@ body {
   background: #060;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 .container {
@@ -62,6 +63,7 @@ Skipto**/
   left: 0;
   z-index: 99;
   opacity: 0.8;
+  filter: alpha(opacity=80);
   text-align: center;
   font-size: 0.8em;
   padding: 6px 0;
@@ -72,7 +74,9 @@ Skipto**/
 Logo Area**/
 #header {
   width: 100%;
-  background: #666;
+  background-color: #333333;
+  background: -webkit-linear-gradient(left, #222222 0%, #333333 100%);
+  background: linear-gradient(to right, #222222 0%, #333333 100%);
 }
 
 #header img {
@@ -412,11 +416,11 @@ Contact Form**/
 }
 
 #contact-form input {
-  width: 268px;
+  width: 300px;
   font-size: 1em;
   padding: 4px;
   border: 1px solid #999;
-  /*cfcfcf*/
+  border-radius: 4px;
 }
 
 #contact-form input:focus, #contact-form textarea:focus {
@@ -424,18 +428,15 @@ Contact Form**/
   background: #fff;
 }
 
-#contact-form input.submit {
+#contact-form input[type="submit"] {
   width: auto;
   cursor: pointer;
   color: #fff;
-  font-weight: bold;
-  padding: 3px 15px;
-  margin-left: 334px;
   border: 0;
   background: #454377;
 }
 
-#contact-form input.submit:hover {
+#contact-form input[type="submit"]:hover {
   background: #78769c;
 }
 
@@ -450,7 +451,6 @@ Contact Form**/
 }
 
 #contact-form select {
-  font-family: arial,helvetica,sans-serif;
   font-size: 1em;
   width: 244px;
   padding: 4px;
@@ -458,14 +458,13 @@ Contact Form**/
 }
 
 #contact-form textarea {
-  font-family: arial,helvetica,sans-serif;
-  font-size: 0.95em;
-  width: 268px;
-  height: 80px;
-  padding: 2px;
-  background: #eee;
+  font-family: helvetica,arial,sans-serif;
+  font-size: 1em;
+  width: 300px;
+  height: 120px;
+  padding: 4px;
   border: 1px solid #999;
-  /*cfcfcf*/
+  border-radius: 4px;
 }
 
 #contact-form textarea.big {
@@ -598,20 +597,20 @@ blockquote {
   border-left: 10px solid #ccc;
 }
 
-blockquote:before {
+blockquote:before, blockquote:after {
   content: open-quote;
   font-size: 4em;
-  color: #eee;
+  color: #666;
   line-height: 0.1em;
   vertical-align: -0.4em;
+}
+
+blockquote:before {
   margin-right: 4px;
 }
 
 blockquote:after {
   content: close-quote;
-  font-size: 4em;
-  color: #eee;
-  line-height: 0.1em;
   vertical-align: -0.6em;
   margin-left: 4px;
 }

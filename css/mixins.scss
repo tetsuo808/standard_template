@@ -1,8 +1,17 @@
 @mixin hide {position:absolute;left:-9999px;}
-
 @mixin drop-shadow {text-shadow:1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000, 6px 6px #000;}
 @mixin text-shadow {text-shadow:1px 1px #000;}
-
+@mixin word-wrap {
+word-break:break-word;
+-webkit-hyphens:auto;
+-moz-hyphens:auto;
+hyphens:auto;
+}
+@mixin opacity($opacity) {
+opacity:$opacity;
+$opacity-ie:$opacity * 100;
+filter:alpha(opacity=$opacity-ie);
+}
 @mixin transition($transition-property, $transition-time, $method) {
 -webkit-transition:$transition-property $transition-time $method;
 -moz-transition:$transition-property $transition-time $method;
@@ -10,7 +19,6 @@
 -o-transition:$transition-property $transition-time $method;
 transition:$transition-property $transition-time $method;
 }
-
 @mixin animation ($animation, $duration, $delay) {
 -webkit-animation-name:$animation;
 -webkit-animation-duration:$duration;
@@ -26,13 +34,16 @@ animation-duration:$duration;
 animation-delay:$delay;
 animation-fill-mode:forwards;
 }
-
-@mixin linear-gradient($fromColor, $toColor) {
+@mixin vert-gradient($fromColor, $toColor) {
 background-color:$toColor;
 background:-webkit-linear-gradient(top, $fromColor 0%, $toColor 100%);
 background:linear-gradient(to bottom, $fromColor 0%, $toColor 100%);
 }
-
+@mixin hori-gradient($fromColor, $toColor) {
+background-color:$toColor;
+background:-webkit-linear-gradient(left, $fromColor 0%, $toColor 100%);
+background:linear-gradient(to right, $fromColor 0%, $toColor 100%);
+}
 @mixin border-box {
 -moz-box-sizing:border-box;
 -webkit-box-sizing:border-box;
