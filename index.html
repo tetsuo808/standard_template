@@ -16,18 +16,19 @@
 	<meta name="robots" content="all" />
 	<meta name="author" content="COMPANY Ltd." />
 	
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png" />
+	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+	<link href="img/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
+	<link href="img/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
+	<link href="img/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" />
 	
-	<link rel="stylesheet" href="css/style.css" media="screen" />
-	<link rel="stylesheet" href="css/theme-home.css" media="screen" />
-	<link rel="stylesheet" href="css/theme-mobile.css" media="screen" />
+	<!--<link href="css/dist/style.css" rel="stylesheet" media="screen" />-->
+	<link href="css/style.css" rel="stylesheet" media="screen" />
+	<link href="css/theme-home.css" rel="stylesheet" media="screen" />
+	<link href="css/theme-mobile.css" rel="stylesheet" media="screen" />
 	
-	<script src="js/dist/production.min.js"></script>
-	<!--<script src="js/libs/jquery-1.7.2.min.js"></script>
-	<script src="js/libs/modernizr.js"></script>-->
+	<!--<script src="js/dist/production.min.js"></script>-->
+	<script src="js/libs/jquery-1.7.2.min.js"></script>
+	<script src="js/libs/modernizr.js"></script>
 	
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
@@ -36,11 +37,13 @@
 	<script src="js/funcs.js"></script>
 	<script src="js/funcs.banner.js"></script>
 	
+	<script src="js/live.js"></script>
+	
 	<!--[if IE 7]>
-		<link rel="stylesheet" href="css/style_ie7.css" />
+		<link href="css/style_ie7.css" rel="stylesheet" />
 	<![endif]-->
 	<!--[if IE 8]>
-		<link rel="stylesheet" href="css/style_ie8.css" />
+		<link href="css/style_ie8.css" rel="stylesheet" />
 	<![endif]-->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -73,9 +76,10 @@
 				<li><a href="generic.html">About Us</a></li>
 				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
-			<a href="#" id="pull">Show menu</a>		</nav>
+			<a href="#" id="pull">Show menu</a>
+		</nav>
 		
-		<div id="flashcontent">
+		<div id="flashcontent" role="slider">
 			<div class="containerz">
 				<div id="slides">
 					<img src="img/banners/home-00a.jpg" alt="" />
@@ -86,7 +90,7 @@
 		</div>
 		
 		<div id="main-content_holder">
-			<section class="main-content" id="skip">
+			<section class="main-content" id="skip" role="main">
 				<header>
 					<h2>Welcome to <span>COMPANY</span></h2>
 				</header>
@@ -109,8 +113,8 @@
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer <a href="#"  class="more">adipiscing elit</a>. Integer eget urna. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet mollis feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla molestie, felis sed sagittis blandit, lectus elit luctus enim, eu hendrerit tellus pede at mi.</p>
 				
-				<figure class="figure">
-					<img src="img/imagery/test-img01.jpg" alt="Photo caption" title="Photo caption" />
+				<figure class="figure" role="complementary">
+					<img src="img/imagery/test-img01.jpg" alt="Photo caption" />
 					<figcaption>Photo caption</figcaption>
 				</figure>
 				
@@ -159,7 +163,7 @@
 							<legend>Details</legend>
 							<ul>
 								<li><label for="name">Name</label><input type="text" name="name" id="name" /></li>
-								<li><label for="email">Email Address</label><input type="email" name="email" id="email" /></li>
+								<li><label for="email">Email Address</label><input type="email" name="email" id="email" required aria-required="true" /></li>
 								<li><label for="url">url</label><input type="text" name="url" id="url" /></li>
 							</ul>
 						</fieldset>
@@ -172,11 +176,30 @@
 						<fieldset>
 							<legend>Submit</legend>
 							<ul>
-								<li><input type="submit" id="submit" value="Submit" /></li>
+								<li><input type="submit" id="submit" value="Submit" role="button" tabindex="0" /></li>
 							</ul>
 						</fieldset>
 					</form>
 				</div>
+				
+				
+				<h4>HTML5 Video</h4>
+				<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
+					<source src="data/video/01/video-01.mp4" type="video/mp4">
+					<source src="data/video/01/video-01.ogv" type="video/ogg">
+					<source src="data/video/01/video-01.webm" type="video/webm">
+					<object type="application/x-shockwave-flash" data="data/video/01/player.swf" width="600" height="338">
+						<param name="allowfullscreen" value="true">
+						<param name="allowscriptaccess" value="always">
+						<param name="flashvars" value="file=<?php echo $base_href; ?>data/video/01/video-01.flv">
+						<!--[if IE]><!--><param name="movie" value="data/video/01/player.swf"><!--<![endif]-->
+						<img src="data/video/01/video-01.jpg" alt="" />
+						<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
+					</object>
+				</video>
+				
+				
+				
 				
 			</section>
 		</div>
@@ -193,7 +216,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.usdigital.co.uk/" rel="external nofollow" title="USdigital - web design &amp; development" id="credit"><span>USdigital - web design &amp; development</span></a>
+			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
 		</div>
 	</footer>
 

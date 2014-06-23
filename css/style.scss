@@ -41,7 +41,7 @@ src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'
 	url('../data/fonts/khaki-one-webfont.ttf') format('truetype'),
 	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg');
 }
-article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section {display:block;}
+article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {display:block;}
 h2, h3, h4, h5, h6 {}
 img {vertical-align:middle;}
 
@@ -366,7 +366,7 @@ top:20px;right:0;
 float:left;
 overflow:hidden;
 width:160px;height:28px;
-background:url(../img/logo-usdigital.png);
+background:#000;
 }
 a#credit span {@include hide;}
 
@@ -413,7 +413,10 @@ margin-left:4px;
 }
 blockquote p {display:inline;}
 q {font-style:italic;display:block;}
-
+video {
+margin:20px 0;
+border:1px solid #ddd;
+}
 /******************
 Links + slectors**/
 a:link, a:visited {

@@ -42,7 +42,7 @@ body {
   src: url("../data/fonts/khaki-one-webfont.eot");
   src: url("../data/fonts/khaki-one-webfont.eot?#iefix") format("embedded-opentype"), url("../data/fonts/khaki-one-webfont.woff") format("woff"), url("../data/fonts/khaki-one-webfont.ttf") format("truetype"), url("../data/fonts/khaki-one-webfont.svg#khakiregular") format("svg");
 }
-article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section {
+article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {
   display: block;
 }
 
@@ -521,7 +521,7 @@ a#credit {
   overflow: hidden;
   width: 160px;
   height: 28px;
-  background: url(../img/logo-usdigital.png);
+  background: #000;
 }
 
 a#credit span {
@@ -622,6 +622,11 @@ blockquote p {
 q {
   font-style: italic;
   display: block;
+}
+
+video {
+  margin: 20px 0;
+  border: 1px solid #ddd;
 }
 
 /******************
