@@ -58,7 +58,9 @@ module.exports = function(grunt) {
 		sass: {
 		  dev: {
 			files: {
-			  'css/style.css': 'css/style.scss'
+			  'css/style.css': 'css/style.scss',
+			  'css/theme-home.css': 'css/theme-home.scss',
+			  'css/theme-mobile.css': 'css/theme-mobile.scss',
 			},
 			options: {
 			  style: 'expanded'
@@ -66,7 +68,9 @@ module.exports = function(grunt) {
 		  },
 		  dist: {
 			files: {
-			  'css/dist/style.css': 'css/style.scss'
+			  'css/dist/style.css': 'css/style.scss',
+			  'css/dist/theme-home.css': 'css/theme-home.scss',
+			  'css/dist/theme-mobile.css': 'css/theme-mobile.scss'
 			},
 			options: {
 			  style: 'compressed'

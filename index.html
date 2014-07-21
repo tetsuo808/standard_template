@@ -29,12 +29,11 @@
 	<!--<script src="js/dist/production.min.js"></script>-->
 	<script src="js/libs/jquery-1.7.2.min.js"></script>
 	<script src="js/libs/modernizr.js"></script>
-	
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.slides.min.js"></script>
-	
 	<script src="js/funcs.js"></script>
+	
+	<script src="js/jquery.slides.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
 	
 	<script src="js/live.js"></script>
@@ -157,20 +156,36 @@
 				
 				<div class="line" role="separator"></div>
 				
-				<div id="contact-form">
-					<form action="./">
+				<div id="contactForm">
+					<form action="./" id="contact-form">
 						<fieldset>
 							<legend>Details</legend>
 							<ul>
-								<li><label for="name">Name</label><input type="text" name="name" id="name" /></li>
-								<li><label for="email">Email Address</label><input type="email" name="email" id="email" required aria-required="true" /></li>
-								<li><label for="url">url</label><input type="text" name="url" id="url" /></li>
+								<li><label for="xxxName">Name</label><input type="text" name="xxxName" id="xxxName" required aria-required="true" /></li>
+								<li><label for="xxxEmail">Email Address</label><input type="email" name="xxxEmail" id="xxxEmail" required aria-required="true" /></li>
+								<li><label for="xxxTel">Telephone</label><input type="tel" name="xxxTel" id="xxxTel" /></li>
+								<li><label for="xxxUrl">Url</label><input type="url" name="xxxUrl" id="xxxUrl" placeholder="http://" /></li>
+								<li><label for="xxxSelect">Select</label>
+								<select name="xxxSelect" id="xxxSelect">
+									<option value="Option None" selected="selected" disabled="disabled">Select a choice</option>
+									<option value="Option 1">Option 1</option>
+									<option value="Option 2">Option 2</option>
+									<option value="Option 3">Option 3</option>
+									<option value="Option 4">Option 4</option>
+								</select>
+								</li>
+								<li><label for="xxxCheckbox">Checkbox</label>
+									Yes <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" />
+									No <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" />
+									Maybe <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" /></li>
+								<li><label for="xxxRadio">Radio</label>Yes<input type="radio" name="xxxRadio" id="xxxRadio" />No<input type="radio" name="xxxRadio" id="xxxRadio" /></li>
+								<li><label for="xxxFile">File Upload</label><input type="file" name="xxxFile" id="xxxFile" /></li>
 							</ul>
 						</fieldset>
 						<fieldset>
 							<legend>Comment</legend>
 							<ul>
-								<li><label for="comment">Comment</label><textarea name="comment" id="comment" cols="50" rows="10"></textarea></li>
+								<li><label for="xxxComment">Comment</label><textarea name="xxxComment" id="xxxComment" cols="50" rows="10"></textarea></li>
 							</ul>
 						</fieldset>
 						<fieldset>
@@ -180,8 +195,8 @@
 							</ul>
 						</fieldset>
 					</form>
+					<script src="js/validate.contact.js"></script>
 				</div>
-				
 				
 				<h4>HTML5 Video</h4>
 				<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
@@ -197,10 +212,7 @@
 						<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
 					</object>
 				</video>
-				
-				
-				
-				
+
 			</section>
 		</div>
 		

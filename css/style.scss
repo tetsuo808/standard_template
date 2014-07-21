@@ -64,9 +64,10 @@ Logo Area**/
 #header {
 width:100%;
 @include hori-gradient (#222, #333);
+
+	img {float:left;}
+	h1 {@include hide;}
 }
-#header img {float:left;}
-#header h1 {@include hide;}
 
 	/******************
 	Quick Links**/
@@ -76,12 +77,13 @@ width:100%;
 	text-align:right;
 	color:#fff;
 	margin:10px 0 0;
+	
+		p {font-size:1.1em;line-height:1.2em;}
+		p span.tel {font-size:1.4em;}
+		a:link, a:visited {color:#999;}
+		a:hover {}
+		a:active, a:focus {color:#000;}
 	}
-	.quick-links p {font-size:1.1em;line-height:1.2em;}
-	.quick-links p span.tel {font-size:1.4em;}
-	.quick-links a:link, .quick-links a:visited {color:#999;}
-	.quick-links a:hover {}
-	.quick-links a:active, .quick-links a:focus {color:#000;}
 
 /******************
 Navigation**/
@@ -91,32 +93,31 @@ width:100%;
 font-family:'khakiregular';
 margin:20px 0;
 background:#555;
-}
-#nav ul li {
-display:inline;
-list-style:none;
-font-size:1.2em;
-text-transform:uppercase;
-letter-spacing:2px;
-}
-#nav ul li span {font-weight:bold;}
-#nav ul li a {
-float:left;
-color:#fff;
-padding:10px 20px;margin:0 10px 0 0;
-text-align:center;
-background-color:#333;
-}
-#nav ul li.selected a {background-color:#999;}
-#nav ul li a:hover {
-color:#fff;
-text-decoration:none;
-background-color:#060;
-}
-#nav li a:active, #nav li a:focus {color:#000;background-color:$focus-bg;}
 
-	/*RESPONSIVE BUTTON*/
-	#nav a#pull {
+	ul li {
+	display:inline;
+	list-style:none;
+	font-size:1.2em;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	}
+	ul li span {font-weight:bold;}
+	ul li a {
+	float:left;
+	color:#fff;
+	padding:10px 20px;margin:0 10px 0 0;
+	text-align:center;
+	background-color:#333;
+	}
+	ul li.selected a {background-color:#999;}
+	ul li a:hover {
+	color:#fff;
+	text-decoration:none;
+	background-color:#060;
+	}
+	li a:active, li a:focus {color:#000;background-color:$focus-bg;}
+
+	a#pull {
 	display:none;
 	position:relative;
 	width:auto;
@@ -126,43 +127,7 @@ background-color:#060;
 	padding:8px 4%;
 	background:#c00 url(../img/icon-nav.png) 97% 50% no-repeat;
 	}
-
-/******************
-Slideshow (HOME)**/
-#flashcontent {
-float:left;
-position:relative;
-width:100%;
-background:#999;
 }
-#flashcontent img {float:left;}
-
-	/*BANNER**/
-	.containerz {clear:left;margin:0 auto;}
-	#slides {display:none;}
-	.slidesjs-pagination {
-	float:left;
-	position:relative;
-	z-index:99;
-	margin:-30px 0 0 46%;
-	}
-	.slidesjs-pagination li {
-	float:left;
-	list-style:none;
-	margin:0 10px 0 0;
-	}
-	.slidesjs-pagination li a {
-	float:left;
-	overflow:hidden;
-	display:block;
-	width:14px;height:0;
-	padding-top:14px;
-	background:rgba(0,0,0,.25);
-	}
-	.slidesjs-pagination li a.active, .slidesjs-pagination li a.active:hover {background:rgba(0,0,0,.5);}
-	.slidesjs-pagination li a:hover {background-position:0 -26px;}
-	.slidesjs-pagination li a:active, .slidesjs-pagination li a:focus {background-color:$focus-bg;}
-	.slidesjs-pagination .active {background:green;}
 
 /******************
 Main Content**/
@@ -171,93 +136,92 @@ Main Content**/
 float:left;
 color:#999;
 padding:20px;
-}
-.main-content h2 {
-font-size:1.7em;
-color:#060;
-margin:$bottom-break;
-}
-.main-content h2 span {color:#600;}
-.main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-font-size:1.4em;
-margin:30px 0 14px;
-}
-.main-content p {
-font-size:0.9em;
-line-height:1.5em;
-margin:$bottom-break;
-}
-.main-content p.intro {
-font-size:1.1em;
-line-height:1.3em;
-}
-.main-content ul, .main-content ol, .main-content dl {margin:$bottom-break;}
-.main-content ul li, .main-content ol li, .main-content dl dd {
-list-style:disc;
-font-size:0.9em;
-line-height:1.5em;
-margin:0 0 0 20px;
-}
-.main-content ol li {
-list-style:decimal;
-margin:0 0 0 30px;
-}
-.main-content dl dt {
-font-size:0.9em;
-font-weight:bold;
-margin:10px 0 0;
-}
-.main-content img {
-float:right;
-margin:0 0 20px 20px;padding:4px;
-background:#fff;
-border:1px solid #999;
-}
-.main-content a:link, .main-content a:visited {
-text-decoration:none;
-border-bottom:1px solid #060;
-}
-.main-content a:hover {
-border-bottom:0;
-padding-bottom:1px;
-}
-.main-content a:active, .main-content a:focus {color:#000;}
 
-/*table code*/
-.main-content table {
-width:100%;
-margin:20px 0;
-border-top:1px solid #ccc;
-border-left:1px solid #ccc;
-}
-.main-content td, .main-content th {
-min-width:100px;
-font-size:0.9em;
-padding:10px;
-vertical-align:top;
-border-right:1px solid #ccc;
-border-bottom:1px solid #ccc;
-}
-.main-content th {
-font-size:1em;
-color:#fff;
-background:#900;
-}
-.main-content td h3 {margin:0;}
-.main-content td p {
-font-size:1em;
-margin:0;
-}
-.main-content td img {float:none;margin:0;padding:0;}
-
-	/******************
-	Labelled Images**/
-	.main-content .figure {
+	h2 {
+	font-size:1.7em;
+	color:#060;
+	margin:$bottom-break;
+	}
+	h2 span {color:#600;}
+	h3, h4, h5, h6 {
+	font-size:1.4em;
+	margin:30px 0 14px;
+	}
+	p {
+	font-size:0.9em;
+	line-height:1.5em;
+	margin:$bottom-break;
+	}
+	p.intro {
+	font-size:1.1em;
+	line-height:1.3em;
+	}
+	ul, ol, dl {margin:$bottom-break;}
+	ul li, ol li, dl dd {
+	list-style:disc;
+	font-size:0.9em;
+	line-height:1.5em;
+	margin:0 0 0 20px;
+	}
+	ol li {
+	list-style:decimal;
+	margin:0 0 0 30px;
+	}
+	dl dt {
+	font-size:0.9em;
+	font-weight:bold;
+	margin:10px 0 0;
+	}
+	img {
+	float:right;
+	margin:0 0 20px 20px;padding:4px;
+	background:#fff;
+	border:1px solid #999;
+	}
+	a:link, a:visited {
+	text-decoration:none;
+	border-bottom:1px solid #060;
+	}
+	a:hover {
+	border-bottom:0;
+	padding-bottom:1px;
+	}
+	a:active, a:focus {color:#000;}
+	
+	/*tables*/
+	table {
+	width:100%;
+	margin:20px 0;
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	}
+	td, th {
+	min-width:100px;
+	font-size:0.9em;
+	padding:10px;
+	vertical-align:top;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	}
+	th {
+	font-size:1em;
+	color:#fff;
+	background:#900;
+	}
+	td h3 {margin:0;}
+	td p {
+	font-size:1em;
+	margin:0;
+	}
+	td img {float:none;margin:0;padding:0;}
+	
+	/*labelled imgs*/
+	.figure {
 	float:right;
 	width:300px;
 	margin:0 0 24px 24px;
 	}
-	.main-content .figure figcaption {
+	.figure figcaption {
 	float:right;
 	clear:both;/*IE Needs me*/
 	width:300px;/*IE Needs me*/
@@ -267,72 +231,128 @@ margin:0;
 	color:#060;
 	margin:4px;
 	}
-	.main-content .figure img {
+	.figure img {
 	width:300px;
 	margin:0;
 	}
+}
 
 /******************
 Contact Form**/
 #contact-form {}
+#contact-form legend {
+color:#bbb;
+font-size:1.2em;
+text-transform:uppercase;
+}
 #contact-form fieldset {
 position:relative;
 padding:20px;margin:0 0 20px;
 border:1px solid #ccc;
 }
-#contact-form ul {}
-#contact-form ul li	{
+#contact-form p {
+clear:left;
+margin:26px 0;
+}
+#contact-form ul#agent {
+display:none;
+clear:left;
+}
+#contact-form ul li {
 display:block;
 float:left;
 clear:left;
-font-size:0.85em;
-margin:0 0 10px;padding-left:0;
+font-size:1.15em;
+margin:0 0 20px;
+padding-left:0;
 }
 #contact-form label {
-cursor:pointer;
 float:left;
 display:block;
 width:200px;
+cursor:pointer;
+color:#000;
+text-align:right;
+line-height:1.3em;
+padding:4px 20px 0 0;
 }
 #contact-form label:after {content:":";}
 #contact-form li.checky label:after {content:none;}
-#contact-form li.checky label {width:178px;margin:0 0 12px;}
-#contact-form input {
+#contact-form li.checky label {
+width:178px;
+margin:0 0 12px;
+}
+#contact-form input {border:1px solid #999;}
+#contact-form input[type="text"], #contact-form input[type="tel"],
+#contact-form input[type="email"], #contact-form input[type="url"] {
 width:300px;
-font-size:1em;
+font-size:0.9em;
 padding:4px;
-border:1px solid #999;
-border-radius:4px;
 }
-#contact-form input:focus, #contact-form textarea:focus {border-color:#8cc541;background:#fff;}
+#contact-form input:focus, #contact-form textarea:focus {
+border-color:#8cc541;
+background:#fff;
+}
 #contact-form input[type="submit"] {
-width:auto;
 cursor:pointer;
+width:auto;
 color:#fff;
+font-size:0.9em;
+padding:8px 14px;margin-left:220px;
 border:0;
-background:#454377;
+background-color:#d2232a;
 }
-#contact-form input[type="submit"]:hover {background:#78769c;}
-#contact-form li.checky input {
-float:left;
-width:15px;height:15px;
-margin:0 10px 0 0;
-padding:0;border:0;/*for IE*/
+#contact-form input[type="submit"]:hover {background-color:#d2232a;}
+#contact-form input[type="checkbox"], #contact-form input[type="radio"] {
+width:16px;height:16px;
+padding:0;margin:0 14px 0 2px;
+vertical-align:middle;
+border:0;/*for IE*/
 }
 #contact-form select {
-font-size:1em;
-width:244px;padding:4px;
-border:1px solid #cfcfcf;
+font-size:0.9em;
+width:310px;
+padding:4px;
+border:1px solid #999;
 }
 #contact-form textarea {
+resize:vertical;
 font-family:helvetica,arial,sans-serif;
 font-size:1em;
 width:300px;height:120px;
 padding:4px;
 border:1px solid #999;
-border-radius:4px;
 }
-#contact-form textarea.big {width:402px;height:80px;margin:10px 0;}
+#contact-form .options label {
+clear:left;
+width:280px;
+text-align:left;
+color:#666;
+padding:0 0 0 0;margin-left:220px;
+}
+#contact-form .options label.intro {
+width:510px;
+text-align:left;
+color:#000;
+padding:4px 20px 0 0;margin-left:0;margin-bottom:10px;
+}
+#contact-form .options input[type="checkbox"], #contact-form .options input[type="radio"] {margin:-4px 0 0 4px;}
+
+/******************
+Validation**/
+#contact-form span.LV_valid {color:#47bf4c;}
+#contact-form span.LV_invalid {color:#d6492a;}
+#contact-form span.LV_validation_message {
+/*float:left;*/
+width:90px;
+/*webkit fix*/
+font-weight:bold;
+/*inhr*/
+/*display:block;*/
+font-size:0.8em;
+padding:6px 5px 0;
+}
+#contact-form .LV_invalid_field {border:1px solid #d6492a;}
 
 /******************
 Footer**/
@@ -341,25 +361,25 @@ float:left;
 position:relative;
 width:100%;
 background:#666;
-}
-#footer p {
-color:#ccc;
-text-align:left;
-font-size:0.9em;
-}
-#footer ul {margin:10px 0;}
-#footer ul li {
-float:left;
-list-style:none;
-font-size:0.9em;
-padding:0 0 0 6px;margin:0 6px 0 0;
-border-left:1px solid #ccc;
-}
-#footer ul li:first-child {border:0;}
-#footer a:link, #footer a:visited {color:#999;}
-#footer a:hover {}
-#footer a:active, #footer a:focus {color:#000;}
 
+	p {
+	color:#ccc;
+	text-align:left;
+	font-size:0.9em;
+	}
+	ul {margin:10px 0;}
+	ul li {
+	float:left;
+	list-style:none;
+	font-size:0.9em;
+	padding:0 0 0 6px;margin:0 6px 0 0;
+	border-left:1px solid #ccc;
+	}
+	ul li:first-child {padding:0;border:0;}
+	a:link, a:visited {color:#999;}
+	a:hover {}
+	a:active, a:focus {color:#000;}
+}
 a#credit {
 position:absolute;
 top:20px;right:0;

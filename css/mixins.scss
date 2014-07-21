@@ -49,3 +49,10 @@ background:linear-gradient(to right, $fromColor 0%, $toColor 100%);
 -webkit-box-sizing:border-box;
 box-sizing:border-box;
 }
+@mixin filter($filter-type,$filter-amount) {
+-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+-moz-filter: $filter-type+unquote('(#{$filter-amount})');
+-ms-filter: $filter-type+unquote('(#{$filter-amount})');
+-o-filter: $filter-type+unquote('(#{$filter-amount})');
+filter: $filter-type+unquote('(#{$filter-amount})');
+}
