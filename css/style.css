@@ -1,7 +1,7 @@
 /**********************************
 Description...:screen sass
-Author........:lewis@fointypinger.co.uk
-Last Changed..:12-06-2014
+Author........:hello@satur9.co.uk
+Last Changed..:01-08-2014
 Notes #1......:
 *********************************/
 /******************
@@ -17,7 +17,6 @@ body {
   font-size: 100%;
   text-align: center;
   cursor: default;
-  background: #060;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -28,12 +27,15 @@ body {
   width: 960px;
   margin: 0 auto;
   text-align: left;
-  background: #eee;
+  background: #ddd;
 }
 
 .cont-header, .cont-footer {
-  width: 920px;
-  padding: 30px 20px;
+  padding: 30px 0;
+  background: none;
+}
+
+.cont-nav {
   background: none;
 }
 
@@ -44,6 +46,10 @@ body {
 }
 article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {
   display: block;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'khakiregular';
 }
 
 img {
@@ -74,9 +80,6 @@ Skipto**/
 Logo Area**/
 #header {
   width: 100%;
-  background-color: #333333;
-  background: -webkit-linear-gradient(left, #222222 0%, #333333 100%);
-  background: linear-gradient(to right, #222222 0%, #333333 100%);
 }
 #header img {
   float: left;
@@ -90,9 +93,8 @@ Logo Area**/
 Quick Links**/
 .quick-links {
   float: right;
-  width: 500px;
+  width: 400px;
   text-align: right;
-  color: #fff;
   margin: 10px 0 0;
 }
 .quick-links p {
@@ -103,74 +105,107 @@ Quick Links**/
   font-size: 1.4em;
 }
 .quick-links a:link, .quick-links a:visited {
-  color: #999;
+  color: #bcbdc0;
 }
 .quick-links a:active, .quick-links a:focus {
-  color: #000;
+  color: #231f20;
 }
 
 /******************
 Navigation**/
 #nav {
-  float: left;
   width: 100%;
-  font-family: 'khakiregular';
-  margin: 20px 0;
-  background: #555;
+  background: #bcbdc0;
+  /*drop-downs*/
+  /*RESPONSIVE BUTTONs*/
 }
 #nav ul li {
-  display: inline;
+  z-index: 999;
+  float: left;
+  position: relative;
   list-style: none;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-#nav ul li span {
-  font-weight: bold;
+  text-align: center;
+  font-size: 1.05em;
 }
 #nav ul li a {
   float: left;
-  color: #fff;
-  padding: 10px 20px;
-  margin: 0 10px 0 0;
-  text-align: center;
-  background-color: #333;
-}
-#nav ul li.selected a {
-  background-color: #999;
-}
-#nav ul li a:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #060;
-}
-#nav li a:active, #nav li a:focus {
   color: #000;
-  background-color: yellow;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-right: 1px solid #d6d7d9;
+}
+#nav ul li:last-child a {
+  border-right: 0;
+}
+#nav ul li > a:hover, #nav ul li.selected > a,
+#nav ul li a:active, #nav ul li a:focus,
+#nav ul li:hover {
+  color: #fff;
+  background-color: #c61017;
+}
+#nav ul li.selected > a:hover {
+  color: #fff;
+}
+#nav ul li ul {
+  display: none;
+  z-index: 99;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #231f20;
+  background: -webkit-linear-gradient(top, #594f51 0%, #231f20 100%);
+  background: linear-gradient(to bottom, #594f51 0%, #231f20 100%);
+  border-top: 3px solid #c61017;
+}
+#nav ul li:hover ul {
+  display: block;
+}
+#nav ul li ul li {
+  text-align: left;
+  font-size: 1em;
+  letter-spacing: normal;
+}
+#nav ul li ul li a {
+  min-width: 200px;
+  color: #fff;
+  padding: 10px 30px;
+  border: 0;
 }
 #nav a#pull {
   display: none;
   position: relative;
   width: auto;
-  color: #600;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  padding: 8px 4%;
-  background: #cc0000 url(../img/icon-nav.png) 97% 50% no-repeat;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  padding: 10px 0;
+  background: #231f20 url(../img/icon-nav.png) 98% 50% no-repeat;
+}
+#nav .mobnav-subarrow {
+  display: none;
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  cursor: pointer;
+  height: 20px;
+  width: 30px;
+  background-color: #231f20;
+  border-radius: 4px;
 }
 
 /******************
 Main Content**/
 .main-content {
   float: left;
-  color: #999;
+  color: #87898f;
   padding: 20px;
   /*tables*/
   /*labelled imgs*/
 }
 .main-content h2 {
+  color: #ed1c24;
   font-size: 1.7em;
-  color: #060;
   margin: 0 0 14px;
 }
 .main-content h2 span {
@@ -212,18 +247,15 @@ Main Content**/
   margin: 0 0 20px 20px;
   padding: 4px;
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid #bcbdc0;
 }
 .main-content a:link, .main-content a:visited {
   text-decoration: none;
-  border-bottom: 1px solid #060;
+  border-bottom: 1px solid #ed1c24;
 }
 .main-content a:hover {
-  border-bottom: 0;
   padding-bottom: 1px;
-}
-.main-content a:active, .main-content a:focus {
-  color: #000;
+  border-bottom: 0;
 }
 .main-content table {
   width: 100%;
@@ -232,17 +264,17 @@ Main Content**/
   border-left: 1px solid #ccc;
 }
 .main-content td, .main-content th {
+  vertical-align: top;
   min-width: 100px;
   font-size: 0.9em;
   padding: 10px;
-  vertical-align: top;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
 .main-content th {
-  font-size: 1em;
   color: #fff;
-  background: #900;
+  font-size: 1em;
+  background: #ed1c24;
 }
 .main-content td h3 {
   margin: 0;
@@ -268,9 +300,9 @@ Main Content**/
   width: 300px;
   /*IE Needs me*/
   text-align: right;
+  color: #ed1c24;
   font-size: 0.8em;
   font-style: normal;
-  color: #060;
   margin: 4px;
 }
 .main-content .figure img {
@@ -280,78 +312,67 @@ Main Content**/
 
 /******************
 Contact Form**/
+#contact-form {
+  /**validation**/
+}
 #contact-form legend {
   color: #bbb;
   font-size: 1.2em;
   text-transform: uppercase;
 }
-
 #contact-form fieldset {
   position: relative;
   padding: 20px;
   margin: 0 0 20px;
   border: 1px solid #ccc;
 }
-
 #contact-form p {
   clear: left;
   margin: 26px 0;
 }
-
 #contact-form ul#agent {
   display: none;
   clear: left;
 }
-
 #contact-form ul li {
   display: block;
   float: left;
   clear: left;
   font-size: 1.15em;
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   padding-left: 0;
 }
-
 #contact-form label {
   float: left;
   display: block;
   width: 200px;
   cursor: pointer;
-  color: #000;
   text-align: right;
   line-height: 1.3em;
   padding: 4px 20px 0 0;
 }
-
 #contact-form label:after {
   content: ":";
 }
-
 #contact-form li.checky label:after {
   content: none;
 }
-
 #contact-form li.checky label {
   width: 178px;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
 }
-
 #contact-form input {
-  border: 1px solid #999;
+  border: 1px solid #bcbdc0;
 }
-
-#contact-form input[type="text"], #contact-form input[type="tel"],
-#contact-form input[type="email"], #contact-form input[type="url"] {
+#contact-form input[type="text"], #contact-form input[type="tel"], #contact-form input[type="email"], #contact-form input[type="url"] {
   width: 300px;
   font-size: 0.9em;
   padding: 4px;
 }
-
 #contact-form input:focus, #contact-form textarea:focus {
-  border-color: #8cc541;
   background: #fff;
+  border-color: #8cc541;
 }
-
 #contact-form input[type="submit"] {
   cursor: pointer;
   width: auto;
@@ -359,14 +380,12 @@ Contact Form**/
   font-size: 0.9em;
   padding: 8px 14px;
   margin-left: 220px;
+  background-color: #c61017;
   border: 0;
-  background-color: #d2232a;
 }
-
-#contact-form input[type="submit"]:hover {
-  background-color: #d2232a;
+#contact-form input[type="submit"]:hover, #contact-form input[type="submit"]:active, #contact-form input[type="submit"]:focus {
+  background-color: #f14b52;
 }
-
 #contact-form input[type="checkbox"], #contact-form input[type="radio"] {
   width: 16px;
   height: 16px;
@@ -376,67 +395,50 @@ Contact Form**/
   border: 0;
   /*for IE*/
 }
-
 #contact-form select {
-  font-size: 0.9em;
   width: 310px;
+  font-size: 0.9em;
   padding: 4px;
-  border: 1px solid #999;
+  border: 1px solid #bcbdc0;
 }
-
 #contact-form textarea {
   resize: vertical;
   font-family: helvetica,arial,sans-serif;
-  font-size: 1em;
   width: 300px;
   height: 120px;
+  font-size: 1em;
   padding: 4px;
-  border: 1px solid #999;
+  border: 1px solid #bcbdc0;
 }
-
 #contact-form .options label {
   clear: left;
   width: 280px;
   text-align: left;
-  color: #666;
-  padding: 0 0 0 0;
+  padding: 0;
   margin-left: 220px;
 }
-
 #contact-form .options label.intro {
   width: 510px;
   text-align: left;
-  color: #000;
   padding: 4px 20px 0 0;
   margin-left: 0;
   margin-bottom: 10px;
 }
-
 #contact-form .options input[type="checkbox"], #contact-form .options input[type="radio"] {
   margin: -4px 0 0 4px;
 }
-
-/******************
-Validation**/
 #contact-form span.LV_valid {
   color: #47bf4c;
 }
-
 #contact-form span.LV_invalid {
   color: #d6492a;
 }
-
 #contact-form span.LV_validation_message {
-  /*float:left;*/
   width: 90px;
-  /*webkit fix*/
-  font-weight: bold;
-  /*inhr*/
-  /*display:block;*/
   font-size: 0.8em;
+  font-weight: bold;
   padding: 6px 5px 0;
 }
-
 #contact-form .LV_invalid_field {
   border: 1px solid #d6492a;
 }
@@ -447,11 +449,12 @@ Footer**/
   float: left;
   position: relative;
   width: 100%;
+  text-shadow: 1px 1px #000;
   background: #666;
 }
 #footer p {
-  color: #ccc;
   text-align: left;
+  color: #ccc;
   font-size: 0.9em;
 }
 #footer ul {
@@ -470,10 +473,7 @@ Footer**/
   border: 0;
 }
 #footer a:link, #footer a:visited {
-  color: #999;
-}
-#footer a:active, #footer a:focus {
-  color: #000;
+  color: #bcbdc0;
 }
 
 a#credit {
@@ -486,7 +486,6 @@ a#credit {
   height: 28px;
   background: #000;
 }
-
 a#credit span {
   position: absolute;
   left: -9999px;
@@ -625,13 +624,13 @@ a[href$=".pdf"]:after {
 }
 
 ::selection {
-  background: #619080;
-  color: #fff;
+  background: yellow;
+  color: #000;
 }
 
 ::-moz-selection {
-  background: #619080;
-  color: #fff;
+  background: yellow;
+  color: #000;
 }
 
 input[type="text"]:disabled {

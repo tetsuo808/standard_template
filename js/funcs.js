@@ -4,11 +4,25 @@ $(document).ready(function() {
 		return this.hostname && this.hostname !== location.hostname;
 	}).addClass('ext');
 	
-	//responsive stuff
-	//nav highlighting for mobile
-	/*$("#nav ul li").each(function(i) {
-		$(this).addClass("rainbow0" + (i+1));
-	});*/
+	//SF menu
+	if ($(window).width() < 960) {
+		//nothing
+	}
+	else {
+		var exampleOptions = {
+			speed: 'fast',
+			popUpSelector: 'ul'
+		}
+		var example = $('#sf-menu').superfish(exampleOptions);
+	}
+	
+	//responsive nav
+	$('#pull').click( function () {
+		$('.sf-menu').toggleClass("xactive");
+	});
+	$('.mobnav-subarrow').click( function () {
+		$(this).parent().toggleClass("xpopdrop");
+	});
 	
 	$(function() {
 		var pull = $('#pull');
@@ -25,4 +39,5 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
 });

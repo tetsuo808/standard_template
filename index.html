@@ -31,6 +31,7 @@
 	<script src="js/libs/modernizr.js"></script>
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.superfish.min.js"></script>
 	<script src="js/funcs.js"></script>
 	
 	<script src="js/jquery.slides.min.js"></script>
@@ -59,24 +60,35 @@
 			<h1>Title of the Website</h1>
 			
 			<div class="quick-links">
-				<p>Tel: <span class="tel">0113 204 4670</span><br />
+				<p>Tel: <span class="tel">0111 022 0333</span><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
 			</div>
 		</div>
 	</header>
 	
-	<div class="container clearfix" id="top">
-		<nav id="nav" role="navigation">
-			<ul class="clearfix">
+	<nav id="nav" role="navigation">
+		<div class="container cont-nav clearfix">
+			<ul id="sf-menu" class="clearfix">
 				<li class="selected"><a href="./">Home</a></li>
-				<li><a href="generic.html">Services</a></li>
-				<li><a href="generic.html">Training</a></li>
-				<li><a href="generic.html">Blog</a></li>
-				<li><a href="generic.html">About Us</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
+				<li><a href="lv1.html">Services</a>
+					<div class="mobnav-subarrow"></div>
+					<ul>
+						<li><a href="lv2.html">Service 01</a></li>
+						<li><a href="lv2.html">Service 02</a></li>
+						<li><a href="lv2.html">Service 03</a></li>
+						<li><a href="lv2.html">Service 04</a></li>
+					</ul>
+				</li>
+				<li><a href="generic.html">About</a></li>
+				<li><a href="generic.html">Profile</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li class="last"><a href="contact.html">Contact</a></li>
 			</ul>
-			<a href="#" id="pull">Show menu</a>
-		</nav>
+			<a href="#" id="pull">Show Menu</a>
+		</div>
+	</nav>
+	
+	<div class="container clearfix" id="top">
 		
 		<div id="flashcontent" role="slider">
 			<div class="containerz">
@@ -142,13 +154,13 @@
 					</tr>
 					<tr>
 						<td class="photo"><a href="#"><img src="img/imagery/test-img02.jpg" alt="" /></a></td>
-						<td class="desc"><h3><a href="#">The Attlee</a></h3>
+						<td class="desc"><h3><a href="#">Heading</a></h3>
 						<p>Nam facilisis dapibus odio. Nullam ornare purus non erat. Aliquam et purus. Fusce ligula augue; laoreet eget, consectetuer eget, placerat non, arcu? Sed neque magna, pharetra sed, lobortis ac, posuere sed, felis. Nullam augue nibh, bibendum non; tincidunt id, sollicitudin eu, ipsum. Vestibulum neque. Nullam auctor, lacus sed tincidunt fringilla, neque eros placerat leo, id lobortis nunc magna molestie lacus! Duis ornare.</p></td>
 						<td class="price">&#163;999,999 - &#163;999,999</td>
 					</tr>
 					<tr>
 						<td class="photo"><a href="#"><img src="img/imagery/test-img02.jpg" alt="" /></a></td>
-						<td class="desc"><h3><a href="#">The Attlee</a></h3>
+						<td class="desc"><h3><a href="#">Heading</a></h3>
 						<p>Nam facilisis dapibus odio. Nullam ornare purus non erat. Aliquam et purus. Fusce ligula augue; laoreet eget, consectetuer eget, placerat non, arcu? Sed neque magna, pharetra sed, lobortis ac, posuere sed, felis. Nullam augue nibh, bibendum non; tincidunt id, sollicitudin eu, ipsum. Vestibulum neque. Nullam auctor, lacus sed tincidunt fringilla, neque eros placerat leo, id lobortis nunc magna molestie lacus! Duis ornare.</p></td>
 						<td class="price">&#163;999,999 - &#163;999,999</td>
 					</tr>
@@ -156,7 +168,7 @@
 				
 				<div class="line" role="separator"></div>
 				
-				<div id="contactForm">
+				<!--<div id="contactForm">
 					<form action="./" id="contact-form">
 						<fieldset>
 							<legend>Details</legend>
@@ -174,11 +186,11 @@
 									<option value="Option 4">Option 4</option>
 								</select>
 								</li>
-								<li><label for="xxxCheckbox">Checkbox</label>
-									Yes <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" />
-									No <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" />
-									Maybe <input type="checkbox" name="xxxCheckbox" id="xxxCheckbox" /></li>
-								<li><label for="xxxRadio">Radio</label>Yes<input type="radio" name="xxxRadio" id="xxxRadio" />No<input type="radio" name="xxxRadio" id="xxxRadio" /></li>
+								<li class="options">
+									<label for="xxxRadio00" class="intro">Do you know the answer?</label><br />
+									<label for="xxxRadio01">No</label> <input type="radio" name="xxxRadio01" id="xxxRadio01" value="No" required /><br />
+									<label for="xxxRadio02">Yes</label> <input type="radio" name="xxxRadio01" id="xxxRadio02" value="Yes" required />
+								</li>
 								<li><label for="xxxFile">File Upload</label><input type="file" name="xxxFile" id="xxxFile" /></li>
 							</ul>
 						</fieldset>
@@ -196,7 +208,7 @@
 						</fieldset>
 					</form>
 					<script src="js/validate.contact.js"></script>
-				</div>
+				</div>-->
 				
 				<h4>HTML5 Video</h4>
 				<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
@@ -212,13 +224,11 @@
 						<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
 					</object>
 				</video>
-
 			</section>
 		</div>
-		
 	</div>
 		
-	<footer id="footer" role="contentinfo">
+<footer id="footer" role="contentinfo">
 		<div class="container cont-footer clearfix">
 			<p>&#169; <time>2014</time> COMPANY | <a href="generic.html">Terms &amp; Conditions</a></p>
 			<ul>
@@ -228,8 +238,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
-		</div>
+			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>		</div>
 	</footer>
 
 <script src="js/tracker.js"></script>

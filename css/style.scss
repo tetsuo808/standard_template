@@ -1,7 +1,7 @@
 /**********************************
 Description...:screen sass
-Author........:lewis@fointypinger.co.uk
-Last Changed..:12-06-2014
+Author........:hello@satur9.co.uk
+Last Changed..:01-08-2014
 Notes #1......:
 *********************************/
 
@@ -16,7 +16,6 @@ font-family:helvetica,arial,sans-serif;
 font-size:100%;
 text-align:center;
 cursor:default;
-background:#060;
 -webkit-font-smoothing:antialiased;
 -webkit-text-size-adjust:100%;
 -ms-text-size-adjust:100%;
@@ -26,13 +25,13 @@ position:relative;
 width:960px;
 margin:0 auto;
 text-align:left;
-background:#eee;
+background:#ddd;
 }
 .cont-header, .cont-footer {
-width:920px;
-padding:30px 20px;
+padding:30px 0;
 background:none;
 }
+.cont-nav {background:none;}
 @font-face {
 font-family:'khakiregular';
 src:url('../data/fonts/khaki-one-webfont.eot');
@@ -42,7 +41,7 @@ src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'
 	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg');
 }
 article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {display:block;}
-h2, h3, h4, h5, h6 {}
+h2, h3, h4, h5, h6 {font-family:'khakiregular';}
 img {vertical-align:middle;}
 
 /******************
@@ -63,7 +62,6 @@ outline:none;
 Logo Area**/
 #header {
 width:100%;
-@include hori-gradient (#222, #333);
 
 	img {float:left;}
 	h1 {@include hide;}
@@ -73,73 +71,102 @@ width:100%;
 	Quick Links**/
 	.quick-links {
 	float:right;
-	width:500px;
+	width:400px;
 	text-align:right;
-	color:#fff;
 	margin:10px 0 0;
 	
 		p {font-size:1.1em;line-height:1.2em;}
 		p span.tel {font-size:1.4em;}
-		a:link, a:visited {color:#999;}
+		a:link, a:visited {color:$base-grey;}
 		a:hover {}
-		a:active, a:focus {color:#000;}
+		a:active, a:focus {color:$base-black;}
 	}
 
 /******************
 Navigation**/
 #nav {
-float:left;
 width:100%;
-font-family:'khakiregular';
-margin:20px 0;
-background:#555;
+background:$base-grey;
 
 	ul li {
-	display:inline;
+	z-index:999;
+	float:left;
+	position:relative;
 	list-style:none;
-	font-size:1.2em;
-	text-transform:uppercase;
-	letter-spacing:2px;
+	text-align:center;
+	font-size:1.05em;
 	}
-	ul li span {font-weight:bold;}
 	ul li a {
 	float:left;
-	color:#fff;
-	padding:10px 20px;margin:0 10px 0 0;
-	text-align:center;
-	background-color:#333;
-	}
-	ul li.selected a {background-color:#999;}
-	ul li a:hover {
-	color:#fff;
+	color:#000;
+	padding:14px 30px;
 	text-decoration:none;
-	background-color:#060;
+	border-right:1px solid lighten($base-grey, 10%);
 	}
-	li a:active, li a:focus {color:#000;background-color:$focus-bg;}
-
+	ul li:last-child a {border-right:0;}
+	ul li > a:hover, ul li.selected > a, 
+	ul li a:active, ul li a:focus, 
+	ul li:hover {
+	color:#fff;
+	background-color:darken($base-red, 10%);
+	}
+	ul li.selected > a:hover {color:#fff;}
+	
+	/*drop-downs*/
+	ul li ul {
+	display:none;
+	z-index:99;
+	position:absolute;
+	top:100%;left:0;
+	@include vert-gradient (lighten($base-black,20%), $base-black);
+	border-top:3px solid darken($base-red, 10%);
+	}
+	ul li:hover ul {display:block;}
+	ul li ul li {
+	text-align:left;
+	font-size:1em;
+	letter-spacing:normal;
+	}
+	ul li ul li a {
+	min-width:200px;
+	color:#fff;
+	padding:10px 30px;
+	border:0;
+	}
+	
+	/*RESPONSIVE BUTTONs*/
 	a#pull {
 	display:none;
 	position:relative;
 	width:auto;
-	color:#600;
-	font-size:0.9em;
-	text-transform:uppercase;
-	padding:8px 4%;
-	background:#c00 url(../img/icon-nav.png) 97% 50% no-repeat;
+	text-align:center;
+	color:#fff;
+	font-size:1.1em;
+	text-decoration:none;
+	padding:10px 0;
+	background:$base-black url(../img/icon-nav.png) 98% 50% no-repeat;
+	}
+	.mobnav-subarrow {
+	display:none;
+	position:absolute;
+	top:14px;right:10px;
+	cursor:pointer;
+	height:20px;width:30px;
+	background-color:$base-black;
+	border-radius:4px;
 	}
 }
-
 /******************
 Main Content**/
 #main-content_holder {}
 .main-content {
 float:left;
-color:#999;
+color:darken($base-grey, 20%);
 padding:20px;
 
 	h2 {
+	color:$base-red;
 	font-size:1.7em;
-	color:#060;
 	margin:$bottom-break;
 	}
 	h2 span {color:#600;}
@@ -176,17 +203,17 @@ padding:20px;
 	float:right;
 	margin:0 0 20px 20px;padding:4px;
 	background:#fff;
-	border:1px solid #999;
+	border:1px solid $base-grey;
 	}
 	a:link, a:visited {
 	text-decoration:none;
-	border-bottom:1px solid #060;
+	border-bottom:1px solid $base-red;
 	}
 	a:hover {
-	border-bottom:0;
 	padding-bottom:1px;
+	border-bottom:0;
 	}
-	a:active, a:focus {color:#000;}
+	a:active, a:focus {}
 	
 	/*tables*/
 	table {
@@ -196,17 +223,17 @@ padding:20px;
 	border-left:1px solid #ccc;
 	}
 	td, th {
+	vertical-align:top;
 	min-width:100px;
 	font-size:0.9em;
 	padding:10px;
-	vertical-align:top;
 	border-right:1px solid #ccc;
 	border-bottom:1px solid #ccc;
 	}
 	th {
-	font-size:1em;
 	color:#fff;
-	background:#900;
+	font-size:1em;
+	background:$base-red;
 	}
 	td h3 {margin:0;}
 	td p {
@@ -226,9 +253,9 @@ padding:20px;
 	clear:both;/*IE Needs me*/
 	width:300px;/*IE Needs me*/
 	text-align:right;
+	color:$base-red;
 	font-size:0.8em;
 	font-style:normal;
-	color:#060;
 	margin:4px;
 	}
 	.figure img {
@@ -239,120 +266,111 @@ padding:20px;
 
 /******************
 Contact Form**/
-#contact-form {}
-#contact-form legend {
-color:#bbb;
-font-size:1.2em;
-text-transform:uppercase;
-}
-#contact-form fieldset {
-position:relative;
-padding:20px;margin:0 0 20px;
-border:1px solid #ccc;
-}
-#contact-form p {
-clear:left;
-margin:26px 0;
-}
-#contact-form ul#agent {
-display:none;
-clear:left;
-}
-#contact-form ul li {
-display:block;
-float:left;
-clear:left;
-font-size:1.15em;
-margin:0 0 20px;
-padding-left:0;
-}
-#contact-form label {
-float:left;
-display:block;
-width:200px;
-cursor:pointer;
-color:#000;
-text-align:right;
-line-height:1.3em;
-padding:4px 20px 0 0;
-}
-#contact-form label:after {content:":";}
-#contact-form li.checky label:after {content:none;}
-#contact-form li.checky label {
-width:178px;
-margin:0 0 12px;
-}
-#contact-form input {border:1px solid #999;}
-#contact-form input[type="text"], #contact-form input[type="tel"],
-#contact-form input[type="email"], #contact-form input[type="url"] {
-width:300px;
-font-size:0.9em;
-padding:4px;
-}
-#contact-form input:focus, #contact-form textarea:focus {
-border-color:#8cc541;
-background:#fff;
-}
-#contact-form input[type="submit"] {
-cursor:pointer;
-width:auto;
-color:#fff;
-font-size:0.9em;
-padding:8px 14px;margin-left:220px;
-border:0;
-background-color:#d2232a;
-}
-#contact-form input[type="submit"]:hover {background-color:#d2232a;}
-#contact-form input[type="checkbox"], #contact-form input[type="radio"] {
-width:16px;height:16px;
-padding:0;margin:0 14px 0 2px;
-vertical-align:middle;
-border:0;/*for IE*/
-}
-#contact-form select {
-font-size:0.9em;
-width:310px;
-padding:4px;
-border:1px solid #999;
-}
-#contact-form textarea {
-resize:vertical;
-font-family:helvetica,arial,sans-serif;
-font-size:1em;
-width:300px;height:120px;
-padding:4px;
-border:1px solid #999;
-}
-#contact-form .options label {
-clear:left;
-width:280px;
-text-align:left;
-color:#666;
-padding:0 0 0 0;margin-left:220px;
-}
-#contact-form .options label.intro {
-width:510px;
-text-align:left;
-color:#000;
-padding:4px 20px 0 0;margin-left:0;margin-bottom:10px;
-}
-#contact-form .options input[type="checkbox"], #contact-form .options input[type="radio"] {margin:-4px 0 0 4px;}
+#contact-form {
+	legend {
+	color:#bbb;
+	font-size:1.2em;
+	text-transform:uppercase;
+	}
+	fieldset {
+	position:relative;
+	padding:20px;margin:0 0 20px;
+	border:1px solid #ccc;
+	}
+	p {
+	clear:left;
+	margin:26px 0;
+	}
+	ul#agent {
+	display:none;
+	clear:left;
+	}
+	ul li {
+	display:block;
+	float:left;
+	clear:left;
+	font-size:1.15em;
+	margin:$bottom-break;padding-left:0;
+	}
+	label {
+	float:left;
+	display:block;
+	width:200px;
+	cursor:pointer;
+	text-align:right;
+	line-height:1.3em;
+	padding:4px 20px 0 0;
+	}
+	label:after {content:":";}
+	li.checky label:after {content:none;}
+	li.checky label {
+	width:178px;
+	margin:$bottom-break;
+	}
+	input {border:1px solid $base-grey;}
+	input[type="text"], input[type="tel"],	input[type="email"], input[type="url"] {
+	width:300px;
+	font-size:0.9em;
+	padding:4px;
+	}
+	input:focus, textarea:focus {
+	background:#fff;
+	border-color:#8cc541;
+	}
+	input[type="submit"] {
+	cursor:pointer;
+	width:auto;
+	color:#fff;
+	font-size:0.9em;
+	padding:8px 14px;margin-left:220px;
+	background-color:darken($base-red, 10%);
+	border:0;
+	}
+	input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {background-color:lighten($base-red, 10%);}
+	input[type="checkbox"], input[type="radio"] {
+	width:16px;height:16px;
+	padding:0;margin:0 14px 0 2px;
+	vertical-align:middle;
+	border:0;/*for IE*/
+	}
+	select {
+	width:310px;
+	font-size:0.9em;
+	padding:4px;
+	border:1px solid $base-grey;
+	}
+	textarea {
+	resize:vertical;
+	font-family:helvetica,arial,sans-serif;
+	width:300px;height:120px;
+	font-size:1em;
+	padding:4px;
+	border:1px solid $base-grey;
+	}
+	.options label {
+	clear:left;
+	width:280px;
+	text-align:left;
+	padding:0;margin-left:220px;
+	}
+	.options label.intro {
+	width:510px;
+	text-align:left;
+	padding:4px 20px 0 0;margin-left:0;margin-bottom:10px;
+	}
+	.options input[type="checkbox"], .options input[type="radio"] {margin:-4px 0 0 4px;}
 
-/******************
-Validation**/
-#contact-form span.LV_valid {color:#47bf4c;}
-#contact-form span.LV_invalid {color:#d6492a;}
-#contact-form span.LV_validation_message {
-/*float:left;*/
-width:90px;
-/*webkit fix*/
-font-weight:bold;
-/*inhr*/
-/*display:block;*/
-font-size:0.8em;
-padding:6px 5px 0;
+	/**validation**/
+	span.LV_valid {color:#47bf4c;}
+	span.LV_invalid {color:#d6492a;}
+	span.LV_validation_message {
+	width:90px;
+	font-size:0.8em;
+	font-weight:bold;
+	padding:6px 5px 0;
+	}
+	.LV_invalid_field {border:1px solid #d6492a;}
 }
-#contact-form .LV_invalid_field {border:1px solid #d6492a;}
 
 /******************
 Footer**/
@@ -360,11 +378,12 @@ Footer**/
 float:left;
 position:relative;
 width:100%;
+@include text-shadow;
 background:#666;
 
 	p {
-	color:#ccc;
 	text-align:left;
+	color:#ccc;
 	font-size:0.9em;
 	}
 	ul {margin:10px 0;}
@@ -376,9 +395,9 @@ background:#666;
 	border-left:1px solid #ccc;
 	}
 	ul li:first-child {padding:0;border:0;}
-	a:link, a:visited {color:#999;}
+	a:link, a:visited {color:$base-grey;}
 	a:hover {}
-	a:active, a:focus {color:#000;}
+	a:active, a:focus {}
 }
 a#credit {
 position:absolute;
@@ -387,8 +406,10 @@ float:left;
 overflow:hidden;
 width:160px;height:28px;
 background:#000;
+
+	span {@include hide;}
 }
-a#credit span {@include hide;}
+
 
 /******************
 Global Styles**/
@@ -440,7 +461,7 @@ border:1px solid #ddd;
 /******************
 Links + slectors**/
 a:link, a:visited {
-color:$base-link;
+color:$base-red;
 text-decoration:underline;
 }
 a:hover {text-decoration:none;}
@@ -455,8 +476,8 @@ a.ext {padding-right:14px;background:url(../img/icon-ext.png) no-repeat 100% 2px
 
 a[href$=".pdf"]:after {content:"(PDF document)";}
 
-::selection {background:#619080;color:#fff;}
-::-moz-selection {background:#619080;color:#fff;}
+::selection {background:$focus-bg;color:#000;}
+::-moz-selection {background:$focus-bg;color:#000;}
 
 input[type="text"]:disabled {background:#ccc;}
 input:checked {border:1px solid #090;}
