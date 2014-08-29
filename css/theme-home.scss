@@ -44,3 +44,49 @@ background:#999;
 	.slidesjs-pagination li a:hover {background-position:0 -26px;}
 	.slidesjs-pagination li a:active, .slidesjs-pagination li a:focus {background-color:$focus-bg;}
 	.slidesjs-pagination .active {background:green;}
+
+
+
+#intro-holder .intro-block {
+float:left;
+width:246px;
+min-height:210px;
+margin:10px 30px 40px 0;padding:20px;
+background:#999;
+}
+#intro-holder .intro-block:hover {background:#eee;}
+#intro-holder .intro-block:last-child {
+width:248px;
+margin-right:0;
+}
+#intro-holder .intro-block h3 {
+min-height:54px;
+margin:$bottom-break;
+}
+#intro-holder .intro-block img {
+float:none;
+max-width:100%;
+margin:0 0 10px;padding:0;
+border:0;
+background-size:100% 100%;
+}
+
+.btn a {
+float:left;
+font-size:1em;
+text-align:center;
+padding:4px 16px 8px;margin:10px 0;
+@include vert-gradient (lighten($base-red,10%), $base-red);
+border-radius:4px;
+box-shadow:2px 2px 6px rgba(0,0,0,0.3);
+}
+.btn a:link,.btn a:visited {
+color:#fff;
+border:0;/*ovr*/
+}
+.btn a:hover {
+background:lighten($base-red, 10%);
+box-shadow:none;
+padding-bottom:8px;/*ovr*/
+}
+.btn a:active,.btn a:focus {@include vert-gradient (darken($base-red,10%), $base-red);}

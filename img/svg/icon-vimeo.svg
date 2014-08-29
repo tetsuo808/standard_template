@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="511.99997"
+   height="446.73105"
+   id="svg3061"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="icon-vimeo.svg">
+  <defs
+     id="defs3063" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-211.85716"
+     inkscape:cy="194.79411"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3076"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       originx="-121.14287px"
+       originy="-325.20589px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3066">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-121.14287,-280.42523)">
+    <path
+       inkscape:connector-curvature="0"
+       d="m 121.14287,401.97583 20.797,27.272 c 0,0 42.885,-33.804 57.18,-16.901 14.294,16.901 68.868,220.978 87.085,258.623 15.9,33.015 59.759,76.66 107.857,45.491 48.068,-31.17 207.92,-167.643 236.533,-328.808 28.59,-161.113 -192.36,-127.363 -215.765,13.005 58.495,-35.118 89.718,14.269 59.785,70.186 -29.879,55.862 -57.18,92.296 -71.476,92.296 -14.269,0 -25.245,-37.384 -41.594,-102.723 -16.899,-67.551 -16.796,-189.23 -87.058,-175.435 -66.259,13.006 -153.344,116.994 -153.344,116.994 z"
+       id="path67"
+       style="fill:#ffffff" />
+  </g>
+</svg>

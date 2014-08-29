@@ -100,10 +100,10 @@
 			</div>
 		</div>
 		
-		<div id="main-content_holder">
+		<div id="main-content_holder" class=""><!-- split-col -->
 			<section class="main-content" id="skip" role="main">
 				<header>
-					<h2>Welcome to <span>COMPANY</span></h2>
+					<h2>Welcome to <span>COMPANYeeee</span></h2>
 				</header>
 				
 				<p class="intro">Lorem ipsum dolor sit amet, consectetuer <a href="#" rel="external">adipiscing elit</a>. Integer eget urna. Morbi <acronym title="Accronym">acronym</acronym> pharetra mauris. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet <abbr title="Abbreviation">Abbreviation.</abbr> feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit.</p>
@@ -111,14 +111,30 @@
 				
 				<img src="img/imagery/test-img01.jpg" alt="Test image" title="Test image" />
 				
-				<ul>
-					<li><strong>ITEM 1: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
-					<li><strong>ITEM 2: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
-					<li><strong>ITEM 3: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
+				<ul contextmenu="mymenu">
+					<li data-something="01"><strong>ITEM 1: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
+					<li data-something="03"><strong>ITEM 2: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
+					<li data-something="03"><strong>ITEM 3: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
 				</ul>
 				
+				<menu type="context" id="mymenu">
+					<menuitem label="Refresh Post" onclick="window.location.reload();" icon="/images/refresh-icon.png"></menuitem>
+					<menuitem label="Skip to Comments" onclick="window.location='#comments';" icon="/images/comment_icon.gif"></menuitem>
+					<menu label="Share on..." icon="/images/share_icon.gif">
+						<menuitem label="Twitter" icon="/images/twitter_icon.gif" onclick="goTo('//twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
+						<menuitem label="Facebook" icon="/images/facebook_icon16x16.gif" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+					</menu>
+				</menu>
+				
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
-				<blockquote><p>This is a blockquote of some sort?</p></blockquote>
+				
+				<blockquote>
+					<p>This is a blockquote of some sort?</p>
+					<footer>
+						<cite>— <a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a></cite>
+					</footer>
+				</blockquote>
+				
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
 				
 				<h3>Heading 3</h3>
@@ -168,7 +184,7 @@
 				
 				<div class="line" role="separator"></div>
 				
-				<!--<div id="contactForm">
+				<div id="contactForm">
 					<form action="./" id="contact-form">
 						<fieldset>
 							<legend>Details</legend>
@@ -208,7 +224,7 @@
 						</fieldset>
 					</form>
 					<script src="js/validate.contact.js"></script>
-				</div>-->
+				</div>
 				
 				<h4>HTML5 Video</h4>
 				<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
@@ -223,12 +239,49 @@
 						<img src="data/video/01/video-01.jpg" alt="" />
 						<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
 					</object>
+					<track src="data/video/01/video-01.vtt" kind="subtitles" srclang="en" label="English subtitles">
 				</video>
+				
+				<div class="embed-container">
+					<iframe src="http://www.youtube.com/embed/A55vsYwkp2U?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+				</div>
+				
+				<div class="line" role="separator"></div>
+				
+				<div id="intro-holder">
+					<div class="intro-block">
+						<h3><a href="generic.html">Heading Here 01</a></h3>
+						<a href="generic.html"><img src="img/imagery/test-img01.jpg" alt="" /></a>
+						<p>Cras eu felis sit amet odio pharetra varius? Etiam vitae elit ac metus tempor gravida.</p>
+						<div class="btn"><a href="generic.html">Discover what we do &Rrightarrow;</a></div>
+					</div>
+					<div class="intro-block">
+						<h3><a href="generic.html">Heading Here 02</a></h3>
+						<a href="generic.html"><img src="img/imagery/test-img01.jpg" alt="" /></a>
+						<p>Cras eu felis sit amet odio pharetra varius? Etiam vitae elit ac metus tempor gravida.</p>
+						<div class="btn"><a href="generic.html">Find out more &Rrightarrow;</a></div>
+					</div>
+					<div class="intro-block">
+						<h3><a href="generic.html">Heading Here 03</a></h3>
+						<a href="generic.html"><img src="img/svg/SNES_controller.svg" alt="" /></a>
+						<p>Cras eu felis sit amet odio pharetra varius? Etiam vitae elit ac metus tempor gravida.</p>
+						<div class="btn"><a href="generic.html">Get in touch &Rrightarrow;</a></div>
+					</div>
+				</div>
+				
+				<div class="line" role="separator"></div>
+				
+				
 			</section>
+			
+			<aside id="aside" role="complementary">
+				<h3>Heading here</h3>
+				<p>Nullam facilisis tortor at condimentum sollicitudin. Phasellus condimentum urna lectus. Integer erat ante, pharetra a euismod vel, accumsan vel odio. Aenean imperdiet tristique volutpat. Duis vitae nulla lorem. Nulla risus augue; imperdiet quis tristique vitae, posuere tempor velit.</p>
+			</aside>
 		</div>
 	</div>
 		
-<footer id="footer" role="contentinfo">
+	<footer id="footer" role="contentinfo">
 		<div class="container cont-footer clearfix">
 			<p>&#169; <time>2014</time> COMPANY | <a href="generic.html">Terms &amp; Conditions</a></p>
 			<ul>
@@ -238,7 +291,8 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>		</div>
+			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
+		</div>
 	</footer>
 
 <script src="js/tracker.js"></script>

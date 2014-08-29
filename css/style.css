@@ -24,7 +24,7 @@ body {
 
 .container {
   position: relative;
-  width: 960px;
+  width: 1280px;
   margin: 0 auto;
   text-align: left;
   background: #ddd;
@@ -41,7 +41,6 @@ body {
 
 @font-face {
   font-family: 'khakiregular';
-  src: url("../data/fonts/khaki-one-webfont.eot");
   src: url("../data/fonts/khaki-one-webfont.eot?#iefix") format("embedded-opentype"), url("../data/fonts/khaki-one-webfont.woff") format("woff"), url("../data/fonts/khaki-one-webfont.ttf") format("truetype"), url("../data/fonts/khaki-one-webfont.svg#khakiregular") format("svg");
 }
 article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {
@@ -134,9 +133,6 @@ Navigation**/
   text-decoration: none;
   border-right: 1px solid #d6d7d9;
 }
-#nav ul li:last-child a {
-  border-right: 0;
-}
 #nav ul li > a:hover, #nav ul li.selected > a,
 #nav ul li a:active, #nav ul li a:focus,
 #nav ul li:hover {
@@ -196,9 +192,20 @@ Navigation**/
 
 /******************
 Main Content**/
+#main-content_holder {
+  color: #87898f;
+}
+
+.split-col .main-content {
+  width: 620px;
+}
+
+.split-col #aside {
+  width: 240px;
+}
+
 .main-content {
   float: left;
-  color: #87898f;
   padding: 20px;
   /*tables*/
   /*labelled imgs*/
@@ -364,7 +371,7 @@ Contact Form**/
 #contact-form input {
   border: 1px solid #bcbdc0;
 }
-#contact-form input[type="text"], #contact-form input[type="tel"], #contact-form input[type="email"], #contact-form input[type="url"] {
+#contact-form input[type="text"], #contact-form input[type="tel"], #contact-form input[type="email"], #contact-form input[type="url"], #contact-form input[type="file"] {
   width: 300px;
   font-size: 0.9em;
   padding: 4px;
@@ -441,6 +448,14 @@ Contact Form**/
 }
 #contact-form .LV_invalid_field {
   border: 1px solid #d6492a;
+}
+
+/******************
+Footer**/
+#aside {
+  float: right;
+  padding: 20px;
+  background: #ada;
 }
 
 /******************
@@ -536,6 +551,11 @@ em {
   font-style: italic;
 }
 
+q {
+  font-style: italic;
+  display: block;
+}
+
 address {
   font-style: normal;
 }
@@ -545,11 +565,31 @@ acronym, abbr {
   border-bottom: 1px dotted #000;
 }
 
-iframe {
-  margin: 10px 0;
-  border: 1px solid #ccc;
+iframe, video {
+  margin: 20px 0;
+  border: 1px solid #888;
 }
 
+.embed-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+}
+
+/******************
+Blockquotes**/
 blockquote {
   font-size: 1.4em;
   quotes: "\201C" "\201D" "\2018" "\2019";
@@ -577,18 +617,13 @@ blockquote:after {
   margin-left: 4px;
 }
 
-blockquote p {
+blockquote footer {
+  clear: left;
+  font-size: 0.75em;
+}
+
+blockquote p, blockquote footer {
   display: inline;
-}
-
-q {
-  font-style: italic;
-  display: block;
-}
-
-video {
-  margin: 20px 0;
-  border: 1px solid #ddd;
 }
 
 /******************
