@@ -21,3 +21,8 @@ GRUNT SETUP:
 - Install Grunt
 - Run 'npm install' from CMD in the working dir. & ensure all modules are installed
 - Run 'grunt' from CMD
+
+**********************
+STUFF TO DO:
+- load fonts differently: http://bdadam.com/blog/loading-webfonts-with-high-performance.html
+- use owl.carousel instead

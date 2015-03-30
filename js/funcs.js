@@ -40,4 +40,11 @@ $(document).ready(function() {
 		});
 	});
 	
+	//keyboard prevent enter submit
+	$('#contact-form').keydown(function(event){
+		if(event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+		}
+	});
 });

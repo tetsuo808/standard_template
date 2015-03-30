@@ -32,12 +32,11 @@
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
 	<script src="js/jquery.superfish.min.js"></script>
+	
 	<script src="js/funcs.js"></script>
 	
 	<script src="js/jquery.slides.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
-	
-	<script src="js/live.js"></script>
 	
 	<!--[if IE 7]>
 		<link href="css/style_ie7.css" rel="stylesheet" />
@@ -90,7 +89,7 @@
 	
 	<div class="container clearfix" id="top">
 		
-		<div id="flashcontent" role="slider">
+		<div id="flashcontent" role="slider" aria-valuemax="" aria-valuemin="" aria-valuenow="">
 			<div class="containerz">
 				<div id="slides">
 					<img src="img/banners/home-00a.jpg" alt="" />
@@ -103,7 +102,7 @@
 		<div id="main-content_holder" class=""><!-- split-col -->
 			<section class="main-content" id="skip" role="main">
 				<header>
-					<h2>Welcome to <span>COMPANYeeee</span></h2>
+					<h2>Welcome to <span>COMPANY</span></h2>
 				</header>
 				
 				<p class="intro">Lorem ipsum dolor sit amet, consectetuer <a href="#" rel="external">adipiscing elit</a>. Integer eget urna. Morbi <acronym title="Accronym">acronym</acronym> pharetra mauris. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet <abbr title="Abbreviation">Abbreviation.</abbr> feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit.</p>
@@ -121,8 +120,8 @@
 					<menuitem label="Refresh Post" onclick="window.location.reload();" icon="/images/refresh-icon.png"></menuitem>
 					<menuitem label="Skip to Comments" onclick="window.location='#comments';" icon="/images/comment_icon.gif"></menuitem>
 					<menu label="Share on..." icon="/images/share_icon.gif">
-						<menuitem label="Twitter" icon="/images/twitter_icon.gif" onclick="goTo('//twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
-						<menuitem label="Facebook" icon="/images/facebook_icon16x16.gif" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+						<menuitem label="Twitter" icon="img/icon-ext.png" onclick="goTo('http://twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
+						<menuitem label="Facebook" icon="img/icon-ext.png" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
 					</menu>
 				</menu>
 				
@@ -162,7 +161,7 @@
 				
 				<div class="line" role="separator"></div>
 
-				<table cellpadding="0" cellspacing="0" class="" id="">
+				<table>
 					<tr class="head">
 						<th scope="col">Housetype</th>
 						<th scope="col">Description</th>
@@ -203,7 +202,7 @@
 								</select>
 								</li>
 								<li class="options">
-									<label for="xxxRadio00" class="intro">Do you know the answer?</label><br />
+									<label for="xxxRadio01" class="intro">Do you know the answer?</label><br />
 									<label for="xxxRadio01">No</label> <input type="radio" name="xxxRadio01" id="xxxRadio01" value="No" required /><br />
 									<label for="xxxRadio02">Yes</label> <input type="radio" name="xxxRadio01" id="xxxRadio02" value="Yes" required />
 								</li>
@@ -243,7 +242,7 @@
 				</video>
 				
 				<div class="embed-container">
-					<iframe src="http://www.youtube.com/embed/A55vsYwkp2U?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+					<iframe src="http://www.youtube.com/embed/A55vsYwkp2U?wmode=transparent" allowfullscreen></iframe>
 				</div>
 				
 				<div class="line" role="separator"></div>
@@ -271,7 +270,6 @@
 				
 				<div class="line" role="separator"></div>
 				
-				
 			</section>
 			
 			<aside id="aside" role="complementary">
@@ -291,7 +289,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.saturn9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
+			<a href="http://www.satur9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
 		</div>
 	</footer>
 

@@ -4,7 +4,7 @@ Last Changed..:24-09-2014
 Notes #1......:
 **********************************/
 /******************
-Slideshow (HOME)**/
+Slideshow**/
 #flashcontent {
   float: left;
   position: relative;
@@ -57,37 +57,35 @@ Slideshow (HOME)**/
 }
 
 .slidesjs-pagination li a:active, .slidesjs-pagination li a:focus {
-  background-color: yellow;
+  background-color: #ff0;
 }
 
 .slidesjs-pagination .active {
   background: green;
 }
 
-#intro-holder .intro-block {
+/******************
+Intro Blocks**/
+.intro-block {
   float: left;
   width: 246px;
   min-height: 210px;
   margin: 10px 30px 40px 0;
   padding: 20px;
-  background: #999;
+  background: #f1f1f1;
 }
-
-#intro-holder .intro-block:hover {
-  background: #eee;
+.intro-block:hover {
+  background: #d6d7d9;
 }
-
-#intro-holder .intro-block:last-child {
+.intro-block:last-child {
   width: 248px;
   margin-right: 0;
 }
-
-#intro-holder .intro-block h3 {
+.intro-block h3 {
   min-height: 54px;
   margin: 0 0 14px;
 }
-
-#intro-holder .intro-block img {
+.intro-block img {
   float: none;
   max-width: 100%;
   margin: 0 0 10px;
@@ -96,34 +94,4 @@ Slideshow (HOME)**/
   background-size: 100% 100%;
 }
 
-.btn a {
-  float: left;
-  font-size: 1em;
-  text-align: center;
-  padding: 4px 16px 8px;
-  margin: 10px 0;
-  background-color: #ed1c24;
-  background: -webkit-linear-gradient(top, #f14b52 0%, #ed1c24 100%);
-  background: linear-gradient(to bottom, #f14b52 0%, #ed1c24 100%);
-  border-radius: 4px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.btn a:link, .btn a:visited {
-  color: #fff;
-  border: 0;
-  /*ovr*/
-}
-
-.btn a:hover {
-  background: #f14b52;
-  box-shadow: none;
-  padding-bottom: 8px;
-  /*ovr*/
-}
-
-.btn a:active, .btn a:focus {
-  background-color: #ed1c24;
-  background: -webkit-linear-gradient(top, #c61017 0%, #ed1c24 100%);
-  background: linear-gradient(to bottom, #c61017 0%, #ed1c24 100%);
-}
+/*# sourceMappingURL=theme-home.css.map */
