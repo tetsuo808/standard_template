@@ -23,7 +23,7 @@ body {
   -ms-text-size-adjust: 100%;
 }
 
-.container {
+.container, .cont-header, .cont-footer {
   position: relative;
   width: 1280px;
   margin: 0 auto;
@@ -31,12 +31,8 @@ body {
   background: #ddd;
 }
 
-.cont-header, .cont-footer {
+.cont-header, .cont-nav, .cont-footer {
   padding: 30px 0;
-  background: none;
-}
-
-.cont-nav {
   background: none;
 }
 
@@ -101,7 +97,7 @@ Quick Links**/
   font-size: 1.1em;
   line-height: 1.2em;
 }
-.quick-links p span.tel {
+.quick-links p a.tel {
   font-size: 1.4em;
 }
 .quick-links a:link, .quick-links a:visited {
@@ -271,7 +267,7 @@ Main Content**/
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
-.main-content td, .main-content th {
+.main-content table td, .main-content table th {
   vertical-align: top;
   min-width: 100px;
   font-size: 0.9em;
@@ -279,19 +275,19 @@ Main Content**/
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-.main-content th {
+.main-content table th {
   color: #fff;
   font-size: 1em;
   background: #ed1c24;
 }
-.main-content td h3 {
+.main-content table td h3 {
   margin: 0;
 }
-.main-content td p {
+.main-content table td p {
   font-size: 1em;
   margin: 0;
 }
-.main-content td img {
+.main-content table td img {
   float: none;
   margin: 0;
   padding: 0;
