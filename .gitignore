@@ -5,3 +5,4 @@ lib-contact
 node_modules
 *Thumbs.db
 *.db
+*.DS_Store
