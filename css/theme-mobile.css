@@ -1,6 +1,6 @@
 /**********************************
 Description...:MOBILE THEME
-Last Changed..:29-08-2014
+Last Changed..:29-08-2016
 Notes #1......:
 /******************/
 @media screen and (max-device-width: 1280px), screen and (max-width: 1280px) {
@@ -20,6 +20,30 @@ Notes #1......:
 
   .container {
     margin: 0 50px;
+  }
+
+  .main-content {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  /*homepage*/
+  .intro-block {
+    width: 33.333%;
+    margin: 10px 0 40px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .intro-block:last-child {
+    width: 33.333%;
+  }
+
+  .intro-block img {
+    width: 100%;
   }
 }
 @media screen and (max-device-width: 960px), screen and (max-width: 960px) {
@@ -61,6 +85,12 @@ Notes #1......:
     width: 100%;
   }
 
+  .embed-container {
+    width: auto;
+    height: auto;
+    padding-bottom: 56.25%;
+  }
+
   /*contact*/
   #contact-form label {
     width: 140px;
@@ -80,8 +110,12 @@ Notes #1......:
     width: 250px;
   }
 }
-@media screen and (max-device-width: 620px), screen and (max-width: 620px) {
-  /*SMARTPHONE, should it be 640?*/
+@media screen and (max-device-width: 640px), screen and (max-width: 640px) {
+  /*SMARTPHONE*/
+  #nav #pull {
+    display: block;
+  }
+
   #nav ul {
     display: none;
   }
@@ -90,16 +124,32 @@ Notes #1......:
     width: 50%;
   }
 
-  #nav a#pull {
-    display: block;
-  }
-
   #nav ul li ul {
     display: none !important;
   }
 
   #nav ul li:hover ul {
     display: block !important;
+  }
+
+  #navslide {
+    display: inline-block;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: 40px;
+    background: url(../img/icon-nav.png);
+  }
+
+  .nav {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: -274px;
+    width: 318px;
+    height: 495px;
   }
 
   /*contact*/
@@ -160,7 +210,6 @@ Notes #1......:
     float: none;
     max-width: 100%;
     margin: 20px 0;
-    width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -180,14 +229,21 @@ Notes #1......:
     width: 100%;
   }
 
-  table, thead, tbody, th, td, tr {
+  table.refactor {
+    display: block;
+  }
+  table.refactor table, table.refactor thead, table.refactor tbody, table.refactor th, table.refactor td, table.refactor tr {
     display: block;
   }
 
-  /*total table change*/
+  .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
 @media screen and (max-device-width: 380px), screen and (max-width: 380px) {
-  /*MOBILE, should it be 320?*/
+  /*MOBILE*/
   #nav ul li {
     width: 100%;
   }

@@ -1,7 +1,7 @@
 /**********************************
 Description...:screen sass
 Author........:hello@satur9.co.uk
-Last Changed..:01-04-2015
+Last Changed..:27-03-2016 / #{timestamp()}
 Notes #1......:
 *********************************/
 
@@ -20,7 +20,7 @@ cursor:default;
 -webkit-text-size-adjust:100%;
 -ms-text-size-adjust:100%;
 }
-.container, .cont-header, .cont-footer {
+.container, .cont-header, .cont-nav, .cont-footer {
 position:relative;
 width:1280px;
 margin:0 auto;
@@ -38,28 +38,43 @@ src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'
 	url('../data/fonts/khaki-one-webfont.ttf') format('truetype'),
 	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg');
 }
-article, aside, details, figcaption, figure, figcaption, footer, header, menu, nav, section, video {display:block;}
+article, aside, details, figcaption, figure, figcaption, footer, header, menu,
+nav, section, video {display:block;}
 h2, h3, h4, h5, h6 {font-family:'khakiregular';}
 img {vertical-align:middle;}
 
 /******************
-Skipto**/
-.skip a {@include hide;}
-.skip a:focus, .skip a:active {
-width:100%;
-top:0;left:0;
-z-index:99;
-@include opacity(0.8);
-text-align:center;
-font-size:0.8em;
-padding:6px 0;
-outline:none;
+Skipto's**/
+#top-link a {
+display:none;
+position:fixed;
+z-index:9999;
+right:0;bottom:0;
+font-size:1em;
+padding:14px;
+background:$base-black;
+border-top-left-radius:10px;
 }
 
+.skip a {
+@include hide;
+
+	&:focus, &:active {
+	@include opacity(0.8);
+	width:100%;
+	top:0;left:0;
+	z-index:99;
+	text-align:center;
+	font-size:0.8em;
+	padding:6px 0;
+	outline:none;
+	}
+}
 /******************
 Logo Area**/
 #header {
 width:100%;
+background-color:#eee;
 
 	img {float:left;}
 	h1 {@include hide;}
@@ -71,17 +86,33 @@ Quick Links**/
 float:right;
 width:400px;
 text-align:right;
-margin:10px 0 0;
 
 	p {
 	font-size:1.1em;
 	line-height:1.2em;
-	
+
 		a.tel {font-size:1.4em;}
 	}
+
+	.social {
+
+		a {
+		@include opacity(0.8);
+		display:inline-block;
+		width:40px;height:40px;
+		margin:0 0 0;
+		background:url(../img/icon-social.png) no-repeat;
+		@include transition(opacity, 0.4s, ease-in-out);
+
+			&.sc-fb {background-position:left;width:50px;}
+			&.sc-tw {background-position:right;}
+			&:hover {@include opacity(1);}
+			span {@include hide;}
+		}
+	}
+
 	a:link, a:visited {color:$base-grey;}
-	a:hover {}
-	a:active, a:focus {color:$base-black;}
+	a:hover, a:active, a:focus {color:$base-black;}
 }
 
 /******************
@@ -90,30 +121,33 @@ Navigation**/
 width:100%;
 background:$base-grey;
 
-	ul li {
-	z-index:999;
-	float:left;
-	position:relative;
-	list-style:none;
-	text-align:center;
-	font-size:1.05em;
-		
-		a {
+	ul {
+
+		li {
+		z-index:999;
 		float:left;
-		color:#000;
-		padding:14px 30px;
-		text-decoration:none;
-		border-right:1px solid lighten($base-grey, 10%);
+		position:relative;
+		list-style:none;
+		text-align:center;
+		font-size:1.05em;
+
+			a {
+			float:left;
+			color:#000;
+			padding:14px 30px;
+			text-decoration:none;
+			border-right:1px solid lighten($base-grey, 10%);
+			}
 		}
 	}
-	ul li > a:hover, ul li.selected > a, 
-	ul li a:active, ul li a:focus, 
+	ul li > a:hover, ul li.selected > a,
+	ul li a:active, ul li a:focus,
 	ul li:hover {
 	color:#fff;
 	background-color:darken($base-red, 10%);
 	}
 	ul li.selected > a:hover {color:#fff;}
-	
+
 	/*drop-downs*/
 	ul li ul {
 	display:none;
@@ -135,27 +169,31 @@ background:$base-grey;
 	padding:10px 30px;
 	border:0;
 	}
-	
+
 	/*RESPONSIVE BUTTONs*/
-	a#pull {
+	#pull {
 	display:none;
+	cursor:pointer;
 	position:relative;
-	width:auto;
+	width:100%;
 	text-align:center;
 	color:#fff;
 	font-size:1.1em;
 	text-decoration:none;
 	padding:10px 0;
-	background:$base-black url(../img/icon-nav.png) 98% 50% no-repeat;
+	background:$base-black url(../img/icon-nav.png) 94% 50% no-repeat;
+
+		&.clozed {background-image:url(../img/icon-nav-closed.png);}
 	}
 	.mobnav-subarrow {
 	display:none;
 	position:absolute;
-	top:14px;right:10px;
+	top:0px;right:0px;
 	cursor:pointer;
-	height:20px;width:30px;
-	background-color:$base-black;
-	border-radius:4px;
+	height:40px;width:40px;
+	background:$base-black url(../img/icon-nav.png) 50% 50% no-repeat;
+
+		&.clozed {background-image:url(../img/icon-nav-closed.png);}
 	}
 }
 
@@ -167,13 +205,14 @@ Main Content**/
 
 .main-content {
 float:left;
+width:1240px;
 padding:20px;
 
 	h2 {
 	color:$base-red;
 	font-size:1.7em;
 	margin:$bottom-break;
-	
+
 		span {color:#600;}
 	}
 	h3, h4, h5, h6 {
@@ -184,33 +223,49 @@ padding:20px;
 	font-size:0.9em;
 	line-height:1.5em;
 	margin:$bottom-break;
-	
+
 		&.intro {
 		font-size:1.1em;
 		line-height:1.3em;
 		}
 	}
-	ul, ol, dl {margin:$bottom-break;}
-	ul li, ol li, dl dd {
-	list-style:disc;
-	font-size:0.9em;
-	line-height:1.5em;
-	margin:0 0 0 20px;
+	ul, ol, dl {
+	margin:$bottom-break;
+
+		li {
+		list-style:disc;
+		font-size:0.9em;
+		line-height:1.5em;
+		margin:0 0 0 20px;
+		}
 	}
 	ol li {
 	list-style:decimal;
 	margin:0 0 0 30px;
 	}
-	dl dt {
-	font-size:0.9em;
-	font-weight:bold;
-	margin:10px 0 0;
+	dl {
+		dt {
+		font-size:0.9em;
+		font-weight:bold;
+		margin:10px 0 0;
+		}
+		dd {
+		list-style:disc;
+		font-size:0.9em;
+		line-height:1.5em;
+		margin:0 0 0 20px;
+		}
 	}
 	img {
 	float:right;
 	margin:0 0 20px 20px;padding:4px;
 	background:#fff;
 	border:1px solid $base-grey;
+
+		&.basic {
+		float:none;
+		margin:20px 0;
+		}
 	}
 	a:link, a:visited {
 	text-decoration:none;
@@ -221,14 +276,15 @@ padding:20px;
 	border-bottom:0;
 	}
 	a:active, a:focus {}
-	
+
 	/*tables*/
 	table {
 	width:100%;
 	margin:20px 0;
+	border-collapse:collapse;
 	border-top:1px solid #ccc;
 	border-left:1px solid #ccc;
-	
+
 		td, th {
 		vertical-align:top;
 		min-width:100px;
@@ -242,20 +298,25 @@ padding:20px;
 		font-size:1em;
 		background:$base-red;
 		}
-		td h3 {margin:0;}
-		td p {
-		font-size:1em;
-		margin:0;
+		td {
+			h3 {margin:0;}
+			p {
+			font-size:1em;
+			margin:0;
+			}
+			img {
+			float:none;
+			margin:0;padding:0;
+			}
 		}
-		td img {float:none;margin:0;padding:0;}
 	}
-	
+
 	/*labelled imgs*/
 	.figure {
 	float:right;
 	width:300px;
 	margin:0 0 24px 24px;
-	
+
 		figcaption {
 		float:right;
 		clear:both;/*IE Needs me*/
@@ -298,7 +359,7 @@ box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 
 /******************
 Contact Form**/
-#contact-form {
+#contact-form, .wpcf7 {
 	legend {
 	color:#bbb;
 	font-size:1.2em;
@@ -428,23 +489,22 @@ background:#666;
 	}
 	ul {
 	margin:10px 0;
-		
+
 		li {
 		float:left;
 		list-style:none;
 		font-size:0.9em;
 		padding:0 0 0 6px;margin:0 6px 0 0;
 		border-left:1px solid #ccc;
-		
+
 			&:first-child {
 			padding:0;border:0;
 			}
 		}
 	}
-	
+
 	a:link, a:visited {color:$base-grey;}
-	a:hover {}
-	a:active, a:focus {}
+	a:hover, a:active, a:focus {}
 
 	a#credit {
 	position:absolute;
@@ -453,7 +513,7 @@ background:#666;
 	overflow:hidden;
 	width:160px;height:28px;
 	background:#000;
-	
+
 		span {@include hide;}
 	}
 }
@@ -495,8 +555,9 @@ border:1px solid #888;
 .embed-container {
 position:relative;
 overflow:hidden;
-max-width:100%;height:auto;
-padding-bottom:56.25%;
+width:728px;height:410px;
+max-width:100%;
+margin:30px 0;
 
 	iframe, object, embed {
 	position:absolute;

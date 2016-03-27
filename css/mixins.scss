@@ -7,12 +7,25 @@ word-break:break-word;
 -moz-hyphens:auto;
 hyphens:auto;
 }
+@mixin un-word-wrap {
+word-break:normal;
+-webkit-hyphens:none;
+-moz-hyphens:none;
+hyphens:none;
+}
 @mixin transition($transition-property, $transition-time, $method) {
 -webkit-transition:$transition-property $transition-time $method;
 -moz-transition:$transition-property $transition-time $method;
 -ms-transition:$transition-property $transition-time $method;
 -o-transition:$transition-property $transition-time $method;
 transition:$transition-property $transition-time $method;
+}
+@mixin transform($transform-property, $transform-value) {
+-webkit-transform:$transform-property+unquote('(#{$transform-value})');
+-moz-transform:$transform-property+unquote('(#{$transform-value})');
+-ms-transform:$transform-property+unquote('(#{$transform-value})');
+-o-transform:$transform-property+unquote('(#{$transform-value})');
+transform:$transform-property+unquote('(#{$transform-value})');
 }
 @mixin animation ($animation, $duration, $delay) {
 -webkit-animation-name:$animation;

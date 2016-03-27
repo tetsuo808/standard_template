@@ -6,26 +6,26 @@
 
 <head>
 	<title>COMPANY</title>
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 	<meta charset="utf-8" />
 	<meta name="description" content="COMPANY - Your description goes here." />
 	<meta name="keywords" content="keyword, keyword, keyword" />
 	<meta name="robots" content="all" />
 	<meta name="author" content="COMPANY Ltd." />
-	
+
 	<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 	<link href="img/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114" />
 	<link href="img/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
 	<link href="img/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" sizes="57x57" />
-	
+
 	<link href="css/style.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-home.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-mobile.css" rel="stylesheet" media="screen" />
-	<link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" />
-	
+	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700%7COswald:400,300" rel="stylesheet" />
+
 	<!--<script src="js/dist/production.min.js"></script>-->
 	<script src="js/libs/jquery-1.7.2.min.js"></script>
 	<script src="js/libs/modernizr.js"></script>
@@ -33,7 +33,7 @@
 	<script src="js/jquery.easing.min.js"></script>
 	<script src="js/jquery.superfish.min.js"></script>
 	<script src="js/funcs.js"></script>
-	
+
 	<script src="js/jquery.slides.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
 
@@ -48,21 +48,26 @@
 <body id="home">
 
 	<div class="skip"><a href="#skip" accesskey="s">Skip to content &#8595;</a></div>
-	
-	<header id="header" role="banner">
+
+	<header id="header">
 		<div class="container cont-header clearfix">
 			<a href="./"><img src="img/logo.png" alt="COMPANY logo" /></a>
 			<h1>Title of the Website</h1>
-			
+
 			<div class="quick-links">
+				<div class="social">
+					<a href="#" rel="external nofollow" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
+					<a href="#" rel="external nofollow" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
+				</div>
 				<p>Tel: <a href="tel:01110220333" class="tel">0111 022 0333</a><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
 			</div>
 		</div>
 	</header>
-	
-	<nav id="nav" role="navigation">
+
+	<nav id="nav">
 		<div class="container cont-nav clearfix">
+			<button id="pull">Show Menu</button>
 			<ul id="sf-menu" class="clearfix">
 				<li class="selected"><a href="./">Home</a></li>
 				<li><a href="lv1.html">Services</a>
@@ -79,13 +84,13 @@
 				<li><a href="blog.html">Blog</a></li>
 				<li class="last"><a href="contact.html">Contact</a></li>
 			</ul>
-			<a href="#" id="pull">Show Menu</a>
+			<a href="#" id="navslide">X</a>
 		</div>
 	</nav>
-	
+
 	<div class="container clearfix" id="top">
-		
-		<div id="flashcontent" role="slider" aria-valuemax="" aria-valuemin="" aria-valuenow="">
+
+		<div id="flashcontent" role="slider" aria-valuemax="10" aria-valuemin="1" aria-valuenow="1">
 			<div class="containerz">
 				<div id="slides">
 					<img src="img/banners/home-00a.jpg" alt="" />
@@ -94,59 +99,50 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div id="main-content_holder" class=""><!-- split-col -->
 			<section class="main-content" id="skip" role="main">
 				<header>
 					<h2>Welcome to <span>COMPANY</span></h2>
 				</header>
-				
-				<p class="intro">Lorem ipsum dolor sit amet, consectetuer <a href="#" rel="external">adipiscing elit</a>. Integer eget urna. Morbi <acronym title="Accronym">acronym</acronym> pharetra mauris. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet <abbr title="Abbreviation">Abbreviation.</abbr> feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit.</p>
+
+				<p class="intro">Lorem ipsum dolor sit amet, consectetuer <a href="#" rel="external">adipiscing elit</a>. Integer eget urna. Morbi <abbr title="Accronym">acronym</abbr> pharetra mauris. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet <abbr title="Abbreviation">Abbreviation.</abbr> feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit.</p>
 				<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla molestie, felis sed sagittis blandit, lectus elit luctus enim, eu hendrerit tellus pede at mi.</p>
-				
+
 				<img src="img/imagery/test-img01.jpg" alt="Test image" title="Test image" />
-				
-				<ul contextmenu="mymenu">
+
+				<ul>
 					<li data-something="01"><strong>ITEM 1: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
 					<li data-something="03"><strong>ITEM 2: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
 					<li data-something="03"><strong>ITEM 3: </strong>Sed vulputate enim sed sem. Nam varius augue eget nisi.</li>
 				</ul>
-				
-				<menu type="context" id="mymenu">
-					<menuitem label="Refresh Post" onclick="window.location.reload();" icon="/images/refresh-icon.png"></menuitem>
-					<menuitem label="Skip to Comments" onclick="window.location='#comments';" icon="/images/comment_icon.gif"></menuitem>
-					<menu label="Share on..." icon="/images/share_icon.gif">
-						<menuitem label="Twitter" icon="img/icon-ext.png" onclick="goTo('http://twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
-						<menuitem label="Facebook" icon="img/icon-ext.png" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
-					</menu>
-				</menu>
-				
+
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
-				
+
 				<blockquote>
 					<p>This is a blockquote of some sort?</p>
 					<footer>
 						<cite>— <a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a></cite>
 					</footer>
 				</blockquote>
-				
+
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
-				
+
 				<h3>Heading 3</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer <a href="#"  class="more">adipiscing elit</a>. Integer eget urna. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet mollis feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla molestie, felis sed sagittis blandit, lectus elit luctus enim, eu hendrerit tellus pede at mi.</p>
-				
+
 				<!--<figure class="figure" role="complementary">
 					<img src="img/imagery/test-img01.jpg" alt="Photo caption" />
 					<figcaption>Photo caption</figcaption>
 				</figure>-->
-				
+
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
-				
+
 				<h4>Heading 4</h4>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam auctor, sapien congue placerat ultrices, risus tellus eleifend dolor, sed bibendum erat tortor quis enim. Suspendisse facilisis nibh quis risus. Pellentesque ac nisi in purus porta dignissim. Mauris aliquet arcu ut augue. Fusce lorem. Duis eget risus non ligula pharetra convallis. Nunc est. Sed mauris tortor; scelerisque eget, egestas et, fringilla id, lorem. Cras euismod euismod pede. Donec sit amet est. Donec ut urna ut nunc condimentum venenatis? Curabitur id massa sed lorem molestie egestas. Nulla mattis. Praesent ullamcorper velit eget odio. Fusce eu velit. Aenean adipiscing felis non quam. Cras pharetra mi nec neque.</p>
-				
+
 				<div class="line" role="separator"></div>
-				
+
 				<p>Nunc egestas sagittis urna. Donec quis erat vitae sem dictum scelerisque! Ut a urna. Donec posuere elementum ante? Aenean in erat. Pellentesque sed arcu et magna laoreet sagittis. Aenean erat augue, congue ac, elementum at, laoreet quis, odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut ipsum. Etiam ultrices. Cras tristique eleifend elit. Proin gravida, tellus quis vehicula tincidunt, odio metus suscipit orci, eget pretium turpis velit quis leo. In id felis. Phasellus ac erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vel diam.</p>
 				<dl>
 					<dt>First Step Title</dt>
@@ -154,10 +150,10 @@
 					<dd>First Step Definition</dd>
 				</dl>
 				<p>Nunc augue lacus; euismod sed, interdum quis, imperdiet ornare, ipsum. Cras eu felis sit amet odio pharetra varius? Etiam vitae elit ac metus tempor gravida. Vestibulum neque. Nullam auctor, lacus sed tincidunt fringilla, neque eros placerat leo, id lobortis nunc magna molestie lacus! Duis ornare. Donec accumsan metus at elit. Mauris egestas. Vestibulum pede arcu, tristique nec, congue id; varius vel, libero! Donec sit amet urna. Sed ultrices, nunc ut porta volutpat; diam felis fringilla pede, ac condimentum libero erat in magna. Vivamus vulputate. Quisque massa lectus, dignissim eu, ultrices quis, facilisis a, urna. Maecenas dignissim augue. Nam facilisis dapibus odio. Nullam ornare purus non erat. Aliquam et purus. Fusce ligula augue; laoreet eget, consectetuer eget, placerat non, arcu? Sed neque magna, pharetra sed, lobortis ac, posuere sed, felis. Nullam augue nibh, bibendum non; tincidunt id, sollicitudin eu, ipsum.</p>
-				
+
 				<div class="line" role="separator"></div>
 
-				<table>
+				<table class="refactor-off">
 					<tr class="head">
 						<th scope="col">Housetype</th>
 						<th scope="col">Description</th>
@@ -176,9 +172,9 @@
 						<td class="price">&#163;999,999 - &#163;999,999</td>
 					</tr>
 				</table>
-				
+
 				<div class="line" role="separator"></div>
-				
+
 				<div id="contactForm">
 					<form action="./" id="contact-form">
 						<fieldset>
@@ -214,35 +210,42 @@
 						<fieldset>
 							<legend>Submit</legend>
 							<ul>
-								<li><input type="submit" id="submit" value="Submit" role="button" tabindex="0" /></li>
+								<li><input type="submit" id="submit" value="Submit" tabindex="0" /></li>
 							</ul>
 						</fieldset>
 					</form>
 					<script src="js/validate.contact.js"></script>
 				</div>
-				
+
 				<h4>HTML5 Video</h4>
-				<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
-					<source src="data/video/01/video-01.mp4" type="video/mp4">
-					<source src="data/video/01/video-01.ogv" type="video/ogg">
-					<source src="data/video/01/video-01.webm" type="video/webm">
-					<object type="application/x-shockwave-flash" data="data/video/01/player.swf" width="600" height="338">
-						<param name="allowfullscreen" value="true">
-						<param name="allowscriptaccess" value="always">
-						<param name="flashvars" value="file=<?php echo $base_href; ?>data/video/01/video-01.flv">
-						<!--[if IE]><!--><param name="movie" value="data/video/01/player.swf"><!--<![endif]-->
-						<img src="data/video/01/video-01.jpg" alt="" />
-						<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
-					</object>
-					<track src="data/video/01/video-01.vtt" kind="subtitles" srclang="en" label="English subtitles">
-				</video>
-				
+
 				<div class="embed-container">
-					<iframe src="http://www.youtube.com/embed/A55vsYwkp2U?wmode=transparent" allowfullscreen></iframe>
+					<video controls preload="none" poster="data/video/01/video-01.jpg" width="600" height="338">
+						<source src="data/video/01/video-01.mp4" type="video/mp4">
+						<source src="data/video/01/video-01.ogv" type="video/ogg">
+						<source src="data/video/01/video-01.webm" type="video/webm">
+						<object type="application/x-shockwave-flash" data="data/video/01/player.swf" width="600" height="338">
+							<param name="allowfullscreen" value="true">
+							<param name="allowscriptaccess" value="always">
+							<param name="flashvars" value="file=<?php echo $base_href; ?>data/video/01/video-01.flv">
+							<!--[if IE]><!--><param name="movie" value="data/video/01/player.swf"><!--<![endif]-->
+							<img src="data/video/01/video-01.jpg" alt="" />
+							<p>Your browser can't play HTML5 video. <a href="data/video/01/video-01.mp4">Download it</a> instead.</p>
+						</object>
+						<track src="data/video/01/video-01.vtt" kind="subtitles" srclang="en" label="English subtitles">
+					</video>
 				</div>
-				
+
+				<div class="embed-container">
+					<iframe src="http://www.youtube.com/embed/bhlwuNXNbMo?wmode=transparent" allowfullscreen></iframe>
+				</div>
+
+				<div class="embed-container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.476040888589!2d135.75402031439285!3d34.96973898036627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f59e4c66699%3A0x489ba724490b2280!2sNintendo!5e0!3m2!1sen!2suk!4v1459102820561" allowfullscreen></iframe>
+				</div>
+
 				<div class="line" role="separator"></div>
-				
+
 				<div id="intro-holder">
 					<div class="intro-block">
 						<h3><a href="generic.html">Heading Here 01</a></h3>
@@ -263,19 +266,21 @@
 						<div class="btn"><a href="generic.html">Get in touch &Rrightarrow;</a></div>
 					</div>
 				</div>
-				
+
 				<div class="line" role="separator"></div>
-				
+
 			</section>
-			
-			<aside id="aside" role="complementary">
+
+			<aside id="aside">
 				<h3>Heading here</h3>
 				<p>Nullam facilisis tortor at condimentum sollicitudin. Phasellus condimentum urna lectus. Integer erat ante, pharetra a euismod vel, accumsan vel odio. Aenean imperdiet tristique volutpat. Duis vitae nulla lorem. Nulla risus augue; imperdiet quis tristique vitae, posuere tempor velit.</p>
 			</aside>
 		</div>
 	</div>
-		
-	<footer id="footer" role="contentinfo">
+
+	<div id="top-link"><a href="#top">Back to top</a></div>
+
+	<footer id="footer">
 		<div class="container cont-footer clearfix">
 			<p>&#169; <time>2015</time> COMPANY | <a href="generic.html">Terms &amp; Conditions</a></p>
 			<ul>
@@ -285,7 +290,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.satur9.co.uk/" rel="external" title="" id="credit"><span>web design &amp; development</span></a>
+			<a href="http://www.satur9.co.uk/" rel="external" title="Web design &amp; development by Satur9" id="credit"><span>web design &amp; development by Satur9</span></a>
 		</div>
 	</footer>
 
