@@ -2,7 +2,7 @@
 /**********************************
 Description...:screen sass
 Author........:hello@satur9.co.uk
-Last Changed..:27-03-2016 / 2016-03-27 20:03:46 +0100
+Last Changed..:27-03-2016 / 2016-03-30 12:15:34 +0100
 Notes #1......:
 *********************************/
 /******************
@@ -28,7 +28,7 @@ body {
   width: 1280px;
   margin: 0 auto;
   text-align: left;
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .cont-header, .cont-nav, .cont-footer {
@@ -113,8 +113,6 @@ Quick Links**/
   font-size: 1.4em;
 }
 .quick-links .social a {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -132,10 +130,6 @@ Quick Links**/
 }
 .quick-links .social a.sc-tw {
   background-position: right;
-}
-.quick-links .social a:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
 }
 .quick-links .social a span {
   position: absolute;
@@ -232,6 +226,9 @@ Navigation**/
 }
 #nav .mobnav-subarrow.clozed {
   background-image: url(../img/icon-nav-closed.png);
+}
+#nav .nav, #nav #navslide {
+  display: none;
 }
 
 /******************
@@ -527,15 +524,6 @@ Contact Form**/
 #contact-form span.LV_invalid, .wpcf7 span.LV_invalid {
   color: #d6492a;
 }
-#contact-form span.LV_validation_message, .wpcf7 span.LV_validation_message {
-  width: 90px;
-  font-size: 0.8em;
-  font-weight: bold;
-  padding: 6px 5px 0;
-}
-#contact-form .LV_invalid_field, .wpcf7 .LV_invalid_field {
-  border: 1px solid #d6492a;
-}
 
 /******************
 Aside**/
@@ -599,7 +587,7 @@ Global Styles**/
   height: 1px;
   font-size: 0;
   margin: 30px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #bcbdc0;
 }
 
 .clearing {
@@ -666,7 +654,7 @@ iframe, video {
   max-width: 100%;
   margin: 30px 0;
 }
-.embed-container iframe, .embed-container object, .embed-container embed {
+.embed-container iframe, .embed-container object, .embed-container embed, .embed-container video {
   position: absolute;
   top: 0;
   left: 0;

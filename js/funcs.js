@@ -120,7 +120,7 @@ $(document).ready(function() {
 	var toggle = 0;
 	$('#navslide').on('click', function () {
 		if(toggle == 0){
-			$('#sf-menu').animate({
+			$('.nav').animate({
 				'left': '0'
 			});
 			$('#navslide').animate({
@@ -129,7 +129,7 @@ $(document).ready(function() {
 			toggle = 1;
 			return false;
 		} else {
-			$('#sf-menu').animate({
+			$('.nav').animate({
 				'left': '-273'
 			});
 			$('#navslide').animate({

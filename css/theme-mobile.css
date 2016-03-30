@@ -14,7 +14,7 @@ Notes #1......:
     width: 100%;
   }
 
-  .container, .cont-header, .cont-footer {
+  .container, .cont-header, .cont-nav, .cont-footer {
     width: auto;
   }
 
@@ -56,12 +56,6 @@ Notes #1......:
     padding: 30px 20px;
   }
 
-  #nav ul li a, #contact-form input, #contact-form textarea {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
   #nav ul li {
     width: 33.333%;
   }
@@ -69,6 +63,9 @@ Notes #1......:
   #nav ul li a {
     width: 100%;
     padding: 14px 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   #nav ul li {
@@ -92,6 +89,12 @@ Notes #1......:
   }
 
   /*contact*/
+  #contact-form input, #contact-form textarea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   #contact-form label {
     width: 140px;
   }
@@ -132,24 +135,26 @@ Notes #1......:
     display: block !important;
   }
 
-  #navslide {
-    display: inline-block;
-    z-index: 9999;
+  #nav #navslide {
+    display: block;
+    z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;
     width: 44px;
-    height: 40px;
+    height: 44px;
     background: url(../img/icon-nav.png);
   }
 
-  .nav {
+  #nav .nav {
+    display: block;
     z-index: 9999;
     position: fixed;
     top: 0;
     left: -274px;
     width: 318px;
     height: 495px;
+    background: green;
   }
 
   /*contact*/
