@@ -14,7 +14,7 @@ Notes #1......:
 	.container, .cont-header, .cont-nav, .cont-footer {width:auto;}
 	.container {margin:0 50px;}
 
-	.main-content {width:100%;@include border-box;}
+	main {width:100%;@include border-box;}
 
 	/*homepage*/
 	.intro-block {width:33.333%;margin:10px 0 40px;@include border-box;}
@@ -87,11 +87,11 @@ Notes #1......:
 	#header img {position:absolute;top:20px;left:50%;margin:0 0 0 -130px;}
 	.quick-links {width:100%;text-align:center;margin:80px 0 0;}
 
-	.main-content img {float:none;max-width:100%;margin:20px 0;@include border-box;}
+	main img {float:none;max-width:100%;margin:20px 0;@include border-box;}
 
-	.main-content .figure {float:none;width:100%;margin:20px 0 40px;}
-	.main-content .figure figcaption {width:auto;}
-	.main-content .figure img {width:100%;}
+	main .figure {float:none;width:100%;margin:20px 0 40px;}
+	main .figure figcaption {width:auto;}
+	main .figure img {width:100%;}
 
 	table.refactor {
 	display:block;

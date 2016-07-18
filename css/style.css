@@ -2,7 +2,7 @@
 /**********************************
 Description...:screen sass
 Author........:hello@satur9.co.uk
-Last Changed..:27-03-2016 / 2016-03-30 12:15:34 +0100
+Last Changed..:27-03-2016 / 2016-05-27 19:36:11 +0100
 Notes #1......:
 *********************************/
 /******************
@@ -38,7 +38,10 @@ body {
 
 @font-face {
   font-family: 'khakiregular';
-  src: url("../data/fonts/khaki-one-webfont.eot?#iefix") format("embedded-opentype"), url("../data/fonts/khaki-one-webfont.woff") format("woff"), url("../data/fonts/khaki-one-webfont.ttf") format("truetype"), url("../data/fonts/khaki-one-webfont.svg#khakiregular") format("svg");
+  src: url("../data/fonts/khaki-one-webfont.eot");
+  /*IE9 Compat Modes, ditch*/
+  src: url("../data/fonts/khaki-one-webfont.eot?#iefix") format("embedded-opentype"), url("../data/fonts/khaki-one-webfont.woff2") format("woff2"), url("../data/fonts/khaki-one-webfont.woff") format("woff"), url("../data/fonts/khaki-one-webfont.ttf") format("truetype"), url("../data/fonts/khaki-one-webfont.svg#khakiregular") format("svg");
+  /*Legacy iOS, ditch*/
 }
 article, aside, details, figcaption, figure, figcaption, footer, header, menu,
 nav, section, video {
@@ -237,7 +240,7 @@ Main Content**/
   color: #87898f;
 }
 
-.split-col .main-content {
+.split-col main {
   width: 620px;
 }
 
@@ -245,85 +248,81 @@ Main Content**/
   width: 240px;
 }
 
-.main-content {
+main {
   float: left;
   width: 1240px;
   padding: 20px;
   /*tables*/
   /*labelled imgs*/
 }
-.main-content h2 {
+main h2 {
   color: #ed1c24;
   font-size: 1.7em;
   margin: 0 0 14px;
 }
-.main-content h2 span {
+main h2 span {
   color: #600;
 }
-.main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+main h3, main h4, main h5, main h6 {
   font-size: 1.4em;
   margin: 30px 0 14px;
 }
-.main-content p {
+main p {
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 14px;
 }
-.main-content p.intro {
+main p.intro {
   font-size: 1.1em;
   line-height: 1.3em;
 }
-.main-content ul, .main-content ol, .main-content dl {
+main ul, main ol, main dl {
   margin: 0 0 14px;
 }
-.main-content ul li, .main-content ol li, .main-content dl li {
+main ul li, main ol li, main dl li {
   list-style: disc;
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 0 20px;
 }
-.main-content ol li {
+main ol li {
   list-style: decimal;
   margin: 0 0 0 30px;
 }
-.main-content dl dt {
+main dl dt {
   font-size: 0.9em;
   font-weight: bold;
   margin: 10px 0 0;
 }
-.main-content dl dd {
+main dl dd {
   list-style: disc;
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 0 20px;
 }
-.main-content img {
+main img {
   float: right;
   margin: 0 0 20px 20px;
   padding: 4px;
   background: #fff;
   border: 1px solid #bcbdc0;
 }
-.main-content img.basic {
+main img.basic {
   float: none;
   margin: 20px 0;
 }
-.main-content a:link, .main-content a:visited {
+main a:link, main a:visited {
   text-decoration: none;
-  border-bottom: 1px solid #ed1c24;
+  text-decoration: underline dashed #4c4345;
 }
-.main-content a:hover {
-  padding-bottom: 1px;
-  border-bottom: 0;
-}
-.main-content table {
+main table {
   width: 100%;
   margin: 20px 0;
   border-collapse: collapse;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
-.main-content table td, .main-content table th {
+main table td, main table th {
   vertical-align: top;
   min-width: 100px;
   font-size: 0.9em;
@@ -331,29 +330,29 @@ Main Content**/
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-.main-content table th {
+main table th {
   color: #fff;
   font-size: 1em;
   background: #ed1c24;
 }
-.main-content table td h3 {
+main table td h3 {
   margin: 0;
 }
-.main-content table td p {
+main table td p {
   font-size: 1em;
   margin: 0;
 }
-.main-content table td img {
+main table td img {
   float: none;
   margin: 0;
   padding: 0;
 }
-.main-content .figure {
+main .figure {
   float: right;
   width: 300px;
   margin: 0 0 24px 24px;
 }
-.main-content .figure figcaption {
+main .figure figcaption {
   float: right;
   clear: both;
   /*IE Needs me*/
@@ -365,9 +364,22 @@ Main Content**/
   font-style: normal;
   margin: 4px;
 }
-.main-content .figure img {
+main .figure img {
   width: 300px;
   margin: 0;
+}
+
+/******************
+SVGs**/
+.icon-svg {
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: pink;
+  stroke: coral;
+  stroke-width: 5%;
+  stroke-linejoin: round;
 }
 
 /******************
@@ -565,7 +577,7 @@ Footer**/
 #footer a:link, #footer a:visited {
   color: #bcbdc0;
 }
-#footer a#credit {
+#footer #❤ {
   position: absolute;
   top: 20px;
   right: 0;
@@ -575,7 +587,7 @@ Footer**/
   height: 28px;
   background: #000;
 }
-#footer a#credit span {
+#footer #❤ span {
   position: absolute;
   left: -9999px;
 }
@@ -615,6 +627,10 @@ Global Styles**/
 
 .tiny {
   font-size: 0.7em;
+}
+
+.no-function {
+  pointer-events: none;
 }
 
 strong {

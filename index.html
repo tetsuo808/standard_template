@@ -61,7 +61,7 @@
 					<a href="#" rel="external nofollow" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
 					<a href="#" rel="external nofollow" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
 				</div>
-				<p>Tel: <a href="tel:01110220333" class="tel">0111 022 0333</a><br />
+				<p>Tel: <a href="tel:011102220333" class="tel">0111 0222 0333</a><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
 			</div>
 		</div>
@@ -69,8 +69,8 @@
 
 	<nav id="nav">
 		<div class="container cont-nav clearfix">
-			<button id="pull">Show Menu</button>
-			<button id="navslide">X</button>
+			<button type="button" id="pull">Show Menu</button>
+			<button type="button" id="navslide">X</button>
 			<div class="nav">2nd nav</div>
 			<ul id="sf-menu" class="clearfix">
 				<li class="selected"><a href="./">Home</a></li>
@@ -100,7 +100,7 @@
 		</div>
 
 		<div id="main-content_holder" class=""><!-- split-col -->
-			<section class="main-content" id="skip" role="main">
+			<main class="main-content" id="skip">
 				<header>
 					<h2>Welcome to <span>COMPANY</span></h2>
 				</header>
@@ -121,14 +121,14 @@
 				<blockquote>
 					<p>This is a blockquote of some sort?</p>
 					<footer>
-						<cite>— <a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a></cite>
+						<cite>— <a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/" target="_blank" rel="noreferrer">Bruce Lawson</a></cite>
 					</footer>
 				</blockquote>
 
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
 
 				<h3>Heading 3</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer <a href="#"  class="more">adipiscing elit</a>. Integer eget urna. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet mollis feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla molestie, felis sed sagittis blandit, lectus elit luctus enim, eu hendrerit tellus pede at mi.</p>
+				<p>Lorem ipsum dolor sit amet, consectetuer <a href="#" class="more">adipiscing elit</a>. Integer eget urna. Maecenas quis leo quis nisl interdum molestie. Nam sagittis, elit sit amet mollis feugiat, metus orci euismod dolor, sit amet molestie nunc sapien in neque. Suspendisse potenti. Integer ullamcorper. Curabitur elementum posuere sapien. Maecenas justo dolor, ullamcorper in, suscipit vel, suscipit a, elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla molestie, felis sed sagittis blandit, lectus elit luctus enim, eu hendrerit tellus pede at mi.</p>
 
 				<figure class="figure" role="complementary">
 					<img src="img/imagery/test-img01.jpg" alt="Photo caption" />
@@ -139,6 +139,56 @@
 
 				<h4>Heading 4</h4>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam auctor, sapien congue placerat ultrices, risus tellus eleifend dolor, sed bibendum erat tortor quis enim. Suspendisse facilisis nibh quis risus. Pellentesque ac nisi in purus porta dignissim. Mauris aliquet arcu ut augue. Fusce lorem. Duis eget risus non ligula pharetra convallis. Nunc est. Sed mauris tortor; scelerisque eget, egestas et, fringilla id, lorem. Cras euismod euismod pede. Donec sit amet est. Donec ut urna ut nunc condimentum venenatis? Curabitur id massa sed lorem molestie egestas. Nulla mattis. Praesent ullamcorper velit eget odio. Fusce eu velit. Aenean adipiscing felis non quam. Cras pharetra mi nec neque.</p>
+
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source media="(min-width: 641px)" srcset="/assets/images/content/drone-rangers/cover-960x600.jpg" type="image/jpeg">
+					<source media="(min-width: 501px)" srcset="/assets/images/content/drone-rangers/cover-640x600.jpg" type="image/jpeg">
+					<source media="(min-width: 321px)" srcset="/assets/images/content/drone-rangers/cover-500x600.jpg" type="image/jpeg">
+					<source srcset="/assets/images/content/drone-rangers/cover-312x600.jpg" type="image/jpeg">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="/assets/images/content/drone-rangers/cover-312x600.jpg" alt="" width="961" height="600" class="ef-video__media ef-video__media--hero">
+				</picture>
+
+				<!--
+				Place the SVG sprite inside a div with its display set to none.
+				SVG sprites must appear before they are used in HTML source order and they must be hidden from view.
+				Inlining the CSS means if there's any delay loading your stylesheet then the sprite will still be hidden
+				-->
+				<div style="display:none;">
+				  <svg xmlns="http://www.w3.org/2000/svg">
+				    <symbol viewBox="0 0 8.3 8.3" id="icon-close" aria-label="Close"><title>Close</title><path d="M8.3,0.3L8,0L4.2,3.8L0.3,0L0,0.3l3.8,3.8L0,8l0.3,0.3l3.8-3.8L8,8.3L8.3,8L4.5,4.2"/>
+				    </symbol>
+				  </svg>
+				</div>
+
+				<!--
+				Okay let's reference our SVG now:
+				Always put the height/width values in there. SVG can be a bit of a nightmare cross browser.
+				Miss a height/width but declare a width/height in your CSS and you can get oddly shaped SVGs (e.g. too wide or too tall)
+				https://github.com/jonathantneal/svg4everybody
+				-->
+				<svg role="img">
+				  <use xlink:href="img/svg/icons.svg#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+				</svg>
+
+				<a href="/news/" aria-label="Latest News">
+					<svg aria-hidden="true" class="icon-svg">
+						<use xlink:href="img/svg/icons.svg#play"></use>
+					</svg>
+				</a>
+
+				<td>
+				  <svg>
+				    <title>Yes</title>
+				    <use xlink:href="img/svg/icons.svg#cross"></use>
+				  </svg>
+				</td>
+
+				<!--
+				Sidenote about accessiblity (a11y):
+				If I'm honest, I'm not 100% sure whether it is better to put your <title>s and/or aria-labels in your sprite or the SVG reference.
+				-->
 
 				<div class="line" role="separator"></div>
 
@@ -267,7 +317,7 @@
 
 				<div class="line" role="separator"></div>
 
-			</section>
+			</main>
 
 			<aside id="aside">
 				<h3>Heading here</h3>
@@ -288,7 +338,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.satur9.co.uk/" rel="external nofollow" target="_blank" title="Web design &amp; development by Satur9" id="credit"><span>web design &amp; development by Satur9</span></a>
+			<a href="http://www.satur9.co.uk/" rel="external nofollow" target="_blank" title="Web design &amp; development by Satur9" id="❤"><span>web design &amp; development by Satur9</span></a>
 		</div>
 	</footer>
 
