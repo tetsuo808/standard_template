@@ -11,7 +11,7 @@
 
 font:italic small-caps bold 1em/140% "Lucida Grande",sans-serif;
 
-When using the font shorthand you can omit any values except font-size and font-family – you always need to give values for those, and in that order. 
+When using the font shorthand you can omit any values except font-size and font-family ï¿½ you always need to give values for those, and in that order.
 
 
 **********************
@@ -24,6 +24,7 @@ GRUNT SETUP:
 
 **********************
 STUFF TO DO:
+- Use 1.7.2 jquery instead of 1.8.2!!! It's broken for Chrome.
 - load fonts differently: http://bdadam.com/blog/loading-webfonts-with-high-performance.html
 - use owl.carousel instead
 - make .intro-block responsive

@@ -47,6 +47,8 @@ Notes #1......:
 
 @media screen and (max-device-width:640px), screen and (max-width:640px) {
 	/*SMARTPHONE*/
+	touch-action:manipulation;//removes 300 mil touch delay?
+
 	#nav #pull {display:block;}
 	#nav ul {display:none;}
 	#nav ul li {width:50%;}
@@ -114,6 +116,17 @@ Notes #1......:
 	#nav .mobnav-subarrow {display:block;}
 	#nav ul li.xpopdrop ul {display:block !important;}
 	.xactive {}
+}
+
+/* IE only (forces a nicer mobile view for IE's?) ----------- */
+@-ms-viewport {
+//width:device-width;
+}
+
+/* Styles for when resolution is 1.5 or higher ----------- */
+@media all and ((-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi)) {
+/* Styles */
 }
 
 /* Smartphones (portrait and landscape) ----------- */
