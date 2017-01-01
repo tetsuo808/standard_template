@@ -23,9 +23,9 @@ float:left;
 width:246px;
 min-height:210px;
 margin:10px 30px 40px 0;padding:20px;
-background:lighten($base-grey, 20%);
+background-color:lighten($base-grey, 20%);
 
-	&:hover {background:lighten($base-grey, 10%);}
+	&:hover {background-color:lighten($base-grey, 10%);}
 	&:last-child {
 	width:248px;
 	margin-right:0;

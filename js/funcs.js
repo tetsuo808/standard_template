@@ -5,7 +5,7 @@ $(document).ready(function() {
 	}).addClass('ext');
 
 	//SF menu
-	if ($(window).width() < 1280) {
+	if ($(window).width() < 960) {
 		//nothing
 	}
 	else {

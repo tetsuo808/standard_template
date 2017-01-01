@@ -12,7 +12,7 @@ Notes #1......:
 	body {-webkit-text-size-adjust:none;-ms-text-size-adjust:100%;}
 	video {width:100%;}
 	.container, .cont-header, .cont-nav, .cont-footer {width:auto;}
-	.container {margin:0 50px;}
+	.container, #top {margin:0 50px;}
 
 	main {width:100%;@include border-box;}
 
@@ -24,7 +24,7 @@ Notes #1......:
 
 @media screen and (max-device-width:960px), screen and (max-width:960px) {
 	/*TABLET*/
-	.container {margin:0 auto;}
+	.container, #top {margin:0 auto;}
 	.cont-header, .cont-footer {padding:30px 20px;}
 
 	#nav ul li {width:33.333%;}
@@ -47,7 +47,15 @@ Notes #1......:
 
 @media screen and (max-device-width:640px), screen and (max-width:640px) {
 	/*SMARTPHONE*/
-	touch-action:manipulation;//removes 300 mil touch delay?
+	//touch-action:manipulation;//removes 300 mil touch delay?
+
+	#top {
+	flex-direction:column;
+	}
+	.quick-links {
+	text-align:center;
+	margin-top:20px;
+	}
 
 	#nav #pull {display:block;}
 	#nav ul {display:none;}
@@ -86,12 +94,12 @@ Notes #1......:
 }
 
 @media screen and (max-device-width:500px), screen and (max-width:500px) {
-	#header img {position:absolute;top:20px;left:50%;margin:0 0 0 -130px;}
-	.quick-links {width:100%;text-align:center;margin:80px 0 0;}
+	//#header img {position:absolute;top:20px;left:50%;margin:0 0 0 -130px;}
+	//.quick-links {width:100%;text-align:center;margin:80px 0 0;}
 
 	main img {float:none;max-width:100%;margin:20px 0;@include border-box;}
 
-	main .figure {float:none;width:100%;margin:20px 0 40px;}
+	main .figure {float:none;width:100%;margin:20px 0 40px;@include border-box;}
 	main .figure figcaption {width:auto;}
 	main .figure img {width:100%;}
 
@@ -121,12 +129,6 @@ Notes #1......:
 /* IE only (forces a nicer mobile view for IE's?) ----------- */
 @-ms-viewport {
 //width:device-width;
-}
-
-/* Styles for when resolution is 1.5 or higher ----------- */
-@media all and ((-webkit-min-device-pixel-ratio: 1.5),
-(min-resolution: 144dpi)) {
-/* Styles */
 }
 
 /* Smartphones (portrait and landscape) ----------- */

@@ -2,9 +2,145 @@
 /**********************************
 Description...:screen sass
 Author........:hello@satur9.co.uk
-Last Changed..:27-03-2016 / 2016-05-27 19:36:11 +0100
+Last Changed..:27-03-2016 / 2017-01-01 18:28:23 +0000
 Notes #1......:
 *********************************/
+.edge--bottom {
+  position: relative;
+  z-index: 1;
+}
+.edge--bottom:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+}
+
+.edge--bottom--reverse {
+  position: relative;
+  z-index: 1;
+}
+.edge--bottom--reverse:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom--reverse:after {
+  bottom: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 0 100%;
+}
+
+.edge--top {
+  position: relative;
+  z-index: 1;
+}
+.edge--top:before {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--top:before {
+  top: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 100% 0;
+}
+
+.edge--top--reverse {
+  position: relative;
+  z-index: 1;
+}
+.edge--top--reverse:before {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--top--reverse:before {
+  top: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 0 0;
+}
+
+.edge--both {
+  position: relative;
+  z-index: 1;
+}
+.edge--both:before, .edge--both:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--both:before {
+  top: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 100% 0;
+}
+.edge--both:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+}
+
+.edge--both--reverse {
+  position: relative;
+  z-index: 1;
+}
+.edge--both--reverse:before, .edge--both--reverse:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--both--reverse:before {
+  top: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 0 0;
+}
+.edge--both--reverse:after {
+  bottom: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 0 0;
+}
+
 /******************
 Layout**/
 * {
@@ -93,19 +229,23 @@ Logo Area**/
   width: 100%;
   background-color: #eee;
 }
-#header img {
-  float: left;
-}
 #header h1 {
   position: absolute;
   left: -9999px;
 }
 
+#top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
 /******************
 Quick Links**/
 .quick-links {
-  float: right;
-  width: 400px;
   text-align: right;
 }
 .quick-links p {
@@ -311,6 +451,9 @@ main img.basic {
   float: none;
   margin: 20px 0;
 }
+main img.skew {
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
 main a:link, main a:visited {
   text-decoration: none;
   text-decoration: underline dashed #4c4345;
@@ -351,6 +494,31 @@ main .figure {
   float: right;
   width: 300px;
   margin: 0 0 24px 24px;
+  padding: 20px;
+  background: #41ade5;
+  position: relative;
+  z-index: 1;
+}
+main .figure:before, main .figure:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+main .figure:before {
+  top: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 100% 0;
+}
+main .figure:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
 }
 main .figure figcaption {
   float: right;
@@ -469,6 +637,7 @@ Contact Form**/
 }
 #contact-form input[type="text"], #contact-form input[type="tel"], #contact-form input[type="email"], #contact-form input[type="url"], #contact-form input[type="file"], .wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"], .wpcf7 input[type="url"], .wpcf7 input[type="file"] {
   width: 300px;
+  font-family: inherit;
   font-size: 0.9em;
   padding: 4px;
 }
@@ -506,7 +675,7 @@ Contact Form**/
 }
 #contact-form textarea, .wpcf7 textarea {
   resize: vertical;
-  font-family: helvetica,arial,sans-serif;
+  font-family: inherit;
   width: 300px;
   height: 120px;
   font-size: 1em;
@@ -631,6 +800,10 @@ Global Styles**/
 
 .no-function {
   pointer-events: none;
+}
+
+.webkit-blurry-fix {
+  box-shadow: 0 0 1px transparent;
 }
 
 strong {
