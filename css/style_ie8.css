@@ -10,3 +10,7 @@ Notes #1......:Fixes for IE8 quirks
 #footer {background:transparent;filter:progid:DXImageTransform.Microsoft.gradient( startColorstr=#99000050,endColorstr=#99000050);zoom:1;}
 
 ie8-trans {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+
+#top {
+display:table; /*use display:table instead of flex for IE*/ 
+}

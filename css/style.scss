@@ -1,7 +1,7 @@
 /**********************************
 Description...:screen sass
 Author........:hello@satur9.co.uk
-Last Changed..:27-03-2016 / #{timestamp()}
+Last Changed..:#{timestamp()} - v1.0
 Notes #1......:
 *********************************/
 
@@ -44,6 +44,7 @@ article, aside, details, figcaption, figure, figcaption, footer, header, menu,
 nav, section, video {display:block;}
 h2, h3, h4, h5, h6 {font-family:'khakiregular';}
 img {vertical-align:middle;}
+svg {border:1px solid red;}
 
 /******************
 Skipto's**/
@@ -96,7 +97,7 @@ margin:0 auto;padding:20px 0;
 
 		p {
 		font-size:1.1em;
-		line-height:1.2em;
+		line-height:1.4em;
 
 			a.tel {font-size:1.4em;}
 		}
@@ -106,7 +107,7 @@ margin:0 auto;padding:20px 0;
 			a {
 			display:inline-block;
 			width:40px;height:40px;
-			margin:0 0 0;
+			margin:0 0 10px;
 			background:url(../img/icon-social.png) no-repeat;
 			@include transition(opacity, 0.4s, ease-in-out);
 
@@ -481,8 +482,8 @@ Contact Form**/
 	.options input[type="checkbox"], .options input[type="radio"] {margin:-4px 0 0 4px;}
 
 	/**validation**/
-	span.LV_valid {color:#47bf4c;}
-	span.LV_invalid {color:#d6492a;}
+	span.LV_valid, [aria-invalid=false] {color:#47bf4c;}
+	span.LV_invalid, [aria-invalid=true] {color:#d6492a;}
 }
 
 /******************
@@ -554,6 +555,10 @@ border-bottom:1px solid $base-grey;
 .tiny {font-size:0.7em;}
 .no-function {pointer-events:none;}
 .webkit-blurry-fix {box-shadow:0 0 1px transparent;}
+.nice-scrolly-area {
+overflow-y:scroll;
+-webkit-overflow-scrolling:touch;
+}
 
 strong {font-weight:bold;}
 em {font-style:italic;}
@@ -640,6 +645,17 @@ a[href$=".pdf"]:after {content:"(PDF document)";}
 
 input[type="text"]:disabled {background:#ccc;}
 input:checked {border:1px solid #090;}
+
+
+
+button {font-size:1.25em;}
+button:only-of-type {font-size:2em;} //bigger if in section of its own
+button:not(:only-of-type) {font-size:2em;} //bigger if more than one in section
+button:nth-last-child(6) {} // the 6th last element
+button:nth-last-child(6):first-child {} // the first of 6 elements. works only with 6 elements
+button:nth-last-child(6):first-child,
+button:nth-last-child(6):first-child ~ button {} // all elements from a specified set (6)
+button:nth-child(n+6) {} // all elements from 6th upwards
 
 /******************
 Clearfix**/

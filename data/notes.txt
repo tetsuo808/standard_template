@@ -17,14 +17,20 @@ When using the font shorthand you can omit any values except font-size and font-
 **********************
 GRUNT SETUP:
 
-- Install SASS
-- Install Grunt
 - Run 'npm install' from CMD in the working dir. & ensure all modules are installed
 - Run 'grunt' from CMD
 
+
+**********************
+RUN SVGO (Manual):
+
+- $ npm install -g svgo
+- $ svgo --input img/graph.svg --output img/optimised-graph.svg
+- if it fucks up complex svgs, try: $ svgo --disable=convertPathData --disable=mergePaths -i img/a.svg
+
+
 **********************
 STUFF TO DO:
-- Use 1.7.2 jquery instead of 1.8.2!!! It's broken for Chrome.
 - load fonts differently: http://bdadam.com/blog/loading-webfonts-with-high-performance.html
 - use owl.carousel instead
 - make .intro-block responsive

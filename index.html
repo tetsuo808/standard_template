@@ -21,7 +21,7 @@
 	<meta property="og:description" content="Introduction text" />
 	<meta property="og:image" content="img/thumbnail.jpg" />
 	<meta property="og:url" content="index.html" />
-	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:card" content="img/summary_large_image.jpg" />
 
 	<!--  Non-Essential, But Recommended -->
 	<meta property="og:site_name" content="European Travel, Inc." />
@@ -44,7 +44,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700%7COswald:400,300" rel="stylesheet" />
 
 	<!--<script src="js/dist/production.min.js"></script>-->
-	<script src="js/libs/jquery-1.8.2.min.js"></script>
+	<script src="js/libs/jquery-1.7.2.min.js"></script>
 	<script src="js/libs/modernizr.js"></script>
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.min.js"></script>
@@ -53,6 +53,8 @@
 
 	<script src="js/jquery.slick.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
+
+	<script src="js/live.js"></script> <!--only works on localhost-->
 
 	<!--[if IE 8]>
 		<link href="css/style_ie8.css" rel="stylesheet" />
@@ -152,17 +154,18 @@
 
 				<p>Praesent consequat. Integer risus. In <strong>porttitor mauris et arcu</strong>. Maecenas libero quam, viverra id, feugiat vitae, <span>spanned content</span>, elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique, metus et varius porttitor, purus nulla imperdiet urna, eget ultricies lorem dolor consequat lorem. Nulla eget mauris. Mauris vitae odio <em>porttitor mauris et arcu</em> mollis. Sed at augue. Quisque ut magna id felis vehicula ornare. Sed vulputate enim sed sem. Nam varius augue eget nisi. Sed sodales, nisi eu porttitor bibendum, sapien orci luctus risus, id congue pede magna a enim. Integer sapien. Donec adipiscing. Vestibulum molestie tincidunt massa. Maecenas faucibus. Etiam elit. Proin auctor tincidunt nibh.</p>
 
-				<h4>Heading 4</h4>
+				<h4>Responsive Images</h4>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam auctor, sapien congue placerat ultrices, risus tellus eleifend dolor, sed bibendum erat tortor quis enim. Suspendisse facilisis nibh quis risus. Pellentesque ac nisi in purus porta dignissim. Mauris aliquet arcu ut augue. Fusce lorem. Duis eget risus non ligula pharetra convallis. Nunc est. Sed mauris tortor; scelerisque eget, egestas et, fringilla id, lorem. Cras euismod euismod pede. Donec sit amet est. Donec ut urna ut nunc condimentum venenatis? Curabitur id massa sed lorem molestie egestas. Nulla mattis. Praesent ullamcorper velit eget odio. Fusce eu velit. Aenean adipiscing felis non quam. Cras pharetra mi nec neque.</p>
+				<p>Example:</p>
 
 				<picture>
 					<!--[if IE 9]><video style="display: none;"><![endif]-->
-					<source media="(min-width: 641px)" srcset="/assets/images/content/drone-rangers/cover-960x600.jpg" type="image/jpeg">
-					<source media="(min-width: 501px)" srcset="/assets/images/content/drone-rangers/cover-640x600.jpg" type="image/jpeg">
-					<source media="(min-width: 321px)" srcset="/assets/images/content/drone-rangers/cover-500x600.jpg" type="image/jpeg">
-					<source srcset="/assets/images/content/drone-rangers/cover-312x600.jpg" type="image/jpeg">
+					<source media="(min-width: 641px)" srcset="img/imagery/test-img01.jpg" type="image/jpeg">
+					<source media="(min-width: 501px)" srcset="img/imagery/test-img02.jpg" type="image/jpeg">
+					<source media="(min-width: 321px)" srcset="img/imagery/test-img02.jpg" type="image/jpeg">
+					<source srcset="img/imagery/test-img01.jpg" type="image/jpeg">
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="/assets/images/content/drone-rangers/cover-312x600.jpg" alt="" width="961" height="600" class="ef-video__media ef-video__media--hero">
+					<img srcset="img/imagery/test-img01.jpg" alt="" class="basic" />
 				</picture>
 
 				<!--
@@ -172,7 +175,9 @@
 				-->
 				<div style="display:none;">
 				  <svg xmlns="http://www.w3.org/2000/svg">
-				    <symbol viewBox="0 0 8.3 8.3" id="icon-close" aria-label="Close"><title>Close</title><path d="M8.3,0.3L8,0L4.2,3.8L0.3,0L0,0.3l3.8,3.8L0,8l0.3,0.3l3.8-3.8L8,8.3L8.3,8L4.5,4.2"/>
+				    <symbol viewBox="0 0 8.3 8.3" id="icon-close" aria-label="Close">
+						<title>Close</title>
+						<path d="M8.3,0.3L8,0L4.2,3.8L0.3,0L0,0.3l3.8,3.8L0,8l0.3,0.3l3.8-3.8L8,8.3L8.3,8L4.5,4.2"/>
 				    </symbol>
 				  </svg>
 				</div>
@@ -187,7 +192,9 @@
 				  <use xlink:href="img/svg/icons.svg#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"/>
 				</svg>
 
+				<p>Inline, text-aligned svgs:</p>
 				<a href="/news/" aria-label="Latest News">
+					Latest news
 					<svg aria-hidden="true" class="icon-svg">
 						<use xlink:href="img/svg/icons.svg#play"></use>
 					</svg>
@@ -204,6 +211,46 @@
 				Sidenote about accessiblity (a11y):
 				If I'm honest, I'm not 100% sure whether it is better to put your <title>s and/or aria-labels in your sprite or the SVG reference.
 				-->
+
+				<svg>
+				    <defs>
+				        <linearGradient id="Gradient-1"
+				             x1="0" y1="0" x2="100%" y2="0">
+				            <stop offset="0%" stop-color="lightblue" />
+				            <stop offset="100%" stop-color="#ef5b2b" />
+				        </linearGradient>
+				    </defs>
+				    <rect x="450" y="10" width="200" height="100" fill= "url(#Gradient-1)" stroke="#333333" stroke-width="4px" />
+				</svg>
+
+				<svg width="500px" height="300px" fill="url(#Gradient-1)" style="font-size:4em;">
+					<defs>
+						<linearGradient id="Gradient-1" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
+						<!--<radialGradient id="Gradient1" cy="60%" fx="45%" fy="45%" r="2">-->
+							<stop offset="10%" stop-color="#48afc1" />
+							<stop offset="10%" stop-color="#b4c63b" />
+							<stop offset="20%" stop-color="#ef5b2b" />
+							<stop offset="20%" stop-color="#503969" />
+							<stop offset="30%" stop-color="#ab6294" />
+							<stop offset="30%" stop-color="#1cb98f" />
+							<stop offset="40%" stop-color="#48afc1" />
+							<stop offset="40%" stop-color="#b4c63b" />
+							<stop offset="50%" stop-color="#ef5b2b" />
+							<stop offset="50%" stop-color="#503969" />
+							<stop offset="60%" stop-color="#ab6294" />
+							<stop offset="60%" stop-color="#1cb98f" />
+							<stop offset="70%" stop-color="#48afc1" />
+							<stop offset="70%" stop-color="#b4c63b" />
+							<stop offset="80%" stop-color="#ef5b2b" />
+							<stop offset="80%" stop-color="#503969" />
+							<stop offset="90%" stop-color="#ab6294" />
+							<stop offset="90%" stop-color="#1cb98f" />
+							<stop offset="100%" stop-color="#48afc1" />
+							<!--</radialGradient>-->
+						</linearGradient>
+					</defs>
+					<text x="15%" y="75%">Apple</text>
+					</svg>
 
 				<div class="line" role="separator"></div>
 
@@ -247,7 +294,7 @@
 								<li><label for="xxxName">Name</label><input type="text" name="xxxName" id="xxxName" required aria-required="true" /></li>
 								<li><label for="xxxEmail">Email Address</label><input type="email" name="xxxEmail" id="xxxEmail" required aria-required="true" /></li>
 								<li><label for="xxxTel">Telephone</label><input type="tel" name="xxxTel" id="xxxTel" /></li>
-								<li><label for="xxxUrl">Url</label><input type="url" name="xxxUrl" id="xxxUrl" placeholder="http://" /></li>
+								<li><label for="xxxUrl">Url</label><input type="url" name="xxxUrl" id="xxxUrl" placeholder="http://" aria-invalid="true" aria-describedby="urltip" /></li>
 								<li><label for="xxxSelect">Select</label>
 								<select name="xxxSelect" id="xxxSelect">
 									<option value="Option None" selected="selected" disabled="disabled">Select a choice</option>

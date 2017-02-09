@@ -4,4 +4,4 @@ Bootstrap? Hah!
 
 to do:
 
-* add in svg examples
+* add in calc(33.333% - 20px) example to mobile stylesheet [and lose border-box]
