@@ -34,3 +34,4 @@ STUFF TO DO:
 - load fonts differently: http://bdadam.com/blog/loading-webfonts-with-high-performance.html
 - use owl.carousel instead
 - make .intro-block responsive
+- remember/reference animate.css and/or hover.css?
