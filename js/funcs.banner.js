@@ -1,11 +1,12 @@
-$(document).ready(function(){
-	//banner slider-homepage
-	$('.banner-hero').slick({
-		autoplay: true,
-		arrows: false,
-		autoplaySpeed: 5000,
-		speed: 2500,
-		fade: true,
-		cssEase: 'linear'
+$(document).ready(function() {
+
+	/*homepage*/
+	jQuery(function(){
+		jQuery('#camera_wrap_1').camera({
+			height:'400px',
+			playPause:false,
+			loader:'none'
+		});
 	});
+
 });

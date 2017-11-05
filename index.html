@@ -37,9 +37,8 @@
 	<link href="img/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" sizes="57x57" />
 
 	<link href="css/style.css" rel="stylesheet" media="screen" />
+	<link href="css/theme-camera.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-home.css" rel="stylesheet" media="screen" />
-	<link href="css/slick.css" rel="stylesheet" media="screen" />
-	<link href="css/slick-theme.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-mobile.css" rel="stylesheet" media="screen" />
 	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700%7COswald:400,300" rel="stylesheet" />
 
@@ -51,16 +50,16 @@
 	<script src="js/jquery.superfish.min.js"></script>
 	<script src="js/funcs.js"></script>
 
-	<script src="js/jquery.slick.min.js"></script>
+	<script src="js/jquery.camera.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
 
-	<script src="js/live.js"></script> <!--only works on localhost-->
+	<script src="js/live.js"></script><!--only works on localhost-->
 
 	<!--[if IE 8]>
 		<link href="css/style_ie8.css" rel="stylesheet" />
 	<![endif]-->
 	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
 
@@ -110,10 +109,25 @@
 
 	<div class="container clearfix">
 
-		<div class="banner-hero">
-			<img src="img/banners/home-00a.jpg" alt="" />
-			<img src="img/banners/home-00b.jpg" alt="" />
-			<img src="img/banners/home-00c.jpg" alt="" />
+		<div class="camera_wrap camera_white_skin" id="camera_wrap_1">
+			<div data-src="img/banners/home-01a.jpg">
+				<div class="camera_caption fadeFromBottom">
+					<strong>Metals</strong><br />
+					<span>— Advanced Solutions to perform different and wide analytical tasks in the Metal Industry</span>
+				</div>
+			</div>
+			<div data-src="img/banners/home-01b.jpg">
+				<div class="camera_caption fadeFromBottom">
+					<strong>Radio 6 musc</strong><br />
+					<span>— Yeah</span>
+				</div>
+			</div>
+			<div data-src="img/banners/home-01c.jpg">
+				<div class="camera_caption fadeFromBottom">
+					<strong>Radio 6 musc</strong><br />
+					<span>— Yeah</span>
+				</div>
+			</div>
 		</div>
 
 		<div id="main-content_holder" class=""><!-- split-col -->
