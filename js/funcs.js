@@ -4,6 +4,13 @@ $(document).ready(function() {
 		return this.hostname && this.hostname !== location.hostname;
 	}).addClass('ext');
 
+	// svr replace w/mondenizr
+	if(!Modernizr.svg) {
+		$('img[src*="svg"]').attr('src', function () {
+			return $(this).attr('src').replace('.svg', '.png');
+		}
+	}
+
 	//SF menu
 	if ($(window).width() < 960) {
 		//nothing

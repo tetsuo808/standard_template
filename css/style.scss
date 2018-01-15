@@ -1,7 +1,7 @@
 /**********************************
-Description...:screen sass
-Author........:hello@satur9.co.uk
-Last Changed..:#{timestamp()} - v1.0
+Description...: screen sass
+Author........: hello@satur9.co.uk
+Last Changed..: #{timestamp()} - v1.0
 Notes #1......:
 *********************************/
 
@@ -49,6 +49,8 @@ nav, section, video {display:block;}
 h2, h3, h4, h5, h6 {font-family:'khakiregular';}
 img {vertical-align:middle;}
 svg {border:1px solid red;}
+	/*make svg <img>s fluid in IE */
+	img.svg, object.svg {width:100%;}
 
 /******************
 Skipto's**/
@@ -77,12 +79,14 @@ border-top-left-radius:10px;
 	outline:none;
 	}
 }
+
 /******************
 Logo Area**/
 #header {
 width:100%;
 background-color:#eee;
 
+	img {}
 	h1 {@include hide;}
 }
 
@@ -370,6 +374,29 @@ stroke:coral;
 stroke-width:5%;
 stroke-linejoin:round;
 }
+.svg-icon-01 {
+fill:green;
+}
+
+.ic-2 {fill:#FDC646;}
+svg path {
+fill:inherit;
+//all: inherit;
+}
+
+.codrops-1 {
+  fill: #4BC0A5;
+  color: #A4DFD1;
+}
+.codrops-2 {
+  fill: #0099CC;
+  color: #7FCBE5;
+}
+.codrops-3 {
+  fill: #5F5EC0;
+  color: #AEAFDD;
+}
+
 
 /******************
 Buttons**/
@@ -671,6 +698,11 @@ button:nth-last-child(6):first-child ~ button {} // all elements from a specifie
 button:nth-child(n+6) {} // all elements from 6th upwards
 
 /******************
+Crazy bg effts**/
+.svg-img {background-image:image('foo.svg#xywh=0,0,200,50');}
+.gradient-img {background-image:conic-gradient(#f00,#0f0,#00f);}
+
+/******************
 Clearfix**/
 .clearfix:after {
 visibility:hidden;
@@ -682,3 +714,11 @@ height:0;
 }
 * html .clearfix {zoom:1;}/*IE6*/
 *:first-child+html .clearfix {zoom:1;}/*IE7*/
+
+/******************
+Fallbacks**/
+@supports not (display:grid) {
+	body {
+	background-color: green;
+	}
+}

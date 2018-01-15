@@ -1,4 +1,3 @@
-- use character encoding type relative to region/country of the site (iso or utf8)
 - use microformats on relevant areas, things like v-cards
 
 	<div class="vcard">
@@ -28,6 +27,29 @@ RUN SVGO (Manual):
 - $ svgo --input img/graph.svg --output img/optimised-graph.svg
 - if it fucks up complex svgs, try: $ svgo --disable=convertPathData --disable=mergePaths -i img/a.svg
 
+**********************
+Install SVGO (Automatic):
+
+- npm install grunt-svgmin --save-dev
+- (in Gruntfile.js)
+
+svgmin: {
+    options: {
+        plugins: {
+            removeViewBox: false
+        }
+    },
+    dist: {
+        files: {
+            'images/svg/atom.svg' : 'src/svg/atom.svg'
+        }
+    }
+}
+
++
+
+grunt.loadNpmTasks('grunt-svgmin');
+RUN: (grunt svgmin)
 
 **********************
 STUFF TO DO:
@@ -35,3 +57,5 @@ STUFF TO DO:
 - use owl.carousel instead
 - make .intro-block responsive
 - remember/reference animate.css and/or hover.css?
+- use contact form code from RTS
+- make svg zone in style.css

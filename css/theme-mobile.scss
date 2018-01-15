@@ -66,7 +66,7 @@ Notes #1......:
 	#nav #navslide {
     display:block;
     z-index:99999;
-    position:fixed;
+    position:fixed;//sticky??
     top:0;left:0;
     width:44px;height:44px;
     background:url(../img/icon-nav.png);
@@ -74,7 +74,7 @@ Notes #1......:
     #nav .nav {
 	display:block;
     z-index:9999;
-    position:fixed;
+    position:fixed;//sticky??
     top:0;left:-274px;
     width:318px;height:495px;
 	background:green;
@@ -97,7 +97,7 @@ Notes #1......:
 	//#header img {position:absolute;top:20px;left:50%;margin:0 0 0 -130px;}
 	//.quick-links {width:100%;text-align:center;margin:80px 0 0;}
 
-	main img {float:none;max-width:100%;margin:20px 0;@include border-box;
+	main img {float:none;max-width:100%;height:auto;margin:20px 0;@include border-box;
 	object-fit:cover;object-position:100% 0; // art direction scaling. no IE support!
 	//height:auto;
 	}
@@ -197,5 +197,10 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
 /* Galaxy s3 (landscape) ----------- */
 @media screen and (max-width: 1028px) {
+/* Styles */
+}
+
+/* dpi styles ----------- */
+@media screen and (resolution: 2dppx) {
 /* Styles */
 }
