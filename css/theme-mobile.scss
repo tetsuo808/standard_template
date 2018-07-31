@@ -1,6 +1,6 @@
 /**********************************
-Description...:MOBILE THEME
-Last Changed..:29-08-2016
+Description...: MOBILE THEME
+Last Changed..: 31-07-2018
 Notes #1......:
 /******************/
 
@@ -12,9 +12,9 @@ Notes #1......:
 	body {-webkit-text-size-adjust:none;-ms-text-size-adjust:100%;}
 	video {width:100%;}
 	.container, .cont-header, .cont-nav, .cont-footer {width:auto;}
-	.container, #top {margin:0 50px;}
+	.container {margin:0 50px;}
 
-	main {width:100%;@include border-box;}
+	.main-content {width:100%;@include border-box;}
 
 	/*homepage*/
 	.intro-block {width:33.333%;margin:10px 0 40px;@include border-box;}
@@ -24,32 +24,23 @@ Notes #1......:
 
 @media screen and (max-device-width:960px), screen and (max-width:960px) {
 	/*TABLET*/
-	.container, #top {margin:0 auto;}
-	.cont-header, .cont-footer {padding:30px 20px;}
+	.container {margin:0 auto;}
+	.cont-header, .cont-nav, .cont-footer {padding:30px 20px;}
 
-	#nav ul li {width:33.333%;}
+	#nav ul li {z-index:inherit;width:33.333%;}
 	#nav ul li a {width:100%;padding:14px 0;@include border-box;}
-	#nav ul li {z-index:inherit;}
 	#nav ul li ul {z-index:999999;width:100%;border-top:0;}
 	#nav ul li ul li {width:100%;}
 
 	.embed-container {width:auto;height:auto;padding-bottom:56.25%;}
-
-	/*contact*/
-	#contact-form input, #contact-form textarea {@include border-box;}
-	#contact-form label {width:140px;}
-	#contact-form input[type="text"], #contact-form input[type="tel"],
-	#contact-form input[type="email"], #contact-form input[type="url"],
-	#contact-form input[type="file"], #contact-form textarea {width:240px;}
-	#contact-form input[type="submit"] {margin-left:160px;}
-	#contact-form select {width:250px;}
 }
 
 @media screen and (max-device-width:640px), screen and (max-width:640px) {
 	/*SMARTPHONE*/
 	//touch-action:manipulation;//removes 300 mil touch delay?
 
-	#top {
+	#header .cont-header {
+	-webkit-flex-direction:column;
 	flex-direction:column;
 	}
 	.quick-links {
@@ -81,30 +72,33 @@ Notes #1......:
     }
 
 	/*contact*/
-	#contact-form ul li {width:100%;}
-	#contact-form label {float:left;width:auto;text-align:left;}
-	#contact-form .options label.intro {padding:4px 0 0;}
-	#contact-form input[type="text"], #contact-form input[type="tel"],
-	#contact-form input[type="email"], #contact-form input[type="url"],
-	#contact-form input[type="file"], #contact-form textarea {float:left;clear:left;width:100%;}
-	#contact-form input[type="submit"] {margin-left:0;}
-	#contact-form select {width:100%;}
-	#contact-form .options label {width:auto;margin-left:0;}
-	#contact-form .options label.intro {width:100%;}
+	#contact-form {
+		ul li {width:100%;}
+		table.refactor {
+		display:block;
+
+			th, td, tr {display:block;}
+			th {display:none;}
+		}
+		input::placeholder, textarea::placeholder {opacity:1;}
+
+		/*not used*/
+	    .table-scroll {width:100%;overflow-x:auto;overflow-y:hidden;}
+	}
 }
 
 @media screen and (max-device-width:500px), screen and (max-width:500px) {
 	//#header img {position:absolute;top:20px;left:50%;margin:0 0 0 -130px;}
 	//.quick-links {width:100%;text-align:center;margin:80px 0 0;}
 
-	main img {float:none;max-width:100%;height:auto;margin:20px 0;@include border-box;
+	.main-content img {float:none;max-width:100%;height:auto;margin:20px 0;@include border-box;
 	object-fit:cover;object-position:100% 0; // art direction scaling. no IE support!
 	//height:auto;
 	}
 
-	main .figure {float:none;width:100%;margin:20px 0 40px;@include border-box;}
-	main .figure figcaption {width:auto;}
-	main .figure img {width:100%;}
+	.main-content .figure {float:none;width:100%;margin:20px 0 40px;@include border-box;}
+	.main-content .figure figcaption {width:auto;}
+	.main-content .figure img {width:100%;}
 
 	table.refactor {
 	display:block;
@@ -121,8 +115,7 @@ Notes #1......:
 
 	#nav ul li {width:100%;}
 	#nav ul li a {border:0;}
-	#nav ul li ul {float:left;position:relative;}
-	#nav ul li ul {display:none !important;position:static;}
+	#nav ul li ul {display:none !important;position:static;float:left;}
 	#nav ul li:hover ul {display:none !important;}
 	#nav .mobnav-subarrow {display:block;}
 	#nav ul li.xpopdrop ul {display:block !important;}

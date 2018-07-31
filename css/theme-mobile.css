@@ -1,6 +1,6 @@
 /**********************************
-Description...:MOBILE THEME
-Last Changed..:29-08-2016
+Description...: MOBILE THEME
+Last Changed..: 31-07-2018
 Notes #1......:
 /******************/
 .edge--bottom {
@@ -154,11 +154,11 @@ Notes #1......:
     width: auto;
   }
 
-  .container, #top {
+  .container {
     margin: 0 50px;
   }
 
-  main {
+  .main-content {
     width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -184,15 +184,16 @@ Notes #1......:
 }
 @media screen and (max-device-width: 960px), screen and (max-width: 960px) {
   /*TABLET*/
-  .container, #top {
+  .container {
     margin: 0 auto;
   }
 
-  .cont-header, .cont-footer {
+  .cont-header, .cont-nav, .cont-footer {
     padding: 30px 20px;
   }
 
   #nav ul li {
+    z-index: inherit;
     width: 33.333%;
   }
 
@@ -202,10 +203,6 @@ Notes #1......:
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
-
-  #nav ul li {
-    z-index: inherit;
   }
 
   #nav ul li ul {
@@ -223,35 +220,11 @@ Notes #1......:
     height: auto;
     padding-bottom: 56.25%;
   }
-
-  /*contact*/
-  #contact-form input, #contact-form textarea {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  #contact-form label {
-    width: 140px;
-  }
-
-  #contact-form input[type="text"], #contact-form input[type="tel"],
-  #contact-form input[type="email"], #contact-form input[type="url"],
-  #contact-form input[type="file"], #contact-form textarea {
-    width: 240px;
-  }
-
-  #contact-form input[type="submit"] {
-    margin-left: 160px;
-  }
-
-  #contact-form select {
-    width: 250px;
-  }
 }
 @media screen and (max-device-width: 640px), screen and (max-width: 640px) {
   /*SMARTPHONE*/
-  #top {
+  #header .cont-header {
+    -webkit-flex-direction: column;
     flex-direction: column;
   }
 
@@ -303,56 +276,44 @@ Notes #1......:
   }
 
   /*contact*/
+  #contact-form {
+    /*not used*/
+  }
   #contact-form ul li {
     width: 100%;
   }
-
-  #contact-form label {
-    float: left;
-    width: auto;
-    text-align: left;
+  #contact-form table.refactor {
+    display: block;
   }
-
-  #contact-form .options label.intro {
-    padding: 4px 0 0;
+  #contact-form table.refactor th, #contact-form table.refactor td, #contact-form table.refactor tr {
+    display: block;
   }
-
-  #contact-form input[type="text"], #contact-form input[type="tel"],
-  #contact-form input[type="email"], #contact-form input[type="url"],
-  #contact-form input[type="file"], #contact-form textarea {
-    float: left;
-    clear: left;
+  #contact-form table.refactor th {
+    display: none;
+  }
+  #contact-form input::placeholder, #contact-form textarea::placeholder {
+    opacity: 1;
+  }
+  #contact-form .table-scroll {
     width: 100%;
-  }
-
-  #contact-form input[type="submit"] {
-    margin-left: 0;
-  }
-
-  #contact-form select {
-    width: 100%;
-  }
-
-  #contact-form .options label {
-    width: auto;
-    margin-left: 0;
-  }
-
-  #contact-form .options label.intro {
-    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
 @media screen and (max-device-width: 500px), screen and (max-width: 500px) {
-  main img {
+  .main-content img {
     float: none;
     max-width: 100%;
+    height: auto;
     margin: 20px 0;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    object-fit: cover;
+    object-position: 100% 0;
   }
 
-  main .figure {
+  .main-content .figure {
     float: none;
     width: 100%;
     margin: 20px 0 40px;
@@ -361,11 +322,11 @@ Notes #1......:
     box-sizing: border-box;
   }
 
-  main .figure figcaption {
+  .main-content .figure figcaption {
     width: auto;
   }
 
-  main .figure img {
+  .main-content .figure img {
     width: 100%;
   }
 
@@ -393,13 +354,9 @@ Notes #1......:
   }
 
   #nav ul li ul {
-    float: left;
-    position: relative;
-  }
-
-  #nav ul li ul {
     display: none !important;
     position: static;
+    float: left;
   }
 
   #nav ul li:hover ul {
@@ -454,6 +411,10 @@ Notes #1......:
 }
 /* Galaxy s3 (landscape) ----------- */
 @media screen and (max-width: 1028px) {
+  /* Styles */
+}
+/* dpi styles ----------- */
+@media screen and (resolution: 2dppx) {
   /* Styles */
 }
 

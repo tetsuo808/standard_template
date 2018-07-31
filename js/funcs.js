@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 	// svr replace w/mondenizr
 	if(!Modernizr.svg) {
-		$('img[src*="svg"]').attr('src', function () {
+		$('img[src*="svg"]').attr('src'), function () {
 			return $(this).attr('src').replace('.svg', '.png');
 		}
 	}

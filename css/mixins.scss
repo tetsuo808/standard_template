@@ -13,6 +13,23 @@ word-break:normal;
 -moz-hyphens:none;
 hyphens:none;
 }
+
+@mixin display-flex {
+display:-ms-flexbox;
+display:-webkit-flex;
+display:flex;
+}
+@mixin flex($flex-grow, $flex-shrink, $flex-basis) {
+-webkit-flex:$flex-grow $flex-shrink $flex-basis;
+-ms-flex:$flex-grow $flex-shrink $flex-basis;
+flex:$flex-grow $flex-shrink $flex-basis;
+}
+@mixin align-items($align-items) {
+align-items:$align-items;
+-webkit-align-items:$align-items;
+}
+
+
 @mixin transition($transition-property, $transition-time, $method) {
 -webkit-transition:$transition-property $transition-time $method;
 -moz-transition:$transition-property $transition-time $method;

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /**********************************
-Description...:screen sass
-Author........:hello@satur9.co.uk
-Last Changed..:27-03-2016 / 2017-01-01 18:28:23 +0000
+Description...: screen sass
+Author........: hello@satur9.co.uk
+Last Changed..: 2018-07-31 16:28:06 +0100 - v1.0
 Notes #1......:
 *********************************/
 .edge--bottom {
@@ -155,6 +155,7 @@ body {
   text-align: center;
   cursor: default;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -164,12 +165,11 @@ body {
   width: 1280px;
   margin: 0 auto;
   text-align: left;
-  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .cont-header, .cont-nav, .cont-footer {
   padding: 30px 0;
-  background: none;
 }
 
 @font-face {
@@ -192,6 +192,15 @@ img {
   vertical-align: middle;
 }
 
+svg {
+  border: 1px solid red;
+}
+
+/*make svg <img>s fluid in IE */
+img.svg, object.svg {
+  width: 100%;
+}
+
 /******************
 Skipto's**/
 #top-link a {
@@ -202,7 +211,7 @@ Skipto's**/
   bottom: 0;
   font-size: 1em;
   padding: 14px;
-  background: #231f20;
+  background-color: #231f20;
   border-top-left-radius: 10px;
 }
 
@@ -227,20 +236,24 @@ Skipto's**/
 Logo Area**/
 #header {
   width: 100%;
-  background-color: #eee;
+}
+#header .cont-header {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+#header .cont-header div {
+  -webkit-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 #header h1 {
   position: absolute;
   left: -9999px;
-}
-
-#top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px 0;
 }
 
 /******************
@@ -250,17 +263,19 @@ Quick Links**/
 }
 .quick-links p {
   font-size: 1.1em;
-  line-height: 1.2em;
+  line-height: 1.4em;
 }
 .quick-links p a.tel {
   font-size: 1.4em;
 }
 .quick-links .social a {
   display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin: 0 0 0;
-  background: url(../img/icon-social.png) no-repeat;
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   -webkit-transition: opacity 0.4s ease-in-out;
   -moz-transition: opacity 0.4s ease-in-out;
   -ms-transition: opacity 0.4s ease-in-out;
@@ -268,11 +283,17 @@ Quick Links**/
   transition: opacity 0.4s ease-in-out;
 }
 .quick-links .social a.sc-fb {
-  background-position: left;
-  width: 50px;
+  background-image: url(../img/svg/icon-facebook.svg);
 }
 .quick-links .social a.sc-tw {
-  background-position: right;
+  background-image: url(../img/svg/icon-twitter.svg);
+}
+.quick-links .social a.sc-in {
+  background-image: url(../img/svg/icon-instagram.svg);
+}
+.quick-links .social a:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 .quick-links .social a span {
   position: absolute;
@@ -289,7 +310,7 @@ Quick Links**/
 Navigation**/
 #nav {
   width: 100%;
-  background: #bcbdc0;
+  background-color: #bcbdc0;
   /*drop-downs*/
   /*RESPONSIVE BUTTONs*/
 }
@@ -307,8 +328,12 @@ Navigation**/
   padding: 14px 30px;
   text-decoration: none;
   border-right: 1px solid #d6d7d9;
+  /*&:not(:last-child) {
+  border-right:1px solid #666;
+  }*/
 }
 #nav ul li > a:hover, #nav ul li.selected > a,
+#nav ul li.current-menu-item > a,
 #nav ul li a:active, #nav ul li a:focus,
 #nav ul li:hover {
   color: #fff;
@@ -328,9 +353,6 @@ Navigation**/
   background: linear-gradient(to bottom, #594f51 0%, #231f20 100%);
   border-top: 3px solid #c61017;
 }
-#nav ul li:hover ul {
-  display: block;
-}
 #nav ul li ul li {
   text-align: left;
   font-size: 1em;
@@ -342,6 +364,9 @@ Navigation**/
   padding: 10px 30px;
   border: 0;
 }
+#nav ul li:hover ul {
+  display: block;
+}
 #nav #pull {
   display: none;
   cursor: pointer;
@@ -349,7 +374,7 @@ Navigation**/
   width: 100%;
   text-align: center;
   color: #fff;
-  font-size: 1.1em;
+  font-size: 1em;
   text-decoration: none;
   padding: 10px 0;
   background: #231f20 url(../img/icon-nav.png) 94% 50% no-repeat;
@@ -360,8 +385,8 @@ Navigation**/
 #nav .mobnav-subarrow {
   display: none;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   cursor: pointer;
   height: 40px;
   width: 40px;
@@ -380,7 +405,7 @@ Main Content**/
   color: #87898f;
 }
 
-.split-col main {
+.split-col .main-content {
   width: 620px;
 }
 
@@ -388,84 +413,88 @@ Main Content**/
   width: 240px;
 }
 
-main {
+.main-content {
   float: left;
   width: 1240px;
   padding: 20px;
   /*tables*/
   /*labelled imgs*/
 }
-main h2 {
+.main-content h2 {
   color: #ed1c24;
   font-size: 1.7em;
   margin: 0 0 14px;
 }
-main h2 span {
+.main-content h2 span {
   color: #600;
 }
-main h3, main h4, main h5, main h6 {
+.main-content h3, .main-content h4, .main-content h5, .main-content h6 {
   font-size: 1.4em;
   margin: 30px 0 14px;
 }
-main p {
+.main-content p {
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 14px;
 }
-main p.intro {
+.main-content p.intro {
   font-size: 1.1em;
   line-height: 1.3em;
 }
-main ul, main ol, main dl {
+.main-content ul, .main-content ol, .main-content dl {
   margin: 0 0 14px;
 }
-main ul li, main ol li, main dl li {
+.main-content ul li, .main-content ol li, .main-content dl li {
   list-style: disc;
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 0 20px;
 }
-main ol li {
+.main-content ol li {
   list-style: decimal;
   margin: 0 0 0 30px;
 }
-main dl dt {
+.main-content dl dt {
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 700;
   margin: 10px 0 0;
 }
-main dl dd {
+.main-content dl dd {
   list-style: disc;
   font-size: 0.9em;
   line-height: 1.5em;
   margin: 0 0 0 20px;
 }
-main img {
+.main-content img {
   float: right;
   margin: 0 0 20px 20px;
   padding: 4px;
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #bcbdc0;
 }
-main img.basic {
+.main-content img.basic, .main-content img.alignnone {
   float: none;
   margin: 20px 0;
 }
-main img.skew {
+.main-content img.alignleft {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.main-content img.skew {
   clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
-main a:link, main a:visited {
+.main-content a:link, .main-content a:visited {
   text-decoration: none;
   text-decoration: underline dashed #4c4345;
 }
-main table {
+.main-content table {
   width: 100%;
   margin: 20px 0;
   border-collapse: collapse;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
-main table td, main table th {
+.main-content table td, .main-content table th {
   vertical-align: top;
   min-width: 100px;
   font-size: 0.9em;
@@ -473,33 +502,33 @@ main table td, main table th {
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-main table th {
+.main-content table th {
   color: #fff;
   font-size: 1em;
-  background: #ed1c24;
+  background-color: #ed1c24;
 }
-main table td h3 {
+.main-content table td h3 {
   margin: 0;
 }
-main table td p {
+.main-content table td p {
   font-size: 1em;
   margin: 0;
 }
-main table td img {
+.main-content table td img {
   float: none;
   margin: 0;
   padding: 0;
 }
-main .figure {
+.main-content .figure {
   float: right;
   width: 300px;
   margin: 0 0 24px 24px;
   padding: 20px;
-  background: #41ade5;
+  background-color: #41ade5;
   position: relative;
   z-index: 1;
 }
-main .figure:before, main .figure:after {
+.main-content .figure:before, .main-content .figure:after {
   background: inherit;
   content: '';
   display: block;
@@ -510,17 +539,17 @@ main .figure:before, main .figure:after {
   z-index: -1;
   -webkit-backface-visibility: hidden;
 }
-main .figure:before {
+.main-content .figure:before {
   top: 0;
   transform: skewY(1.5deg);
   transform-origin: 100% 0;
 }
-main .figure:after {
+.main-content .figure:after {
   bottom: 0;
   transform: skewY(-1.5deg);
   transform-origin: 100%;
 }
-main .figure figcaption {
+.main-content .figure figcaption {
   float: right;
   clear: both;
   /*IE Needs me*/
@@ -532,7 +561,7 @@ main .figure figcaption {
   font-style: normal;
   margin: 4px;
 }
-main .figure img {
+.main-content .figure img {
   width: 300px;
   margin: 0;
 }
@@ -548,6 +577,33 @@ SVGs**/
   stroke: coral;
   stroke-width: 5%;
   stroke-linejoin: round;
+}
+
+.svg-icon-01 {
+  fill: green;
+}
+
+.ic-2 {
+  fill: #FDC646;
+}
+
+svg path {
+  fill: inherit;
+}
+
+.codrops-1 {
+  fill: #4BC0A5;
+  color: #A4DFD1;
+}
+
+.codrops-2 {
+  fill: #0099CC;
+  color: #7FCBE5;
+}
+
+.codrops-3 {
+  fill: #5F5EC0;
+  color: #AEAFDD;
 }
 
 /******************
@@ -570,7 +626,7 @@ Buttons**/
   /*ovr*/
 }
 .btn a:hover {
-  background: #f14b52;
+  background-color: #f14b52;
   box-shadow: none;
   padding-bottom: 8px;
   /*ovr*/
@@ -586,123 +642,140 @@ Contact Form**/
 #contact-form, .wpcf7 {
   /**validation**/
 }
+#contact-form *, .wpcf7 * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 #contact-form legend, .wpcf7 legend {
-  color: #bbb;
-  font-size: 1.2em;
-  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.4em;
+  padding: 6px 10px 4px;
+  background-color: #ed1c24;
 }
 #contact-form fieldset, .wpcf7 fieldset {
   position: relative;
-  padding: 20px;
-  margin: 0 0 20px;
-  border: 1px solid #ccc;
+  padding: 30px;
+  margin: 0 0 30px;
+  border: 1px solid #bcbdc0;
 }
 #contact-form p, .wpcf7 p {
   clear: left;
-  margin: 26px 0;
-}
-#contact-form ul#agent, .wpcf7 ul#agent {
-  display: none;
-  clear: left;
+  margin: 0 0 20px;
 }
 #contact-form ul li, .wpcf7 ul li {
-  display: block;
   float: left;
+  width: 50%;
+  list-style: none;
+  margin: 0 0 14px 0;
+  padding: 0 10px;
+}
+#contact-form ul li.full, .wpcf7 ul li.full {
+  width: 100%;
+}
+#contact-form ul li.clear-left, .wpcf7 ul li.clear-left {
   clear: left;
-  font-size: 1.15em;
-  margin: 0 0 14px;
-  padding-left: 0;
 }
 #contact-form label, .wpcf7 label {
-  float: left;
-  display: block;
-  width: 200px;
   cursor: pointer;
-  text-align: right;
-  line-height: 1.3em;
-  padding: 4px 20px 0 0;
-}
-#contact-form label:after, .wpcf7 label:after {
-  content: ":";
-}
-#contact-form li.checky label:after, .wpcf7 li.checky label:after {
-  content: none;
-}
-#contact-form li.checky label, .wpcf7 li.checky label {
-  width: 178px;
-  margin: 0 0 14px;
+  display: block;
+  font-weight: 700;
 }
 #contact-form input, .wpcf7 input {
   border: 1px solid #bcbdc0;
 }
 #contact-form input[type="text"], #contact-form input[type="tel"], #contact-form input[type="email"], #contact-form input[type="url"], #contact-form input[type="file"], .wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"], .wpcf7 input[type="url"], .wpcf7 input[type="file"] {
-  width: 300px;
+  width: 100%;
   font-family: inherit;
-  font-size: 0.9em;
-  padding: 4px;
+  font-size: 1em;
+  padding: 10px;
+  margin-bottom: 3px;
+  background-color: #eee;
 }
-#contact-form input:focus, #contact-form textarea:focus, .wpcf7 input:focus, .wpcf7 textarea:focus {
-  background: #fff;
-  border-color: #8cc541;
+#contact-form input:focus, .wpcf7 input:focus {
+  background-color: #fff;
+  border-color: #0c0;
+}
+#contact-form input::placeholder, .wpcf7 input::placeholder {
+  opacity: 0;
+  color: #bcbdc0;
 }
 #contact-form input[type="submit"], .wpcf7 input[type="submit"] {
   cursor: pointer;
-  width: auto;
   color: #fff;
-  font-size: 0.9em;
-  padding: 8px 14px;
-  margin-left: 220px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  padding: 16px 30px;
   background-color: #c61017;
   border: 0;
 }
 #contact-form input[type="submit"]:hover, #contact-form input[type="submit"]:active, #contact-form input[type="submit"]:focus, .wpcf7 input[type="submit"]:hover, .wpcf7 input[type="submit"]:active, .wpcf7 input[type="submit"]:focus {
-  background-color: #f14b52;
-}
-#contact-form input[type="checkbox"], #contact-form input[type="radio"], .wpcf7 input[type="checkbox"], .wpcf7 input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  margin: 0 14px 0 2px;
-  vertical-align: middle;
-  border: 0;
-  /*for IE*/
+  background-color: #970c11;
 }
 #contact-form select, .wpcf7 select {
-  width: 310px;
-  font-size: 0.9em;
-  padding: 4px;
+  width: 100%;
+  font-size: 1em;
+  padding: 10px;
   border: 1px solid #bcbdc0;
 }
 #contact-form textarea, .wpcf7 textarea {
   resize: vertical;
   font-family: inherit;
-  width: 300px;
-  height: 120px;
+  width: 100%;
+  height: 150px;
   font-size: 1em;
-  padding: 4px;
+  padding: 10px;
+  background-color: #eee;
   border: 1px solid #bcbdc0;
 }
+#contact-form textarea:focus, .wpcf7 textarea:focus {
+  background-color: #fff;
+  border-color: #0c0;
+}
+#contact-form textarea::placeholder, .wpcf7 textarea::placeholder {
+  opacity: 0;
+  color: #bcbdc0;
+}
 #contact-form .options label, .wpcf7 .options label {
-  clear: left;
-  width: 280px;
-  text-align: left;
-  padding: 0;
-  margin-left: 220px;
+  float: left;
+  font-weight: normal;
+  margin-left: 10px;
+  margin-right: 30px;
 }
 #contact-form .options label.intro, .wpcf7 .options label.intro {
-  width: 510px;
-  text-align: left;
-  padding: 4px 20px 0 0;
+  cursor: default;
+  float: none;
+  width: 100%;
+  font-weight: 700;
   margin-left: 0;
   margin-bottom: 10px;
 }
 #contact-form .options input[type="checkbox"], #contact-form .options input[type="radio"], .wpcf7 .options input[type="checkbox"], .wpcf7 .options input[type="radio"] {
-  margin: -4px 0 0 4px;
+  float: left;
+  margin: 4px 0 0;
 }
-#contact-form span.LV_valid, .wpcf7 span.LV_valid {
+#contact-form table, .wpcf7 table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+#contact-form table td, #contact-form table th, .wpcf7 table td, .wpcf7 table th {
+  vertical-align: top;
+  padding: 8px;
+}
+#contact-form table th, .wpcf7 table th {
+  font-size: 1em;
+}
+#contact-form table input[type="text"], .wpcf7 table input[type="text"] {
+  margin-bottom: 0;
+}
+#contact-form table textarea, .wpcf7 table textarea {
+  height: 150px;
+}
+#contact-form span.LV_valid, #contact-form [aria-invalid=false], .wpcf7 span.LV_valid, .wpcf7 [aria-invalid=false] {
   color: #47bf4c;
 }
-#contact-form span.LV_invalid, .wpcf7 span.LV_invalid {
+#contact-form span.LV_invalid, #contact-form [aria-invalid=true], .wpcf7 span.LV_invalid, .wpcf7 [aria-invalid=true] {
   color: #d6492a;
 }
 
@@ -711,7 +784,7 @@ Aside**/
 #aside {
   float: right;
   padding: 20px;
-  background: #ada;
+  background-color: #ada;
 }
 
 /******************
@@ -721,7 +794,7 @@ Footer**/
   position: relative;
   width: 100%;
   text-shadow: 1px 1px #000;
-  background: #666;
+  background-color: #666;
 }
 #footer p {
   text-align: left;
@@ -754,7 +827,7 @@ Footer**/
   overflow: hidden;
   width: 160px;
   height: 28px;
-  background: #000;
+  background-color: #000;
 }
 #footer #❤ span {
   position: absolute;
@@ -763,7 +836,7 @@ Footer**/
 
 /******************
 Global Styles**/
-.line {
+.line, hr {
   clear: both;
   height: 1px;
   font-size: 0;
@@ -806,8 +879,13 @@ Global Styles**/
   box-shadow: 0 0 1px transparent;
 }
 
+.nice-scrolly-area {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 em {
@@ -853,6 +931,11 @@ iframe, video {
   border: 0;
 }
 
+audio {
+  width: 100%;
+  margin: 20px 0;
+}
+
 /******************
 Blockquotes**/
 blockquote {
@@ -860,13 +943,13 @@ blockquote {
   quotes: "“" "”" "‘" "’";
   margin: 20px 0;
   padding: 20px 10px 0;
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   border-left: 10px solid #ccc;
 }
 blockquote:before, blockquote:after {
   content: open-quote;
   font-size: 4em;
-  color: #666;
+  color: #696;
   line-height: 0.1em;
   vertical-align: -0.4em;
 }
@@ -919,21 +1002,47 @@ a[href$=".pdf"]:after {
 }
 
 ::selection {
-  background: #ff0;
+  background-color: #ff0;
   color: #000;
 }
 
 ::-moz-selection {
-  background: #ff0;
+  background-color: #ff0;
   color: #000;
 }
 
 input[type="text"]:disabled {
-  background: #ccc;
+  background-color: #ccc;
 }
 
 input:checked {
   border: 1px solid #090;
+}
+
+.no-svg .icon-only:after {
+  content: attr(aria-label);
+}
+
+button {
+  font-size: 1.25em;
+}
+
+button:only-of-type {
+  font-size: 2em;
+}
+
+button:not(:only-of-type) {
+  font-size: 2em;
+}
+
+/******************
+Crazy bg effts**/
+.svg-img {
+  background-image: image("foo.svg#xywh=0,0,200,50");
+}
+
+.gradient-img {
+  background-image: conic-gradient(#f00, #0f0, #00f);
 }
 
 /******************
@@ -957,5 +1066,12 @@ Clearfix**/
 }
 
 /*IE7*/
+/******************
+Fallbacks**/
+@supports not (display: grid) {
+  body {
+    background-color: green;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

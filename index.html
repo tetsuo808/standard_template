@@ -57,7 +57,7 @@
 	<script src="js/jquery.camera.min.js"></script>
 	<script src="js/funcs.banner.js"></script>
 
-	<script src="js/live.js"></script><!--only works on localhost-->
+	<script src="js/live.js"></script><!--only works on http-->
 
 	<!--[if IE 8]>
 		<link href="css/style_ie8.css" rel="stylesheet" />
@@ -72,14 +72,17 @@
 	<div class="skip"><a href="#skip" accesskey="s">Skip to content &#8595;</a></div>
 
 	<header id="header">
-		<div id="top">
-			<a href="./"><img src="img/logo.png" alt="COMPANY logo" /></a>
-			<h1>Title of the Website</h1>
+		<div class="container cont-header" id="top">
+			<div>
+				<a href="./"><img src="img/logo.png" alt="COMPANY logo" /></a>
+				<h1>Title of the Website</h1>
+			</div>
 
 			<div class="quick-links">
 				<div class="social">
 					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
-					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-fb"><span>Like us on Facebook</span></a>
+					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-fb"><span>Like on Facebook</span></a>
+					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-in"><span>Follow on Instagram</span></a>
 				</div>
 				<p>Tel: <a href="tel:011102220333" class="tel">0111 0222 0333</a><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
@@ -369,6 +372,7 @@
 				<h3>Audio!</h3>
 				<audio src="data/video/night-owl.mp3" controls></audio>
 
+
 				<p>Nunc egestas sagittis urna. Donec quis erat vitae sem dictum scelerisque! Ut a urna. Donec posuere elementum ante? Aenean in erat. Pellentesque sed arcu et magna laoreet sagittis. Aenean erat augue, congue ac, elementum at, laoreet quis, odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut ipsum. Etiam ultrices. Cras tristique eleifend elit. Proin gravida, tellus quis vehicula tincidunt, odio metus suscipit orci, eget pretium turpis velit quis leo. In id felis. Phasellus ac erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vel diam.</p>
 				<dl>
 					<dt>First Step Title</dt>
@@ -401,38 +405,82 @@
 
 				<div class="line" role="separator"></div>
 
-				<div id="contactForm">
+				<div id="contactForm" class="wpcf7">
 					<form action="./" id="contact-form">
 						<fieldset>
-							<legend>Details</legend>
+							<legend>Section 1: Personal Details</legend>
 							<ul>
-								<li><label for="xxxName">Name</label><input type="text" name="xxxName" id="xxxName" required aria-required="true" /></li>
-								<li><label for="xxxEmail">Email Address</label><input type="email" name="xxxEmail" id="xxxEmail" required aria-required="true" /></li>
+								<li class="full"><label for="xxxName">Name</label><input type="text" name="xxxName" id="xxxName" required aria-required="true" /></li>
+								<li class="full"><label for="xxxEmail">Email Address</label><input type="email" name="xxxEmail" id="xxxEmail" required aria-required="true" /></li>
+
 								<li><label for="xxxTel">Telephone</label><input type="tel" name="xxxTel" id="xxxTel" /></li>
 								<li><label for="xxxUrl">Url</label><input type="url" name="xxxUrl" id="xxxUrl" placeholder="http://" aria-invalid="true" aria-describedby="urltip" /></li>
+
 								<li><label for="xxxSelect">Select</label>
-								<select name="xxxSelect" id="xxxSelect">
-									<option value="Option None" selected="selected" disabled="disabled">Select a choice</option>
-									<option value="Option 1">Option 1</option>
-									<option value="Option 2">Option 2</option>
-									<option value="Option 3">Option 3</option>
-									<option value="Option 4">Option 4</option>
-								</select>
+									<select name="xxxSelect" id="xxxSelect">
+										<option value="Option None" selected="selected" disabled="disabled">Select a choice</option>
+										<option value="Option 1">Option 1</option>
+										<option value="Option 2">Option 2</option>
+										<option value="Option 3">Option 3</option>
+										<option value="Option 4">Option 4</option>
+									</select>
+								</li>
+
+								<li><label for="xxxFile">File Upload</label><input type="file" name="xxxFile" id="xxxFile" /></li>
+
+								<li class="options">
+									<label class="intro">Can we contact you at work?</label>
+									<input type="radio" name="sec01_010" id="sec01_010a" value="Yes" /><label for="sec01_010a">Yes</label>
+									<input type="radio" name="sec01_010" id="sec01_010b" value="No" /><label for="sec01_010b">No</label>
 								</li>
 								<li class="options">
-									<label for="xxxRadio01" class="intro">Do you know the answer?</label><br />
-									<label for="xxxRadio01">No</label> <input type="radio" name="xxxRadio01" id="xxxRadio01" value="No" required /><br />
-									<label for="xxxRadio02">Yes</label> <input type="radio" name="xxxRadio01" id="xxxRadio02" value="Yes" required />
+									<label class="intro">Are you free to remain and take up employment?</label>
+									<input type="radio" name="sec01_011" id="sec01_011a" value="Yes" /><label for="sec01_011a">Yes</label>
+									<input type="radio" name="sec01_011" id="sec01_011b" value="No" /><label for="sec01_011b">No</label>
 								</li>
-								<li><label for="xxxFile">File Upload</label><input type="file" name="xxxFile" id="xxxFile" /></li>
+
+								<li class="full"><label for="xxxComment">Comment</label><textarea name="xxxComment" id="xxxComment" cols="50" rows="10"></textarea></li>
+								<li class="full">
+									<label for="sec02_002a">Address:</label>
+									<input type="text" name="sec02_002a" id="sec02_002a" />
+									<input type="text" name="sec02_002b" id="sec02_002b" />
+									<input type="text" name="sec02_002c" id="sec02_002c" />
+								</li>
 							</ul>
 						</fieldset>
+
 						<fieldset>
-							<legend>Comment</legend>
-							<ul>
-								<li><label for="xxxComment">Comment</label><textarea name="xxxComment" id="xxxComment" cols="50" rows="10"></textarea></li>
-							</ul>
+							<legend>Professional, Technical or Management Qualifications</legend>
+							<p>Nam facilisis dapibus odio. Nullam ornare purus non erat. Aliquam et purus. Fusce ligula augue; laoreet eget, consectetuer eget, placerat non, arcu? Sed neque magna, pharetra sed, lobortis ac, posuere sed, felis. Nullam augue nibh, bibendum non; tincidunt id, sollicitudin eu, ipsum. Vestibulum neque. Nullam auctor, lacus sed tincidunt fringilla, neque eros placerat leo, id lobortis nunc magna molestie lacus! Duis ornare.</p>
+
+							<table class="refactor">
+								<tr>
+									<th>Professional / Technical / Management Qualifications</th>
+									<th>Course Details</th>
+									<th>Valid From</th>
+									<th>Valid To</th>
+								</tr>
+								<tr>
+									<td>GWO Working at Height & Rescue</td>
+									<td><textarea name="sec01_013-01a" id="sec01_013-01a" cols="30" rows="10" placeholder="Course Details:"></textarea></td>
+									<td><input type="text" name="sec01_013-01b" id="sec01_013-01b" placeholder="Valid From:" /></td>
+									<td><input type="text" name="sec01_013-01c" id="sec01_013-01c" placeholder="Valid To:" /></td>
+								</tr>
+								<tr>
+									<td>GWO First Aid</td>
+									<td><textarea name="sec01_013-02a" id="sec01_013-02a" cols="30" rows="10" placeholder="Course Details:"></textarea></td>
+									<td><input type="text" name="sec01_013-02b" id="sec01_013-02b" placeholder="Valid From:" /></td>
+									<td><input type="text" name="sec01_013-02c" id="sec01_013-02c" placeholder="Valid To:" /></td>
+								</tr>
+								<tr>
+									<td>Membership of any Professional / Technical Associations - Please state level of Membership:</td>
+									<td colspan="3">
+										<textarea name="sec01_013-20a" id="sec01_013-20a" cols="30" rows="10" placeholder="Membership of any Professional / Technical Associations - Please state level of Membership:"></textarea>
+									</td>
+								</tr>
+							</table>
 						</fieldset>
+
 						<fieldset>
 							<legend>Submit</legend>
 							<ul>
@@ -519,6 +567,6 @@
 		</div>
 	</footer>
 
-<script src="js/tracker.js"></script>
+	<script src="js/tracker.js"></script>
 </body>
 </html>

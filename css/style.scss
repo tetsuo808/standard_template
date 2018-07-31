@@ -29,11 +29,10 @@ position:relative;
 width:1280px;
 margin:0 auto;
 text-align:left;
-background:rgba(0,0,0,0.2);
+background-color:rgba(0,0,0,0.1);
 }
 .cont-header, .cont-nav, .cont-footer {
 padding:30px 0;
-background:none;
 }
 @font-face {
 font-family:'khakiregular';
@@ -61,7 +60,7 @@ z-index:9999;
 right:0;bottom:0;
 font-size:1em;
 padding:14px;
-background:$base-black;
+background-color:$base-black;
 border-top-left-radius:10px;
 }
 
@@ -84,57 +83,64 @@ border-top-left-radius:10px;
 Logo Area**/
 #header {
 width:100%;
-background-color:#eee;
+//background-color:#eee;
+
+	.cont-header {
+	@include display-flex;
+	@include align-items(center);
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+
+		div {
+		@include flex(1,1,0%);
+		}
+	}
 
 	img {}
 	h1 {@include hide;}
 }
 
-#top {
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1280px;
-margin:0 auto;padding:20px 0;
-}
 
-	/******************
-	Quick Links**/
-	.quick-links {
-	text-align:right;
+/******************
+Quick Links**/
+.quick-links {
+text-align:right;
 
-		p {
-		font-size:1.1em;
-		line-height:1.4em;
+	p {
+	font-size:1.1em;
+	line-height:1.4em;
 
-			a.tel {font-size:1.4em;}
-		}
-
-		.social {
-
-			a {
-			display:inline-block;
-			width:40px;height:40px;
-			margin:0 0 10px;
-			background:url(../img/icon-social.png) no-repeat;
-			@include transition(opacity, 0.4s, ease-in-out);
-
-				&.sc-fb {background-position:left;width:50px;}
-				&.sc-tw {background-position:right;}
-				&:hover {}
-				span {@include hide;}
-			}
-		}
-
-		a:link, a:visited {color:$base-grey;}
-		a:hover, a:active, a:focus {color:$base-black;}
+		a.tel {font-size:1.4em;}
 	}
+
+	.social {
+
+		a {
+		display:inline-block;
+		width:26px;height:26px;
+		margin-right:6px;
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center;
+		@include transition(opacity, 0.4s, ease-in-out);
+
+			&.sc-fb {background-image:url(../img/svg/icon-facebook.svg);}
+			&.sc-tw {background-image:url(../img/svg/icon-twitter.svg);}
+			&.sc-in {background-image:url(../img/svg/icon-instagram.svg);}
+			&:hover {@include opacity(0.8);}
+			span {@include hide;}
+		}
+	}
+
+	a:link, a:visited {color:$base-grey;}
+	a:hover, a:active, a:focus {color:$base-black;}
+}
 
 /******************
 Navigation**/
 #nav {
 width:100%;
-background:$base-grey;
+background-color:$base-grey;
 
 	ul {
 
@@ -161,6 +167,9 @@ background:$base-grey;
 		}
 	}
 	ul li > a:hover, ul li.selected > a,
+
+	ul li.current-menu-item > a,
+
 	ul li a:active, ul li a:focus,
 	ul li:hover {
 	color:#fff;
@@ -176,20 +185,21 @@ background:$base-grey;
 	top:100%;left:0;
 	@include vert-gradient (lighten($base-black,20%), $base-black);
 	border-top:3px solid darken($base-red, 10%);
-	}
-	ul li:hover ul {display:block;}
-	ul li ul li {
-	text-align:left;
-	font-size:1em;
-	letter-spacing:normal;
 
-		a {
-		min-width:200px;
-		color:#fff;
-		padding:10px 30px;
-		border:0;
+		li {
+		text-align:left;
+		font-size:1em;
+		letter-spacing:normal;
+
+			a {
+			min-width:200px;
+			color:#fff;
+			padding:10px 30px;
+			border:0;
+			}
 		}
 	}
+	ul li:hover ul {display:block;}
 
 	/*RESPONSIVE BUTTONs*/
 	#pull {
@@ -199,7 +209,7 @@ background:$base-grey;
 	width:100%;
 	text-align:center;
 	color:#fff;
-	font-size:1.1em;
+	font-size:1em;
 	text-decoration:none;
 	padding:10px 0;
 	background:$base-black url(../img/icon-nav.png) 94% 50% no-repeat;
@@ -209,7 +219,7 @@ background:$base-grey;
 	.mobnav-subarrow {
 	display:none;
 	position:absolute;
-	top:0px;right:0px;
+	top:0;right:0;
 	cursor:pointer;
 	height:40px;width:40px;
 	background:$base-black url(../img/icon-nav.png) 50% 50% no-repeat;
@@ -222,10 +232,10 @@ background:$base-grey;
 /******************
 Main Content**/
 #main-content_holder {color:darken($base-grey, 20%);}
-.split-col main {width:620px;}
+.split-col .main-content {width:620px;}
 .split-col #aside {width:240px;}
 
-main {
+.main-content {
 float:left;
 width:1240px;
 padding:20px;
@@ -268,7 +278,7 @@ padding:20px;
 	dl {
 		dt {
 		font-size:0.9em;
-		font-weight:bold;
+		font-weight:700;
 		margin:10px 0 0;
 		}
 		dd {
@@ -281,12 +291,16 @@ padding:20px;
 	img {
 	float:right;
 	margin:0 0 20px 20px;padding:4px;
-	background:#fff;
+	background-color:#fff;
 	border:1px solid $base-grey;
 
-		&.basic {
+		&.basic, &.alignnone {
 		float:none;
 		margin:20px 0;
+		}
+		&.alignleft {
+		float:left;
+		margin:0 20px 20px 0;
 		}
 		&.skew {
 		clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
@@ -323,7 +337,7 @@ padding:20px;
 		th {
 		color:#fff;
 		font-size:1em;
-		background:$base-red;
+		background-color:$base-red;
 		}
 		td {
 			h3 {margin:0;}
@@ -343,7 +357,7 @@ padding:20px;
 	float:right;
 	width:300px;
 	margin:0 0 24px 24px;padding:20px;
-	background:#41ade5;
+	background-color:#41ade5;
  	@include angle(both);
 
 		figcaption {
@@ -414,7 +428,7 @@ box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 	border:0;/*ovr*/
 	}
 	&:hover {
-	background:lighten($base-red, 10%);
+	background-color:lighten($base-red, 10%);
 	box-shadow:none;
 	padding-bottom:8px;/*ovr*/
 	}
@@ -424,99 +438,134 @@ box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 /******************
 Contact Form**/
 #contact-form, .wpcf7 {
+	* {@include border-box;}
 	legend {
-	color:#bbb;
-	font-size:1.2em;
-	text-transform:uppercase;
+	color:#fff;
+	font-size:1.4em;
+	padding:6px 10px 4px;
+	background-color:$base-red;
 	}
 	fieldset {
 	position:relative;
-	padding:20px;margin:0 0 20px;
-	border:1px solid #ccc;
+	padding:30px;margin:0 0 30px;
+	border:1px solid $base-grey;
 	}
 	p {
 	clear:left;
-	margin:26px 0;
+	margin:0 0 20px;
 	}
-	ul#agent {
-	display:none;
-	clear:left;
-	}
-	ul li {
-	display:block;
-	float:left;
-	clear:left;
-	font-size:1.15em;
-	margin:$bottom-break;padding-left:0;
+	ul {
+
+		li {
+		float:left;
+		width:50%;
+		list-style:none;
+		margin:0 0 14px 0;padding:0 10px;
+
+			&.full {width:100%;}
+			&.clear-left {clear:left;}
+		}
 	}
 	label {
-	float:left;
+	cursor:pointer;
 	display:block;
-	width:200px;
-	cursor:pointer;
-	text-align:right;
-	line-height:1.3em;
-	padding:4px 20px 0 0;
+	font-weight:700;
+
+		//&:after {content:":";}
 	}
-	label:after {content:":";}
-	li.checky label:after {content:none;}
-	li.checky label {
-	width:178px;
-	margin:$bottom-break;
+
+	input {
+	border:1px solid $base-grey;
+
+		&[type="text"], &[type="tel"], &[type="email"], &[type="url"], &[type="file"] {
+		width:100%;
+		font-family:inherit;
+		font-size:1em;
+		padding:10px;margin-bottom:3px;
+		background-color:#eee;
+		}
+		&[type="checkbox"], &[type="radio"] {}
+
+		&:focus {
+		background-color:#fff;
+		border-color:#0c0;
+		}
+		&::placeholder {
+		opacity:0;
+		color:$base-grey;
+		}
+
+		&[type="submit"] {
+		cursor:pointer;
+		color:#fff;
+		font-size:1.3em;
+		text-transform:uppercase;
+		padding:16px 30px;
+		background-color:darken($base-red, 10%);
+		border:0;
+		}
+		&[type="submit"]:hover, &[type="submit"]:active, &[type="submit"]:focus {
+		background-color:darken($base-red, 20%);}
 	}
-	input {border:1px solid $base-grey;}
-	input[type="text"], input[type="tel"], input[type="email"], input[type="url"], input[type="file"] {
-	width:300px;
-	font-family:inherit;
-	font-size:0.9em;
-	padding:4px;
-	}
-	input:focus, textarea:focus {
-	background:#fff;
-	border-color:#8cc541;
-	}
-	input[type="submit"] {
-	cursor:pointer;
-	width:auto;
-	color:#fff;
-	font-size:0.9em;
-	padding:8px 14px;margin-left:220px;
-	background-color:darken($base-red, 10%);
-	border:0;
-	}
-	input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {background-color:lighten($base-red, 10%);}
-	input[type="checkbox"], input[type="radio"] {
-	width:16px;height:16px;
-	padding:0;margin:0 14px 0 2px;
-	vertical-align:middle;
-	border:0;/*for IE*/
-	}
+
 	select {
-	width:310px;
-	font-size:0.9em;
-	padding:4px;
+	width:100%;
+	font-size:1em;
+	padding:10px;
 	border:1px solid $base-grey;
 	}
 	textarea {
 	resize:vertical;
 	font-family:inherit;
-	width:300px;height:120px;
+	width:100%;height:150px;
 	font-size:1em;
-	padding:4px;
+	padding:10px;
+	background-color:#eee;
 	border:1px solid $base-grey;
+
+		&:focus {
+		background-color:#fff;
+		border-color:#0c0;
+		}
+		&::placeholder {
+		opacity:0;
+		color:$base-grey;
+		}
 	}
-	.options label {
-	clear:left;
-	width:280px;
-	text-align:left;
-	padding:0;margin-left:220px;
+
+	.options {
+		label {
+		float:left;
+		font-weight:normal;
+		margin-left:10px;margin-right:30px;
+
+			&.intro {
+			cursor:default;
+			float:none;
+			width:100%;
+			font-weight:700;
+			margin-left:0;margin-bottom:10px;
+			}
+		}
+		input[type="checkbox"], input[type="radio"] {
+		float:left;
+		margin:4px 0 0;
+		}
 	}
-	.options label.intro {
-	width:510px;
-	text-align:left;
-	padding:4px 20px 0 0;margin-left:0;margin-bottom:10px;
+
+	table {
+	width:100%;
+	margin:20px 0;
+	border-collapse:collapse;
+
+		td, th {
+		vertical-align:top;
+		padding:8px;
+		}
+		th {font-size:1em;}
+		input[type="text"] {margin-bottom:0;}
+		textarea {height:150px;}
 	}
-	.options input[type="checkbox"], .options input[type="radio"] {margin:-4px 0 0 4px;}
 
 	/**validation**/
 	span.LV_valid, [aria-invalid=false] {color:#47bf4c;}
@@ -528,7 +577,7 @@ Aside**/
 #aside {
 float:right;
 padding:20px;
-background:#ada;
+background-color:#ada;
 }
 
 /******************
@@ -538,7 +587,7 @@ float:left;
 position:relative;
 width:100%;
 @include text-shadow;
-background:#666;
+background-color:#666;
 
 	p {
 	text-align:left;
@@ -569,7 +618,7 @@ background:#666;
 	float:left;
 	overflow:hidden;
 	width:160px;height:28px;
-	background:#000;
+	background-color:#000;
 
 		span {@include hide;}
 	}
@@ -597,7 +646,7 @@ overflow-y:scroll;
 -webkit-overflow-scrolling:touch;
 }
 
-strong {font-weight:bold;}
+strong {font-weight:700;}
 em {font-style:italic;}
 q {
 font-style:italic;
@@ -629,6 +678,10 @@ margin:30px 0;
 	margin:0;border:0;
 	}
 }
+audio {
+width:100%;
+margin:20px 0;
+}
 
 /******************
 Blockquotes**/
@@ -636,13 +689,13 @@ blockquote {
 font-size:1.4em;
 quotes:"\201C""\201D""\2018""\2019";
 margin:20px 0;padding:20px 10px 0;
-background:#f9f9f9;
+background-color:#f9f9f9;
 border-left:10px solid #ccc;
 
 	&:before, &:after {
 	content:open-quote;
 	font-size:4em;
-	color:#666;
+	color:#696;
 	line-height:0.1em;
 	vertical-align:-0.4em;
 	}
@@ -677,10 +730,10 @@ a.ext {padding-right:14px;background:url(../img/icon-ext.png) no-repeat 100% 2px
 
 a[href$=".pdf"]:after {content:"(PDF document)";}
 
-::selection {background:$focus-bg;color:#000;}
-::-moz-selection {background:$focus-bg;color:#000;}
+::selection {background-color:$focus-bg;color:#000;}
+::-moz-selection {background-color:$focus-bg;color:#000;}
 
-input[type="text"]:disabled {background:#ccc;}
+input[type="text"]:disabled {background-color:#ccc;}
 input:checked {border:1px solid #090;}
 
 //aria fallbacks for non-loading icons
