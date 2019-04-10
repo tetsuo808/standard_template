@@ -19,6 +19,7 @@ font-size:100%;
 //line-height:1.5;
 text-align:center;
 cursor:default;
+scroll-behavior:smooth;
 -webkit-font-smoothing:antialiased;
 -moz-osx-font-smoothing:grayscale;
 -webkit-text-size-adjust:100%;
@@ -725,6 +726,10 @@ color:#000;
 background-color:$focus-bg;
 text-decoration:underline;
 }
+
+//removes outline for mouse users, preserves it for keyboard.
+:focus:not(:focus-visible) {outline:none;}
+
 a.pdf {padding-right:14px;background:url(../img/icon-pdf.gif) no-repeat 100% 50%;}
 a.ext {padding-right:14px;background:url(../img/icon-ext.png) no-repeat 100% 2px;}
 
