@@ -2,7 +2,7 @@
 /**********************************
 Description...: screen sass
 Author........: hello@satur9.co.uk
-Last Changed..: 2018-07-31 16:28:06 +0100 - v1.0
+Last Changed..: 2020-04-07 15:01:49 +0100 - v1.0
 Notes #1......:
 *********************************/
 .edge--bottom {
@@ -154,6 +154,7 @@ body {
   font-size: 100%;
   text-align: center;
   cursor: default;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -241,8 +242,8 @@ Logo Area**/
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
   -webkit-align-items: center;
+  align-items: center;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
@@ -985,6 +986,10 @@ a:active, a:focus {
   color: #000;
   background-color: #ff0;
   text-decoration: underline;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 a.pdf {
