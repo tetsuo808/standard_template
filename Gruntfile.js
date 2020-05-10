@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+	// 1. All configuration goes here
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
 		//
 		concat: {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 					}
 				]
 			},
-            gif: {
+			gif: {
 				files: [
 					{
 						expand: true,
@@ -62,6 +62,21 @@ module.exports = function(grunt) {
 						ext: '.gif'
 					}
 				]
+			}
+		},
+
+		//
+		cwebp: {
+			dynamic: {
+				options: {
+					q: 90
+				},
+				files: [{
+					expand: true,
+					cwd: 'img/imagery/',
+					src: ['**/*.{png,jpg}'],
+					dest: 'img/dist/imagery/webp/'
+				}]
 			}
 		},
 
@@ -103,14 +118,15 @@ module.exports = function(grunt) {
 
     });
 
-    // 3. Where we tell Grunt we plan to use this plug-in.
-    grunt.loadNpmTasks('grunt-contrib-concat');
+	// 3. Where we tell Grunt we plan to use this plug-in.
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-cwebp');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sass', 'watch']);
+	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'cwebp', 'sass', 'watch']);
 
 };
