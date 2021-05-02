@@ -36,22 +36,28 @@
 	<link href="img/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72" />
 	<link href="img/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed" sizes="57x57" />
 
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
+
 	<!-- async css loading (hack, then official [low support, try cssrelpreload.js])-->
 	<link href="css/style.css" rel="stylesheet" media="nope!" onload="this.media='screen'" />
 	<link href="css/style.css" rel="preload" as="style" onload="this.rel='stylesheet'" />
 
 	<link href="css/style.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-camera.css" rel="stylesheet" media="screen" />
-	<link href="css/theme-home.css" rel="stylesheet" media="screen" />
 	<link href="css/theme-mobile.css" rel="stylesheet" media="screen" />
-	<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700%7COswald:400,300" rel="stylesheet" />
 
-	<!--<script src="js/dist/production.min.js"></script>-->
+	<!--<script src="js/dist/production.min.js"></script>
 	<script src="js/libs/jquery-1.8.2.min.js"></script>
-	<script src="js/libs/modernizr.js"></script>
+	<script src="js/libs/modernizr.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
+
 	<script src="js/jquery.smoothscroll.js"></script>
 	<script src="js/jquery.easing.min.js"></script>
-	<script src="js/jquery.superfish.min.js"></script>
 	<script src="js/jquery.inertiascroll.min.js"></script>
 		<!--https://satur9.co.uk/demo/fit-friends/html/19.08.2018/-->
 	<script src="js/funcs.js"></script>
@@ -67,6 +73,8 @@
 	<!--[if lt IE 9]>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
+
+	<style>.wow {visibility:hidden;}</style>
 </head>
 
 <body id="home">
@@ -76,15 +84,15 @@
 	<header id="header">
 		<div class="container cont-header" id="top">
 			<div>
-				<a href="./"><img src="img/logo.png" alt="COMPANY logo" /></a>
+				<a href="./"><img src="img/logo.png" alt="COMPANY logo" class="wow zoomIn" data-wow-duration="1s" data-wow-delay="0s" /></a>
 				<h1>Title of the Website</h1>
 			</div>
 
 			<div class="quick-links">
 				<div class="social">
-					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
-					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-fb"><span>Like on Facebook</span></a>
-					<a href="#" rel="external nofollow noopener" target="_blank" class="sc-in"><span>Follow on Instagram</span></a>
+					<a href="#" rel="external nofollow noopener noreferrer" target="_blank" class="sc-tw"><span>Follow us on Twitter</span></a>
+					<a href="#" rel="external nofollow noopener noreferrer" target="_blank" class="sc-fb"><span>Like on Facebook</span></a>
+					<a href="#" rel="external nofollow noopener noreferrer" target="_blank" class="sc-in"><span>Follow on Instagram</span></a>
 				</div>
 				<p>Tel: <a href="tel:011102220333" class="tel">0111 0222 0333</a><br />
 				Email: <a href="mailto:enquiries@company.co.uk">enquiries@company.co.uk</a></p>
@@ -514,7 +522,8 @@
 				</div>
 
 				<div class="embed-container">
-					<iframe src="http://www.youtube.com/embed/bhlwuNXNbMo?wmode=transparent" allowfullscreen></iframe>
+					<iframe src="http://www.youtube.com/embed/xIoNAK_ruZE?wmode=transparent&yt:cc=on" allowfullscreen></iframe>
+
 				</div>
 
 				<div class="embed-container">
@@ -567,7 +576,7 @@
 				<li><a href="generic.html">Accessibility</a></li>
 				<li><a href="generic.html">Privacy Policy &amp; Legal</a></li>
 			</ul>
-			<a href="http://www.satur9.co.uk/" rel="external nofollow noopener" target="_blank" title="Web design &amp; development by Satur9" id="❤"><span>web design &amp; development by Satur9</span></a>
+			<a href="https://www.satur9.co.uk/" rel="external nofollow noopener noreferrer" target="_blank" title="Web design &amp; development by Satur9" id="❤"><span>web design &amp; development by Satur9</span></a>
 		</div>
 	</footer>
 

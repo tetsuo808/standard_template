@@ -1,3 +1,5 @@
+https://twitter.com/mgechev/status/1354300680807329793
+
 - use microformats on relevant areas, things like v-cards
 
 	<div class="vcard">

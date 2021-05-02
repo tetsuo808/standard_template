@@ -4,8 +4,9 @@ Last Changed..: 31-07-2018
 Notes #1......:
 /******************/
 
-@import "variables.scss";
-@import "mixins.scss";
+@import "_settings/variables.scss";
+@import "_settings/mixins.scss";
+@import "_settings/fonts.scss";
 
 @media screen and (max-device-width:1380px), screen and (max-width:1380px) {
 	/*SUPER SIZE MONITOR, + 100px for margin on the sides*/

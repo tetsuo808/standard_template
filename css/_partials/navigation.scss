@@ -1,0 +1,90 @@
+#nav {
+width:100%;
+background-color:$base-grey;
+
+	ul {
+
+		li {
+		z-index:999;
+		float:left;
+		position:relative;
+		list-style:none;
+		text-align:center;
+		font-size:1.05em;
+
+			a {
+			float:left;
+			color:#000;
+			padding:14px 30px;
+			text-decoration:none;
+			border-right:1px solid lighten($base-grey, 10%);
+
+				//another way of doing the above
+				/*&:not(:last-child) {
+				border-right:1px solid #666;
+				}*/
+			}
+		}
+	}
+	ul li > a:hover, ul li.selected > a,
+
+	ul li.current-menu-item > a,
+
+	ul li a:active, ul li a:focus,
+	ul li:hover {
+	color:#fff;
+	background-color:darken($base-red, 10%);
+	}
+	ul li.selected > a:hover {color:#fff;}
+
+	/*drop-downs*/
+	ul li ul {
+	display:none;
+	z-index:99;
+	position:absolute;
+	top:100%;left:0;
+	@include vert-gradient (lighten($base-black,20%), $base-black);
+	border-top:3px solid darken($base-red, 10%);
+
+		li {
+		text-align:left;
+		font-size:1em;
+		letter-spacing:normal;
+
+			a {
+			min-width:200px;
+			color:#fff;
+			padding:10px 30px;
+			border:0;
+			}
+		}
+	}
+	ul li:hover ul {display:block;}
+
+	/*RESPONSIVE BUTTONs*/
+	#pull {
+	display:none;
+	cursor:pointer;
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-size:1em;
+	text-decoration:none;
+	padding:10px 0;
+	background:$base-black url(../img/icon-nav.png) 94% 50% no-repeat;
+
+		&.clozed {background-image:url(../img/icon-nav-closed.png);}
+	}
+	.mobnav-subarrow {
+	display:none;
+	position:absolute;
+	top:0;right:0;
+	cursor:pointer;
+	height:40px;width:40px;
+	background:$base-black url(../img/icon-nav.png) 50% 50% no-repeat;
+
+		&.clozed {background-image:url(../img/icon-nav-closed.png);}
+	}
+	.nav, #navslide {display:none;}
+}

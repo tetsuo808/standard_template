@@ -5,8 +5,11 @@ Last Changed..: #{timestamp()} - v1.0
 Notes #1......:
 *********************************/
 
-@import "variables.scss";
-@import "mixins.scss";
+/******************
+Settings **/
+@import "_settings/variables.scss";
+@import "_settings/mixins.scss";
+@import "_settings/fonts.scss";
 
 /******************
 Layout**/
@@ -25,25 +28,14 @@ scroll-behavior:smooth;
 -webkit-text-size-adjust:100%;
 -ms-text-size-adjust:100%;
 }
-.container, .cont-header, .cont-nav, .cont-footer {
+.container {
 position:relative;
 width:1280px;
 margin:0 auto;
 text-align:left;
 background-color:rgba(0,0,0,0.1);
 }
-.cont-header, .cont-nav, .cont-footer {
-padding:30px 0;
-}
-@font-face {
-font-family:'khakiregular';
-src:url('../data/fonts/khaki-one-webfont.eot'); /*IE9 Compat Modes, ditch*/
-src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'), /*IE6-IE8, ditch*/
-	url('../data/fonts/khaki-one-webfont.woff2') format('woff2'), /*Super Modern Browsers*/
-	url('../data/fonts/khaki-one-webfont.woff') format('woff'), /*Modern Browsers*/
-	url('../data/fonts/khaki-one-webfont.ttf') format('truetype'), /*Safari, Android, iOS*/
-	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg'); /*Legacy iOS, ditch*/
-}
+
 article, aside, details, figcaption, figure, figcaption, footer, header, menu,
 nav, section, video {display:block;}
 h2, h3, h4, h5, h6 {font-family:'khakiregular';}
@@ -81,154 +73,19 @@ border-top-left-radius:10px;
 }
 
 /******************
-Logo Area**/
-#header {
-width:100%;
-//background-color:#eee;
-
-	.cont-header {
-	@include display-flex;
-	@include align-items(center);
-	-webkit-justify-content:space-between;
-	justify-content:space-between;
-
-		div {
-		@include flex(1,1,0%);
-		}
-	}
-
-	img {}
-	h1 {@include hide;}
-}
-
+Logo Area **/
+@import "_partials/header.scss";
 
 /******************
-Quick Links**/
-.quick-links {
-text-align:right;
+Navigation **/
+@import "_partials/navigation.scss";
 
-	p {
-	font-size:1.1em;
-	line-height:1.4em;
 
-		a.tel {font-size:1.4em;}
-	}
 
-	.social {
 
-		a {
-		display:inline-block;
-		width:26px;height:26px;
-		margin-right:6px;
-		background-size:contain;
-		background-repeat:no-repeat;
-		background-position:center;
-		@include transition(opacity, 0.4s, ease-in-out);
 
-			&.sc-fb {background-image:url(../img/svg/icon-facebook.svg);}
-			&.sc-tw {background-image:url(../img/svg/icon-twitter.svg);}
-			&.sc-in {background-image:url(../img/svg/icon-instagram.svg);}
-			&:hover {@include opacity(0.8);}
-			span {@include hide;}
-		}
-	}
 
-	a:link, a:visited {color:$base-grey;}
-	a:hover, a:active, a:focus {color:$base-black;}
-}
 
-/******************
-Navigation**/
-#nav {
-width:100%;
-background-color:$base-grey;
-
-	ul {
-
-		li {
-		z-index:999;
-		float:left;
-		position:relative;
-		list-style:none;
-		text-align:center;
-		font-size:1.05em;
-
-			a {
-			float:left;
-			color:#000;
-			padding:14px 30px;
-			text-decoration:none;
-			border-right:1px solid lighten($base-grey, 10%);
-
-				//another way of doing the above
-				/*&:not(:last-child) {
-				border-right:1px solid #666;
-				}*/
-			}
-		}
-	}
-	ul li > a:hover, ul li.selected > a,
-
-	ul li.current-menu-item > a,
-
-	ul li a:active, ul li a:focus,
-	ul li:hover {
-	color:#fff;
-	background-color:darken($base-red, 10%);
-	}
-	ul li.selected > a:hover {color:#fff;}
-
-	/*drop-downs*/
-	ul li ul {
-	display:none;
-	z-index:99;
-	position:absolute;
-	top:100%;left:0;
-	@include vert-gradient (lighten($base-black,20%), $base-black);
-	border-top:3px solid darken($base-red, 10%);
-
-		li {
-		text-align:left;
-		font-size:1em;
-		letter-spacing:normal;
-
-			a {
-			min-width:200px;
-			color:#fff;
-			padding:10px 30px;
-			border:0;
-			}
-		}
-	}
-	ul li:hover ul {display:block;}
-
-	/*RESPONSIVE BUTTONs*/
-	#pull {
-	display:none;
-	cursor:pointer;
-	position:relative;
-	width:100%;
-	text-align:center;
-	color:#fff;
-	font-size:1em;
-	text-decoration:none;
-	padding:10px 0;
-	background:$base-black url(../img/icon-nav.png) 94% 50% no-repeat;
-
-		&.clozed {background-image:url(../img/icon-nav-closed.png);}
-	}
-	.mobnav-subarrow {
-	display:none;
-	position:absolute;
-	top:0;right:0;
-	cursor:pointer;
-	height:40px;width:40px;
-	background:$base-black url(../img/icon-nav.png) 50% 50% no-repeat;
-
-		&.clozed {background-image:url(../img/icon-nav-closed.png);}
-	}
-	.nav, #navslide {display:none;}
-}
 
 /******************
 Main Content**/
@@ -414,164 +271,14 @@ fill:inherit;
 
 
 /******************
-Buttons**/
-.btn a {
-float:left;
-font-size:1em;
-text-align:center;
-padding:4px 16px 8px;margin:10px 0;
-@include vert-gradient (lighten($base-red,10%), $base-red);
-border-radius:4px;
-box-shadow:2px 2px 6px rgba(0,0,0,0.3);
-
-	&:link, &:visited {
-	color:#fff;
-	border:0;/*ovr*/
-	}
-	&:hover {
-	background-color:lighten($base-red, 10%);
-	box-shadow:none;
-	padding-bottom:8px;/*ovr*/
-	}
-	&:active, &:focus {@include vert-gradient (darken($base-red,10%), $base-red);}
-}
+Buttons **/
+@import "_partials/buttons.scss";
 
 /******************
-Contact Form**/
-#contact-form, .wpcf7 {
-	* {@include border-box;}
-	legend {
-	color:#fff;
-	font-size:1.4em;
-	padding:6px 10px 4px;
-	background-color:$base-red;
-	}
-	fieldset {
-	position:relative;
-	padding:30px;margin:0 0 30px;
-	border:1px solid $base-grey;
-	}
-	p {
-	clear:left;
-	margin:0 0 20px;
-	}
-	ul {
+Web Form **/
+@import "_partials/webform.scss";
 
-		li {
-		float:left;
-		width:50%;
-		list-style:none;
-		margin:0 0 14px 0;padding:0 10px;
 
-			&.full {width:100%;}
-			&.clear-left {clear:left;}
-		}
-	}
-	label {
-	cursor:pointer;
-	display:block;
-	font-weight:700;
-
-		//&:after {content:":";}
-	}
-
-	input {
-	border:1px solid $base-grey;
-
-		&[type="text"], &[type="tel"], &[type="email"], &[type="url"], &[type="file"] {
-		width:100%;
-		font-family:inherit;
-		font-size:1em;
-		padding:10px;margin-bottom:3px;
-		background-color:#eee;
-		}
-		&[type="checkbox"], &[type="radio"] {}
-
-		&:focus {
-		background-color:#fff;
-		border-color:#0c0;
-		}
-		&::placeholder {
-		opacity:0;
-		color:$base-grey;
-		}
-
-		&[type="submit"] {
-		cursor:pointer;
-		color:#fff;
-		font-size:1.3em;
-		text-transform:uppercase;
-		padding:16px 30px;
-		background-color:darken($base-red, 10%);
-		border:0;
-		}
-		&[type="submit"]:hover, &[type="submit"]:active, &[type="submit"]:focus {
-		background-color:darken($base-red, 20%);}
-	}
-
-	select {
-	width:100%;
-	font-size:1em;
-	padding:10px;
-	border:1px solid $base-grey;
-	}
-	textarea {
-	resize:vertical;
-	font-family:inherit;
-	width:100%;height:150px;
-	font-size:1em;
-	padding:10px;
-	background-color:#eee;
-	border:1px solid $base-grey;
-
-		&:focus {
-		background-color:#fff;
-		border-color:#0c0;
-		}
-		&::placeholder {
-		opacity:0;
-		color:$base-grey;
-		}
-	}
-
-	.options {
-		label {
-		float:left;
-		font-weight:normal;
-		margin-left:10px;margin-right:30px;
-
-			&.intro {
-			cursor:default;
-			float:none;
-			width:100%;
-			font-weight:700;
-			margin-left:0;margin-bottom:10px;
-			}
-		}
-		input[type="checkbox"], input[type="radio"] {
-		float:left;
-		margin:4px 0 0;
-		}
-	}
-
-	table {
-	width:100%;
-	margin:20px 0;
-	border-collapse:collapse;
-
-		td, th {
-		vertical-align:top;
-		padding:8px;
-		}
-		th {font-size:1em;}
-		input[type="text"] {margin-bottom:0;}
-		textarea {height:150px;}
-	}
-
-	/**validation**/
-	span.LV_valid, [aria-invalid=false] {color:#47bf4c;}
-	span.LV_invalid, [aria-invalid=true] {color:#d6492a;}
-}
 
 /******************
 Aside**/
@@ -582,48 +289,8 @@ background-color:#ada;
 }
 
 /******************
-Footer**/
-#footer {
-float:left;
-position:relative;
-width:100%;
-@include text-shadow;
-background-color:#666;
-
-	p {
-	text-align:left;
-	color:#ccc;
-	font-size:0.9em;
-	}
-	ul {
-	margin:10px 0;
-
-		li {
-		float:left;
-		list-style:none;
-		font-size:0.9em;
-		padding:0 0 0 6px;margin:0 6px 0 0;
-		border-left:1px solid #ccc;
-
-			&:first-child {
-			padding:0;border:0;
-			}
-		}
-	}
-	a:link, a:visited {color:$base-grey;}
-	a:hover, a:active, a:focus {}
-
-	#❤ {
-	position:absolute;
-	top:20px;right:0;
-	float:left;
-	overflow:hidden;
-	width:160px;height:28px;
-	background-color:#000;
-
-		span {@include hide;}
-	}
-}
+Footer **/
+@import "_partials/footer.scss";
 
 /******************
 Global Styles**/
@@ -774,9 +441,21 @@ height:0;
 *:first-child+html .clearfix {zoom:1;}/*IE7*/
 
 /******************
+Page Specifics **/
+@import "_pages/home.scss";
+
+/******************
+Colour Scheming **/
+//@import "_functions/theming.scss";
+
+/******************
+JavaScript Events **/
+@import "_functions/funcs.scss";
+
+/******************
 Fallbacks**/
 @supports not (display:grid) {
 	body {
-	background-color: green;
+	background-color:green;
 	}
 }

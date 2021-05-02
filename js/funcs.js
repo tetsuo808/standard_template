@@ -1,3 +1,13 @@
+//wowjs init
+new WOW({
+	boxClass:'wow',
+	animateClass:'animated',
+	offset:100,
+	mobile:false,
+	live:true
+}).init();
+
+//jquery
 $(document).ready(function() {
 	//rel links
 	$('.main-content a[rel=external]').filter(function() {

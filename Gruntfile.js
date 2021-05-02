@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 		  dev: {
 			files: {
 			  'css/style.css': 'css/style.scss',
-			  'css/theme-home.css': 'css/theme-home.scss',
+			  //'css/theme-home.css': 'css/theme-home.scss',
 			  'css/theme-mobile.css': 'css/theme-mobile.scss',
 			},
 			options: {
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 		  dist: {
 			files: {
 			  'css/dist/style.css': 'css/style.scss',
-			  'css/dist/theme-home.css': 'css/theme-home.scss',
+			  //'css/dist/theme-home.css': 'css/theme-home.scss',
 			  'css/dist/theme-mobile.css': 'css/theme-mobile.scss'
 			},
 			options: {

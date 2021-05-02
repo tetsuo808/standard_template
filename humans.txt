@@ -3,14 +3,14 @@
 
 # TEAM
 
-    <lewis> -- <developer/designer> -- <hello@satur9.co.uk>
+	<lewis> -- <developer/designer> -- <hello@satur9.co.uk>
 
 # THANKS
 
-    <name>
+	<name>
 
 # TECHNOLOGY COLOPHON
-    Sass, Grunt
-    HTML5, CSS3
-    jquery, modernizr, slidesjs
-    WordPress
+	sass, grunt
+	html5, css3
+	jquery, modernizr, slidesjs
+	wordpress

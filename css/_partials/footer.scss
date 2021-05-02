@@ -1,0 +1,43 @@
+/******************
+Footer**/
+#footer {
+float:left;
+position:relative;
+width:100%;
+@include text-shadow;
+background-color:#666;
+
+	p {
+	text-align:left;
+	color:#ccc;
+	font-size:0.9em;
+	}
+	ul {
+	margin:10px 0;
+
+		li {
+		float:left;
+		list-style:none;
+		font-size:0.9em;
+		padding:0 0 0 6px;margin:0 6px 0 0;
+		border-left:1px solid #ccc;
+
+			&:first-child {
+			padding:0;border:0;
+			}
+		}
+	}
+	a:link, a:visited {color:$base-grey;}
+	a:hover, a:active, a:focus {}
+
+	#❤ {
+	position:absolute;
+	top:20px;right:0;
+	float:left;
+	overflow:hidden;
+	width:160px;height:28px;
+	background-color:#000;
+
+		span {@include hide;}
+	}
+}

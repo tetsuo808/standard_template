@@ -139,6 +139,13 @@ Notes #1......:
   transform-origin: 0 0;
 }
 
+@font-face {
+  font-family: 'khakiregular';
+  src: url("../data/fonts/khaki-one-webfont.eot");
+  /*IE9 Compat Modes, ditch*/
+  src: url("../data/fonts/khaki-one-webfont.eot?#iefix") format("embedded-opentype"), url("../data/fonts/khaki-one-webfont.woff2") format("woff2"), url("../data/fonts/khaki-one-webfont.woff") format("woff"), url("../data/fonts/khaki-one-webfont.ttf") format("truetype"), url("../data/fonts/khaki-one-webfont.svg#khakiregular") format("svg");
+  /*Legacy iOS, ditch*/
+}
 @media screen and (max-device-width: 1380px), screen and (max-width: 1380px) {
   /*SUPER SIZE MONITOR, + 100px for margin on the sides*/
   body {

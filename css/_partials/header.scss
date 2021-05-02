@@ -1,0 +1,52 @@
+#header {
+width:100%;
+//background-color:#eee;
+
+	.cont-header {
+	@include display-flex;
+	@include align-items(center);
+	-webkit-justify-content:space-between;
+	justify-content:space-between;
+
+		div {
+		@include flex(1,1,0%);
+		}
+	}
+
+	img {}
+	h1 {@include hide;}
+}
+
+//quick links
+.quick-links {
+text-align:right;
+
+	p {
+	font-size:1.1em;
+	line-height:1.4em;
+
+		a.tel {font-size:1.4em;}
+	}
+
+	.social {
+
+		a {
+		display:inline-block;
+		width:26px;height:26px;
+		margin-right:6px;
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center;
+		@include transition(opacity, 0.4s, ease-in-out);
+
+			&.sc-fb {background-image:url(../img/svg/icon-facebook.svg);}
+			&.sc-tw {background-image:url(../img/svg/icon-twitter.svg);}
+			&.sc-in {background-image:url(../img/svg/icon-instagram.svg);}
+			&:hover {@include opacity(0.8);}
+			span {@include hide;}
+		}
+	}
+
+	a:link, a:visited {color:$base-grey;}
+	a:hover, a:active, a:focus {color:$base-black;}
+}
