@@ -6,4 +6,5 @@ src:url('../data/fonts/khaki-one-webfont.eot?#iefix') format('embedded-opentype'
 	url('../data/fonts/khaki-one-webfont.woff') format('woff'), /*Modern Browsers*/
 	url('../data/fonts/khaki-one-webfont.ttf') format('truetype'), /*Safari, Android, iOS*/
 	url('../data/fonts/khaki-one-webfont.svg#khakiregular') format('svg'); /*Legacy iOS, ditch*/
+font-display:swap;
 }

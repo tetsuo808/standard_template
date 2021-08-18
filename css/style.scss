@@ -399,6 +399,13 @@ text-decoration:underline;
 
 a.pdf {padding-right:14px;background:url(../img/icon-pdf.gif) no-repeat 100% 50%;}
 a.ext {padding-right:14px;background:url(../img/icon-ext.png) no-repeat 100% 2px;}
+a.external {
+background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxwYXRoIGQ9Ik03LjUgM2EuNS41IDAgMCAxIDAgMWgtNmEuNS41IDAgMCAwLS41LjV2MTBhLjUuNSAwIDAgMCAuNS41aDEwYS41LjUgMCAwIDAgLjUtLjV2LTZhLjUuNSAwIDAgMSAxIDB2NmMwIC44MjctLjY3MyAxLjUtMS41IDEuNWgtMTBDLjY3MyAxNiAwIDE1LjMyNyAwIDE0LjV2LTEwQzAgMy42NzMuNjczIDMgMS41IDNoNnptOC0zYy4wNiAwIC4xMTcuMDEuMTc0LjAzMmwuMDIxLjAwOGEuNS41IDAgMCAxIC4yNjcuMjdsLjAwNy4wMTdDMTUuOTg5LjM4IDE2IC40NCAxNiAuNVY1YS41LjUgMCAwIDEtMSAwVjEuNzA4bC05LjE0NiA5LjE0NmEuNS41IDAgMCAxLS43MDgtLjcwOEwxNC4yOTMgMUgxMWEuNS41IDAgMCAxIDAtMWg0LjV6IiBpZD0iYSIvPjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjx1c2UgZmlsbD0iIzQwNDA0MCIgeGxpbms6aHJlZj0iI2EiLz48L2c+PC9zdmc+');
+background-repeat:no-repeat;
+background-position-x:right;
+background-position-y:4px;
+padding-right:1rem;
+}
 
 a[href$=".pdf"]:after {content:"(PDF document)";}
 
