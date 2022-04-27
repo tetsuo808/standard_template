@@ -2,7 +2,7 @@
   "name": "example-project",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
+    "grunt": "~1.5.2",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-sass": "^0.7.3",
